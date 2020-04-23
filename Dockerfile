@@ -1,12 +1,38 @@
+#   ____                                 ____         __ _
+#  |  _ \ ___   __ _ _ __ ___   ___ _ __/ ___|  ___  / _| |_
+#  | |_) / _ \ / _` | '_ ` _ \ / _ \ '__\___ \ / _ \| |_| __|
+#  |  _ < (_) | (_| | | | | | |  __/ |   ___) | (_) |  _| |_
+#  |_| \_\___/ \__,_|_| |_| |_|\___|_|  |____/ \___/|_|  \__|
+#  ---------------------------------------------------------------
+#  Frontend App - Server Side Rendered - Docker Multi-Stage Build
+#  ---------------------------------------------------------------
+
 # Stage 1: Build an Angular Docker Image
-FROM node as build
-WORKDIR /app
-COPY package*.json /app/
-RUN npm install
-COPY . /app
-ARG configuration=production
-RUN npm run build -- --outputPath=./dist/out --configuration $configuration
-# Stage 2, use the compiled app, ready for production with Nginx
-FROM nginx
-COPY --from=build /app/dist/out/ /usr/share/nginx/html
-COPY /nginx-custom.conf /etc/nginx/conf.d/default.conf
+FROM node:alpine as build
+
+# Create app directory
+WORKDIR /usr/src/app
+
+# Install app dependencies
+# A wildcard is used to ensure both package.json AND package-lock.json are copied
+# where available (npm@5+)
+COPY package*.json ./
+RUN npm install ci --only=production
+
+# Bundle app source
+COPY . /usr/src/app
+
+# Build SSR app
+RUN npm run build:ssr
+
+# Stage 2: Use only the compiled app for production
+FROM node:alpine
+
+# Create app directory
+WORKDIR /usr/src/app
+
+# Copy only the needed files from the build
+COPY --from=build /usr/src/app/dist dist/
+
+# Start server
+CMD [ "node", "dist/server" ]
