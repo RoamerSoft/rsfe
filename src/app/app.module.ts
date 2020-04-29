@@ -24,7 +24,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     // Only call this method in the root module (AppModule).
     TranslateModule.forRoot({
       loader: {
-        // TranslateHttpLoader loads translations from "/assets/i18n/[lang].json"
+        // TranslateHttpLoader loads translations from "/assets/i18n/[lang].json" by default
         provide: TranslateLoader,
         useFactory: HttpLoaderFactory,
         deps: [HttpClient],

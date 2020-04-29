@@ -2,6 +2,7 @@ import { Component, Optional, Inject, PLATFORM_ID } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { REQUEST } from '@nguniversal/express-engine/tokens';
 import { isPlatformBrowser } from '@angular/common';
+import { TranslationService } from './services/translation-service/translation.service';
 
 @Component({
   selector: 'app-root',
@@ -18,15 +19,28 @@ export class AppComponent {
     @Optional()
     @Inject(REQUEST)
     private request: Request,
-    @Inject(PLATFORM_ID) private platformId: any
+    @Inject(PLATFORM_ID) private platformId: any,
+    private translationService: TranslationService
   ) {}
 
-  public ngOnInit(): void {
+  public async ngOnInit() {
     const language = this.getLang();
-    // Set NL or EN based on the request or EN for any other language.
+    // Set NL or EN based on the request or EN for any other language
     if (['en', 'nl'].indexOf(language) > -1) {
+      // Set the backend as source for the specific translation in json
+      this.translate.setTranslation(
+        language,
+        await this.translationService.getTranslation(language).toPromise()
+      );
+      // Set specific language
       this.translate.setDefaultLang(language);
     } else {
+      // Set the backend as source for the English translation in json
+      this.translate.setTranslation(
+        'en',
+        await this.translationService.getTranslation('en').toPromise()
+      );
+      // Set the English language
       this.translate.setDefaultLang('en');
     }
   }
@@ -43,7 +57,13 @@ export class AppComponent {
     return lang;
   }
 
-  public switchLanguage(lang: string): void {
+  public async switchLanguage(lang: string) {
+    // Set the backend as source for the specific translation in json
+    this.translate.setTranslation(
+      lang,
+      await this.translationService.getTranslation(lang).toPromise()
+    );
+    // Use the specific language translation
     this.translate.use(lang);
   }
 }

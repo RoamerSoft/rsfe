@@ -24,7 +24,7 @@ import {join} from 'path';
 const app = express();
 
 // Constants
-const PORT = 8081;
+const PORT = 8080;
 const HOST = '0.0.0.0';
 
 const DIST_FOLDER = join(process.cwd(), 'dist/browser');

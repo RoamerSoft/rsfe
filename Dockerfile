@@ -4,7 +4,7 @@
 #  |  _ < (_) | (_| | | | | | |  __/ |   ___) | (_) |  _| |_
 #  |_| \_\___/ \__,_|_| |_| |_|\___|_|  |____/ \___/|_|  \__|
 #  ---------------------------------------------------------------
-#  Frontend App - Server Side Rendered - Docker Multi-Stage Build
+#  Frontend App - Angular Server Side Rendered - Multi-Stage Build
 #  ---------------------------------------------------------------
 
 # Stage 1: Build an Angular Docker Image
@@ -19,14 +19,14 @@ COPY package*.json ./
 RUN npm install
 
 # Bundle app source
-COPY . /usr/src/app
+COPY . .
 
 # Build SSR app
 RUN npm run build:ssr
 #  ---------------------------------------------------------------
 
 # Stage 2: Use only the compiled app for production
-FROM node:alpine
+FROM node:alpine as production
 
 # Create app directory
 WORKDIR /usr/src/app
