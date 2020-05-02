@@ -8,6 +8,8 @@ import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { HomePageComponent } from './pages/home-page/home-page.component';
+import { HomeHeaderComponent } from './components/home-header/home-header.component';
+import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
@@ -15,7 +17,7 @@ export function HttpLoaderFactory(http: HttpClient) {
 }
 
 @NgModule({
-  declarations: [AppComponent, HomePageComponent],
+  declarations: [AppComponent, HomePageComponent, HomeHeaderComponent, NavBarComponent],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
