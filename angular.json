@@ -28,9 +28,13 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "src/theme/css/style.css",
+              "src/theme/css/plugins.css",
+              "src/theme/css/fonts.css",
+              "src/theme/css/theme.css"
             ],
-            "scripts": []
+            "scripts": [ ]
           },
           "configurations": {
             "production": {
