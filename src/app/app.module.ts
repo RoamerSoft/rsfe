@@ -20,7 +20,15 @@ export function HttpLoaderFactory(http: HttpClient) {
 }
 
 @NgModule({
-  declarations: [AppComponent, HomePageComponent, HomeHeaderComponent, NavBarComponent, WelcomeComponent, ServicesComponent, FooterComponent],
+  declarations: [
+    AppComponent,
+    HomePageComponent,
+    HomeHeaderComponent,
+    NavBarComponent,
+    WelcomeComponent,
+    ServicesComponent,
+    FooterComponent,
+  ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
