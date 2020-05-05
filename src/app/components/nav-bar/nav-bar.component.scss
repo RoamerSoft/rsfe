@@ -4,7 +4,13 @@
 }
 
 .social-icons {
-  margin-top: 22px;
+  margin-top: 1.6rem;
+  position: absolute;
+  right: 4rem;
 }
 
-
+@media only screen and (max-width: 1385px){
+  .social-icons {
+    display: none;
+  }
+}
