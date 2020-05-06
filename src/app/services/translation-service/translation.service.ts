@@ -22,12 +22,12 @@ export class TranslationService {
     @Inject(PLATFORM_ID) private platformId: any
   ) {}
 
-  private getAllTranslationsFromServer(): Observable<Translation> {
-    return this.http.get<Translation>(`${this.api}/translations`);
-  }
-
   private getTranslationFromServer(lang: string): Observable<Translation> {
     return this.http.get<Translation>(`${this.api}/translations/${lang}`);
+  }
+
+  public getTranslationByKey(key: string[]) {
+    return this.translate.get(key);
   }
 
   public getLang(): string {

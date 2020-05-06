@@ -10,6 +10,18 @@ import { TranslationService } from 'src/app/services/translation-service/transla
 })
 export class HomePageComponent implements OnInit {
   public loadAPI: Promise<any>;
+
+  /**
+   * [0] = Title
+   * [1] = Description
+   * [2] = Keywords
+   */
+  private metaDataTranslateKeys = [
+    'RoamerSoft | Web and App Development',
+    'Mobile App Development for Android and Apple iOS. Advanced Web Applications, WordPress Websites and Web Shops. Remotely build by a Full-Stack Software Developer.',
+    'RoamerSoft, Bas Gerritsen, App Development, Web Development, WordPress Development, Websites, Web Shop, Remote, Full-Stack, Software, Developer',
+  ];
+
   constructor(private title: Title, private meta: Meta, private translationService: TranslationService) {}
 
   ngOnInit() {
@@ -17,12 +29,17 @@ export class HomePageComponent implements OnInit {
       this.loadScript();
       resolve(true);
     });
-
-    this.translationService.setTranslation();
+    this.setTranslationAndMetaData();
   }
 
-  switchLanguage(lang: string) {
-    this.translationService.switchLanguage(lang);
+  private setTranslationAndMetaData() {
+    this.translationService.setTranslation().then(() => {
+      this.translationService.getTranslationByKey(this.metaDataTranslateKeys).subscribe((resAsJson) => {
+        this.title.setTitle(resAsJson[this.metaDataTranslateKeys[0]]);
+        this.meta.updateTag({ name: 'description', content: resAsJson[this.metaDataTranslateKeys[1]] });
+        this.meta.updateTag({ name: 'keywords', content: resAsJson[this.metaDataTranslateKeys[2]] });
+      });
+    });
   }
 
   public loadScript() {
