@@ -30,7 +30,7 @@ export class TranslationService {
     return this.http.get<Translation>(`${this.api}/translations/${lang}`);
   }
 
-  private getLang(): string {
+  public getLang(): string {
     let lang: string;
     if (isPlatformBrowser(this.platformId)) {
       // Gets browser language and sets it as default

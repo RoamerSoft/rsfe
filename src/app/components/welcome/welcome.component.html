@@ -3,17 +3,24 @@
   <div class="container-fluid">
     <div class="row">
       <div data-animate="fadeInUp" class="col-lg-4 offset-lg-1 col-md-12 m-t-40">
-        <h4 class="mt-3">About us</h4>
-        <h2>Set your goals high, and don't stop till you get there.</h2>
+        <!-- <h4 class="mt-3">About us</h4> -->
+        <h2>{{ 'Custom Software for Every Device' | translate }}</h2>
         <p class="lead">
-          Nulla varius consequat magna, id molestie ipsum volutpat quis. A true story, that never been told!. Fusce id mi diam, non ornare. Fusce id
-          mi diam, non ornare orci. Pellentesque ipsum erat, facilisis ut venenatis eu.
+          {{
+            'Do you need a Mobile App which runs on both Android and Apple IOS? Or do you need an application to improve your business process efficiency? Or maybe a Website or Web Shop to get your name out and raise sales?'
+              | translate
+          }}
+          <br /><br />
+          {{
+            'Whether it is a Mobile App, an advanced web application, a website or Web shop. I create the application which suits your needs, an application of the highest quality and which runs smoothly and exactly the same on all devices.'
+              | translate
+          }}
         </p>
-        <a href="#services" class="btn btn-dark btn-outline btn-rounded">Our Services</a>
+        <a href="#services" class="btn btn-outline btn-rounded mt-3 mb-3">{{ 'More about my services' | translate }}</a>
       </div>
       <!-- Device images -->
       <div class="col-lg-6 col-md-12 p-0">
-        <div class="devices">
+        <div class="devices mt-md-5">
           <div data-animate="fadeInRightBig" class="iphone">
             <!-- iphone -->
             <img src="/assets/images/devices/iphone.png" class="img-fluid" alt="devices" />
