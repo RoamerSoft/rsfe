@@ -1267,7 +1267,7 @@ var INSPIRO = {},
     },
     naTo: function () {
       $("a.scroll-to, #dotsMenu > ul > li > a, .menu-one-page nav > ul > li > a").on("click", function () {
-        var extraPaddingTop = 0,
+        var extraPaddingTop = -20,
           extraHeaderHeight = 80
         $(window).breakpoints("lessThan", "lg", function () {
           if (Settings.menuIsOpen) {
