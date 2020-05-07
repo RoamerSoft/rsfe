@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  api: "https://api.roamersoft.com"
+  api: 'https://api.roamersoft.com',
 };

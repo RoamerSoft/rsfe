@@ -9,7 +9,14 @@
   right: 4rem;
 }
 
-@media only screen and (max-width: 1385px){
+.flag-icon {
+  max-width: 1.8rem;
+  margin-left: .5rem;
+  padding-bottom: .3rem;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 1385px) {
   .social-icons {
     display: none;
   }
