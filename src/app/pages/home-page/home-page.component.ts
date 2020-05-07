@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Title, Meta } from '@angular/platform-browser';
 import { TranslateService } from '@ngx-translate/core';
 import { TranslationService } from 'src/app/services/translation-service/translation.service';
+import { promise } from 'protractor';
+import { resolve } from 'url';
 
 @Component({
   selector: 'app-home-page',
@@ -24,20 +26,24 @@ export class HomePageComponent implements OnInit {
 
   constructor(private title: Title, private meta: Meta, private translationService: TranslationService) {}
 
-  ngOnInit() {
+  async ngOnInit() {
     this.loadAPI = new Promise((resolve) => {
       this.loadScript();
       resolve(true);
     });
-    this.setTranslationAndMetaData();
+
+    await this.setTranslationAndMetaData();
   }
 
-  private setTranslationAndMetaData() {
-    this.translationService.setTranslation().then(() => {
-      this.translationService.getTranslationByKey(this.metaDataTranslateKeys).subscribe((resAsJson) => {
-        this.title.setTitle(resAsJson[this.metaDataTranslateKeys[0]]);
-        this.meta.updateTag({ name: 'description', content: resAsJson[this.metaDataTranslateKeys[1]] });
-        this.meta.updateTag({ name: 'keywords', content: resAsJson[this.metaDataTranslateKeys[2]] });
+  public async setTranslationAndMetaData() {
+    return new Promise((resolve) => {
+      this.translationService.setTranslation().then(() => {
+        this.translationService.getTranslationByKey(this.metaDataTranslateKeys).subscribe((resAsJson) => {
+          this.title.setTitle(resAsJson[this.metaDataTranslateKeys[0]]);
+          this.meta.updateTag({ name: 'description', content: resAsJson[this.metaDataTranslateKeys[1]] });
+          this.meta.updateTag({ name: 'keywords', content: resAsJson[this.metaDataTranslateKeys[2]] });
+          resolve();
+        });
       });
     });
   }
