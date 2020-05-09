@@ -1,9 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Title, Meta } from '@angular/platform-browser';
-import { TranslateService } from '@ngx-translate/core';
 import { TranslationService } from 'src/app/services/translation-service/translation.service';
-import { promise } from 'protractor';
-import { resolve } from 'url';
 
 @Component({
   selector: 'app-home-page',
