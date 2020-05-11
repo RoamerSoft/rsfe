@@ -13,6 +13,8 @@ import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { WelcomeComponent } from './components/welcome/welcome.component';
 import { ServicesComponent } from './components/services/services.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { MissionComponent } from './components/mission/mission.component';
+import { PromiseComponent } from './components/promise/promise.component';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
@@ -28,6 +30,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     WelcomeComponent,
     ServicesComponent,
     FooterComponent,
+    MissionComponent,
+    PromiseComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
