@@ -15,6 +15,7 @@ import { ServicesComponent } from './components/services/services.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { MissionComponent } from './components/mission/mission.component';
 import { PromiseComponent } from './components/promise/promise.component';
+import { ClientsComponent } from './components/clients/clients.component';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
@@ -32,6 +33,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     FooterComponent,
     MissionComponent,
     PromiseComponent,
+    ClientsComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
