@@ -3,43 +3,43 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-7">
-        <h4 data-animate="fadeInRight" class="m-b-10">{{ 'Something about my' | translate }}</h4>
+        <h4 data-animate="fadeInRight" class="m-b-10">{{ 'About my' | translate }}</h4>
         <h2 data-animate="fadeInRight" data-animate-delay="300" class="m-b-10">{{ 'Working Method' | translate }}</h2>
-        <p data-animate="fadeInLeft" class="lead">
-          {{
-            'Everything starts with a first introduction. Getting to know each other a bit better is essential because it is important for me to understand what you precisely trying to accomplish. The next step is to figure out which possibilities we can use and which technique fits the best.'
-              | translate
-          }}
-        </p>
-        <!-- Image only visible on phone -->
-        <div class="col-lg-3 d-sm-block d-lg-none">
-          <img
-            class="img-fluid image"
-            src="assets/images/working_method.svg"
-            data-animate="fadeInRightBig"
-            data-animate-delay="800"
-            alt="RoamerSoft Working Method"
-          />
+        <div data-animate="fadeInLeft" data-animate-delay="500">
+          <p class="lead">
+            {{
+              'Everything starts with a first introduction. Getting to know each other a bit better is essential because it is important for me to understand what you precisely trying to accomplish. The next step is to figure out which possibilities we can use and which technique fits the best.'
+                | translate
+            }}
+          </p>
+          <!-- Image only visible on phone -->
+          <div class="col-lg-3 d-sm-block d-lg-none">
+            <img
+              class="img-fluid image"
+              src="assets/images/working_method.svg"
+              alt="RoamerSoft Working Method"
+            />
+          </div>
+          <p class="lead">
+            {{
+              'We start working right away after we have figured out the plan in guidelines. We? Yes, you and me. Software development is teamwork and it is very unpredictable how the plans will work out. We cut the big project into smaller pieces and I start developing those with the highest value and priority first. I will create those pieces in short cycles of 2 weeks and we discuss the results and any improvements afterwards. After that, we can set the new priority for the next two weeks. We keep doing this cycle until the product has become the possibility which get you a step closer to your main goal.'
+                | translate
+            }}
+          </p>
+          <p class="lead">
+            {{
+              'I will make sure, with the right preparation and a clear structure, that our contact moments are fast and smooth. There is no need to spend hours of your time when it is not adding the highest possible value to the result.'
+                | translate
+            }}
+          </p>
+          <p class="lead">
+            {{
+              'Do you want to know more about my working method or do you have any other question? Please, feel free to contact me. I would be happy help.'
+                | translate
+            }}
+          </p>
+          <a href="#contact" class="btn btn-outline btn-rounded mt-3 mb-3 scroll-to">{{ 'Contact Me' | translate }}</a>
         </div>
-        <p data-animate="fadeInLeft" class="lead">
-          {{
-            'We start working right away after we have figured out the plan in guidelines. We? Yes, you and me. Software development is teamwork and it is very unpredictable how the plans will work out. We cut the big project into smaller pieces and I start developing those with the highest value and priority first. I will create those pieces in short cycles of 2 weeks and we discuss the results and any improvements afterwards. After that, we can set the new priority for the next two weeks. We keep doing this cycle until the product has become the possibility which get you a step closer to your main goal.'
-              | translate
-          }}
-        </p>
-        <p data-animate="fadeInLeft" class="lead">
-          {{
-            'I will make sure, with the right preparation and a clear structure, that our contact moments are fast and smooth. There is no need to spend hours of your time when it is not adding the highest possible value to the result.'
-              | translate
-          }}
-        </p>
-        <p data-animate="fadeInLeft" class="lead">
-          {{
-            'Do you want to know more about my working method or do you have any other question? Please, feel free to contact me. I would be happy help.'
-              | translate
-          }}
-        </p>
-        <a data-animate="fadeInUp" href="#contact" class="btn btn-outline btn-rounded mt-3 mb-3 scroll-to">{{ 'Contact Me' | translate }}</a>
       </div>
       <!-- Image only visible on larger screens -->
       <div class="col-lg-5 m-t-50 d-none d-sm-none d-lg-block">
@@ -47,7 +47,7 @@
           class="img-fluid image"
           src="assets/images/working_method.svg"
           data-animate="fadeInRightBig"
-          data-animate-delay="800"
+          data-animate-delay="600"
           alt="RoamerSoft Working Method"
         />
       </div>
