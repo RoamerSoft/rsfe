@@ -18,6 +18,8 @@ import { PromiseComponent } from './components/promise/promise.component';
 import { ClientsComponent } from './components/clients/clients.component';
 import { WorkingMethodComponent } from './components/working-method/working-method.component';
 import { PortfolioComponent } from './components/portfolio/portfolio.component';
+import { DreamComponent } from './components/dream/dream.component';
+import { MemberCardComponent } from './components/member-card/member-card.component';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
@@ -38,6 +40,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     ClientsComponent,
     WorkingMethodComponent,
     PortfolioComponent,
+    DreamComponent,
+    MemberCardComponent,
     ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),

@@ -1,11 +1,10 @@
-<!-- Working Method -->
 <section>
   <div class="container">
     <div class="row">
       <div class="col-lg-7">
-        <h4 data-animate="fadeInRight" class="m-b-10">{{ 'About my' | translate }}</h4>
-        <h2 data-animate="fadeInRight" data-animate-delay="300" class="m-b-10">{{ 'Working Method' | translate }}</h2>
-        <div data-animate="fadeInLeft" data-animate-delay="500">
+        <h4 data-animate="fadeInLeft" class="m-b-10">{{ 'About my' | translate }}</h4>
+        <h2 data-animate="fadeInLeft" data-animate-delay="300" class="m-b-10">{{ 'Working Method' | translate }}</h2>
+        <div data-animate="fadeInLeft">
           <p class="lead">
             {{
               'Everything starts with a first introduction. Getting to know each other a bit better is essential because it is important for me to understand what you precisely trying to accomplish. The next step is to figure out which possibilities we can use and which technique fits the best.'
@@ -14,11 +13,7 @@
           </p>
           <!-- Image only visible on phone -->
           <div class="col-lg-3 d-sm-block d-lg-none">
-            <img
-              class="img-fluid image"
-              src="assets/images/working_method.svg"
-              alt="RoamerSoft Working Method"
-            />
+            <img class="img-fluid image" src="assets/images/working_method.svg" alt="RoamerSoft Working Method" />
           </div>
           <p class="lead">
             {{
@@ -26,6 +21,8 @@
                 | translate
             }}
           </p>
+        </div>
+        <div data-animate="fadeInLeft">
           <p class="lead">
             {{
               'I will make sure, with the right preparation and a clear structure, that our contact moments are fast and smooth. There is no need to spend hours of your time when it is not adding the highest possible value to the result.'
@@ -38,20 +35,13 @@
                 | translate
             }}
           </p>
-          <a href="#contact" class="btn btn-outline btn-rounded mt-3 mb-3 scroll-to">{{ 'Contact Me' | translate }}</a>
         </div>
+        <a data-animate="fadeInUp" href="#contact" class="btn btn-outline btn-rounded mt-3 mb-3 scroll-to">{{ 'Contact Me' | translate }}</a>
       </div>
       <!-- Image only visible on larger screens -->
       <div class="col-lg-5 m-t-50 d-none d-sm-none d-lg-block">
-        <img
-          class="img-fluid image"
-          src="assets/images/working_method.svg"
-          data-animate="fadeInRightBig"
-          data-animate-delay="600"
-          alt="RoamerSoft Working Method"
-        />
+        <img class="img-fluid image" src="assets/images/working_method.svg" alt="RoamerSoft Working Method" />
       </div>
     </div>
   </div>
 </section>
-<!-- end: Working Method -->
