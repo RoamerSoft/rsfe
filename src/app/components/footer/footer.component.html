@@ -12,7 +12,7 @@
             <ul class="list-icon">
               <li>
                 <i class="fa fa-map-marker-alt"></i>
-                {{'Working Worldwide Remotely'}}
+                {{'Working Worldwide Remotely' | translate}}
               </li>
               <li><i class="far fa-envelope"></i> <a href="mailto:info@roamersoft.com">info@roamersoft.com</a></li>
               <li><i class="fa fa-phone"></i><a href="tel:+31612791550">+31 (0)6 12 791550</a></li>
@@ -23,7 +23,7 @@
         </div>
 
         <div class="col-lg-4">
-          <!-- Footer widget area 1 -->
+          <!-- Footer widget area 2 -->
           <div class="widget">
             <h4>INFO</h4>
             <ul class="list">
@@ -34,16 +34,16 @@
                 <a href="assets/documents/Algemene_Voorwaarden.pdf" target="_blank">{{ 'Terms and Conditions' | translate }}</a>
               </li>
               <li>
-                <a href="#footer" class="scroll-to">{{ 'VAT ID: NL002236315B59' | translate }}</a>
+                <a href="#footer" class="scroll-to">{{ 'VAT ID:' | translate }} NL002236315B59</a>
               </li>
               <li>
                 <a href="https://www.kvk.nl/orderstraat/product-kiezen/?kvknummer=749365570000" target="_blank">{{
-                  'Chamber of Commerce No.: 74936557' | translate
-                }}</a>
+                  'Chamber of Commerce No.:' | translate
+                }} 74936557</a>
               </li>
             </ul>
           </div>
-          <!-- end: Footer widget area 1 -->
+          <!-- end: Footer widget area 2 -->
         </div>
 
         <div class="col-lg-4">
@@ -55,9 +55,10 @@
               <input
                 type="text"
                 aria-required="true"
+                required
                 name="widget-contact-form-name"
                 class="form-control required name"
-                placeholder="Enter your Name"
+                placeholder="{{'Enter your Name' | translate }}"
               />
             </div>
             <div class="input-group mb-2">
@@ -70,20 +71,22 @@
                 required
                 name="widget-contact-form-email"
                 class="form-control required email"
-                placeholder="Enter your Email"
+                placeholder="{{'Enter your Email' | translate }}"
               />
             </div>
             <div class="form-group mb-2">
               <textarea
                 type="text"
+                aria-required="true"
+                required
                 name="widget-contact-form-message"
                 rows="5"
                 class="form-control required"
-                placeholder="Enter your Message"
+                placeholder="{{'Enter your Message' | translate }}"
               ></textarea>
             </div>
             <div class="form-group">
-              <button class="btn" type="submit" id="form-submit"><i class="fa fa-paper-plane"></i>&nbsp;Send message</button>
+              <button class="btn" type="submit" id="form-submit"><i class="fa fa-paper-plane"></i>&nbsp;{{'Send message' | translate }}</button>
             </div>
           </form>
         </div>
