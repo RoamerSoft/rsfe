@@ -20,6 +20,7 @@ import { WorkingMethodComponent } from './components/working-method/working-meth
 import { PortfolioComponent } from './components/portfolio/portfolio.component';
 import { DreamComponent } from './components/dream/dream.component';
 import { MemberCardComponent } from './components/member-card/member-card.component';
+import { CookieBarComponent } from './components/cookie-bar/cookie-bar.component';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
@@ -42,6 +43,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     PortfolioComponent,
     DreamComponent,
     MemberCardComponent,
+    CookieBarComponent,
     ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
