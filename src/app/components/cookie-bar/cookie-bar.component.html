@@ -1,0 +1,23 @@
+<div
+  *ngIf="showCookieBar"
+  id="cookieNotify"
+  class="modal-strip modal-bottom cookie-notify background-dark"
+  data-delay="3000"
+  data-expire="1"
+  data-cookie-name="cookieAccepted"
+  data-cookie-enabled="true"
+>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 text-sm-center sm-center sm-m-b-10 m-t-5">
+        {{ 'This website uses cookies to ensure you get the best experience.' | translate }}
+        <a href="assets/documents/Privacy_Verklaring.pdf" target="_blanc" class="text-light"
+          ><span> {{ 'More info' | translate }} <i class="fa fa-info-circle"></i></span
+        ></a>
+      </div>
+      <div class="col-lg-4 text-right sm-text-center sm-center">
+        <button type="button" class="btn btn-rounded btn-light btn-sm modal-confirm">{{ 'Got it!' | translate }}</button>
+      </div>
+    </div>
+  </div>
+</div>
