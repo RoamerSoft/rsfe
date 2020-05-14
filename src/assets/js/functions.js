@@ -1842,7 +1842,6 @@ var INSPIRO = {},
           isotopeRTL = true;
         }
 
-        console.log(isotopeRTL);
         $gridLayout.each(function () {
           var elem = $(this)
           elem.options = {

@@ -56,7 +56,7 @@ export class HomePageComponent implements OnInit {
     }
 
     if (!isFound) {
-      const dynamicScripts = ['/assets/js/jquery.js', '/assets/js/plugins.js', '/assets/js/functions.js'];
+      const dynamicScripts = ['/assets/js/jquery.js', '/assets/js/popper.min.js', '/assets/js/plugins.js', '/assets/js/functions.js'];
 
       // tslint:disable-next-line: prefer-for-of
       for (let i = 0; i < dynamicScripts.length; i++) {

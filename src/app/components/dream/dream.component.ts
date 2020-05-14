@@ -6,10 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dream.component.scss']
 })
 export class DreamComponent implements OnInit {
+  public param;
 
   constructor() { }
 
   ngOnInit() {
+    this.param = { roamer: '<strong>Roamer</strong>' };
   }
 
 }
