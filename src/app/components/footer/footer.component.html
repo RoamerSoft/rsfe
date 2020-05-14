@@ -1,114 +1,125 @@
-<!-- Footer -->
 <footer id="footer" class="inverted">
   <div class="footer-content">
     <div class="container">
       <div class="row">
-        <div class="col-xl-2 col-lg-2 col-md-3">
+        <div class="col-lg-4">
           <!-- Footer widget area 1 -->
-          <div class="widget">
-            <h4>PROJECT</h4>
-            <ul class="list">
-              <li><a href="#">Latest Release</a></li>
-              <li><a href="#">Updates</a></li>
-              <li><a href="#">License</a></li>
-              <li><a href="#">News</a></li>
-              <li><a href="#">Links</a></li>
+          <div
+            class="widget widget-contact-us"
+            style="background-image: url('assets/images/world-map.png'); background-position: 50% 20px; background-repeat: no-repeat;"
+          >
+            <h4>RoamerSoft</h4>
+            <ul class="list-icon">
+              <li>
+                <i class="fa fa-map-marker-alt"></i>
+                {{'Working Worldwide Remotely' | translate}}
+              </li>
+              <li><i class="far fa-envelope"></i> <a href="mailto:info@roamersoft.com">info@roamersoft.com</a></li>
+              <li><i class="fa fa-phone"></i><a href="tel:+31612791550">+31 (0)6 12 791550</a></li>
+              <li><i class="fab fa-skype"></i><a href="https://join.skype.com/invite/lAz4cN9Ijnar">RoamerSoft</a></li>
             </ul>
           </div>
           <!-- end: Footer widget area 1 -->
         </div>
-        <div class="col-xl-2 col-lg-2 col-md-3">
+
+        <div class="col-lg-4">
           <!-- Footer widget area 2 -->
           <div class="widget">
-            <h4>SUPPORT</h4>
+            <h4>INFO</h4>
             <ul class="list">
-              <li><a href="#">Troubleshooting</a></li>
-              <li><a href="#">Common Questions</a></li>
-              <li><a href="#">Report a Bug</a></li>
-              <li><a href="#">Get Help</a></li>
-              <li><a href="#">FAQS</a></li>
+              <li>
+                <a href="assets/documents/Privacy_Verklaring.pdf" target="_blank">{{ 'Privacy Disclaimer' | translate }}</a>
+              </li>
+              <li>
+                <a href="assets/documents/Algemene_Voorwaarden.pdf" target="_blank">{{ 'Terms and Conditions' | translate }}</a>
+              </li>
+              <li>
+                <a href="#footer" class="scroll-to">{{ 'VAT ID:' | translate }} NL002236315B59</a>
+              </li>
+              <li>
+                <a href="https://www.kvk.nl/orderstraat/product-kiezen/?kvknummer=749365570000" target="_blank">{{
+                  'Chamber of Commerce No.:' | translate
+                }} 74936557</a>
+              </li>
             </ul>
           </div>
           <!-- end: Footer widget area 2 -->
         </div>
 
-        <div class="col-xl-2 col-lg-2 col-md-3">
-          <!-- Footer widget area 3 -->
-          <div class="widget">
-            <h4>COMPANY</h4>
-            <ul class="list">
-              <li><a href="#">About</a></li>
-              <li><a href="#">Contact</a></li>
-              <li><a href="#">Home</a></li>
-              <li><a href="#">Blog</a></li>
-              <li><a href="#">Portfolio</a></li>
-            </ul>
-          </div>
-          <!-- end: Footer widget area 3 -->
-        </div>
-
-        <div class="col-xl-2 col-lg-2 col-md-3">
-          <!-- Footer widget area 4 -->
-          <div class="widget">
-            <h4>INFO</h4>
-            <ul class="list">
-              <li><a href="#">Get Directions</a></li>
-              <li><a href="#">Call Us</a></li>
-              <li><a href="#">Our Staff</a></li>
-              <li><a href="#">Working Hours</a></li>
-              <li><a href="#">Offices</a></li>
-            </ul>
-          </div>
-          <!-- end: Footer widget area 4 -->
-        </div>
-
-        <div class="col-xl-4 col-lg-4 col-md-12">
-          <!-- Footer widget area 5 -->
-          <div class="widget clearfix widget-newsletter">
-            <h4 class="widget-title"><i class="fa fa-envelope"></i> Sign Up For a Newsletter</h4>
-            <p>Weekly breaking news, analysis and cutting edge advices on job searching.
-
-            </p>
-            <form class="widget-subscribe-form p-r-40" action="include/subscribe-form.php" role="form" method="post" novalidate="novalidate">
-
-
-              <div class="input-group">
-                <input aria-required="true" name="widget-subscribe-form-email" class="form-control required email" placeholder="Enter your Email" type="email">
-                <span class="input-group-btn">
-                  <button type="submit" id="widget-subscribe-submit-button" class="btn"><i class="fa fa-paper-plane"></i></button>
-                </span> </div>
-            </form>
-          </div>
-          <!-- end: Footer widget area 5 -->
+        <div class="col-lg-4">
+          <form class="widget-contact-form" novalidate action="include/contact-form.php" role="form" method="post">
+            <div class="input-group mb-2">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1"><i class="fa fa-user"></i></span>
+              </div>
+              <input
+                type="text"
+                aria-required="true"
+                required
+                name="widget-contact-form-name"
+                class="form-control required name"
+                placeholder="{{'Enter your Name' | translate }}"
+              />
+            </div>
+            <div class="input-group mb-2">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1"><i class="fa fa-envelope"></i></span>
+              </div>
+              <input
+                type="email"
+                aria-required="true"
+                required
+                name="widget-contact-form-email"
+                class="form-control required email"
+                placeholder="{{'Enter your Email' | translate }}"
+              />
+            </div>
+            <div class="form-group mb-2">
+              <textarea
+                type="text"
+                aria-required="true"
+                required
+                name="widget-contact-form-message"
+                rows="5"
+                class="form-control required"
+                placeholder="{{'Enter your Message' | translate }}"
+              ></textarea>
+            </div>
+            <div class="form-group">
+              <button class="btn" type="submit" id="form-submit"><i class="fa fa-paper-plane"></i>&nbsp;{{'Send message' | translate }}</button>
+            </div>
+          </form>
         </div>
       </div>
     </div>
   </div>
   <div class="copyright-content">
     <div class="container">
-
       <div class="row">
         <div class="col-lg-6">
           <!-- Social icons -->
-          <div class="social-icons social-icons">
+          <div class="social-icons social-icons-colored-hover">
             <ul>
-              <li class="social-rss"><a href="#"><i class="fa fa-rss"></i></a></li>
-              <li class="social-facebook"><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-              <li class="social-twitter"><a href="#"><i class="fab fa-twitter"></i></a></li>
-              <li class="social-vimeo"><a href="#"><i class="fab fa-vimeo"></i></a></li>
-              <li class="social-youtube"><a href="#"><i class="fab fa-youtube"></i></a></li>
-              <li class="social-pinterest"><a href="#"><i class="fab fa-pinterest"></i></a></li>
-              <li class="social-gplus"><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
+              <li class="social-facebook">
+                <a href="https://www.facebook.com/RoamerSoft-287897755483538" target="_blanc"><i class="fab fa-facebook-f"></i></a>
+              </li>
+              <li class="social-linkedin">
+                <a href="https://www.linkedin.com/company/19186536" target="_blanc"><i class="fab fa-linkedin"></i></a>
+              </li>
+              <li class="social-github">
+                <a href="https://github.com/RoamerSoft" target="_blanc"><i class="fab fa-github"></i></a>
+              </li>
             </ul>
           </div>
           <!-- end: Social icons -->
         </div>
 
-        <div class="col-lg-6 text-right">
-          <div class="copyright-text">© 2019 POLO HTML5 Template. All Rights Reserved. </div>
+        <!-- Copy right -->
+        <div class="col-lg-6 text-lg-right">
+          <div class="copyright-text">{{ 'RoamerSoft.com © 2020 All Rights Reserved.' | translate: param }}</div>
         </div>
+        <!-- end: Copy right -->
       </div>
     </div>
   </div>
 </footer>
-<!-- end: Footer -->
