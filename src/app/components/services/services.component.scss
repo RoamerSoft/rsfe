@@ -1,6 +1,10 @@
-$webColor : #1abc9c;
-$appColor : #3498db;
-$wpColor : #34495e;
+$webColor: #1abc9c;
+$appColor: #3498db;
+$wpColor: #34495e;
+
+.no-pointer {
+  cursor: default;
+}
 
 .text-box {
   padding: 1rem 2rem;
@@ -56,7 +60,7 @@ $wpColor : #34495e;
 }
 
 .text-box.app:hover {
-  background-color: $appColor
+  background-color: $appColor;
 }
 
 .wp {
@@ -71,12 +75,11 @@ $wpColor : #34495e;
 }
 
 .text-box.wp:hover {
-  background-color: $wpColor
+  background-color: $wpColor;
 }
 
-@media only screen and(max-width: 991px){
-  .col-lg-4{
-    padding: .5rem 0 !important;
+@media only screen and(max-width: 991px) {
+  .col-lg-4 {
+    padding: 0.5rem 0 !important;
   }
-
 }
