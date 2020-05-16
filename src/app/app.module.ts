@@ -22,6 +22,9 @@ import { DreamComponent } from './components/dream/dream.component';
 import { MemberCardComponent } from './components/member-card/member-card.component';
 import { CookieBarComponent } from './components/cookie-bar/cookie-bar.component';
 
+import { FormsModule } from '@angular/forms';
+
+
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -44,11 +47,13 @@ export function HttpLoaderFactory(http: HttpClient) {
     DreamComponent,
     MemberCardComponent,
     CookieBarComponent,
+
     ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     HttpClientModule,
+    FormsModule,
     // The forRoot static method is a convention that provides and configures services at the same time
     // This method allows configuring the TranslateModule by specifying a loader, a parser and/or a missing translations handler
     // Only call this method in the root module (AppModule).
