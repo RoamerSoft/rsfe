@@ -27,7 +27,7 @@ export class FooterComponent implements OnInit {
       // Check email.
       if (!this.validateEmail(this.input.email)) {
         // Show email error
-        this.error = 'Your email address is incorrect!';
+        this.error = 'Email address is incorrect!';
         this.success = undefined;
       } else {
         // Send form
