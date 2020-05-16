@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ContactForm } from 'src/app/models/contact-form/contact-form';
 import { NgForm, Validators, FormControl } from '@angular/forms';
+import { ContactFormService } from 'src/app/services/contact-form/contact-form.service';
 
 @Component({
   selector: 'app-footer',
@@ -14,7 +15,7 @@ export class FooterComponent implements OnInit {
 
   public input = new ContactForm();
 
-  constructor() {}
+  constructor(private contactFormService: ContactFormService) {}
 
   ngOnInit() {
     this.param = { year: new Date().getFullYear() };
@@ -30,6 +31,9 @@ export class FooterComponent implements OnInit {
         this.success = undefined;
       } else {
         // Send form
+        this.contactFormService.post(this.input).subscribe((res) => {
+          console.log(res);
+        });
         console.log('Sending form....');
         // Hide error message
         this.error = undefined;
