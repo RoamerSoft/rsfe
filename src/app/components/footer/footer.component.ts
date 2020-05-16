@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ContactForm } from 'src/app/models/contact-form/contact-form';
-import { NgForm, Validators, FormControl } from '@angular/forms';
 import { ContactFormService } from 'src/app/services/contact-form/contact-form.service';
+import { ReCaptchaV3Service } from 'ng-recaptcha';
 
 @Component({
   selector: 'app-footer',
@@ -15,7 +15,7 @@ export class FooterComponent implements OnInit {
 
   public input = new ContactForm();
 
-  constructor(private contactFormService: ContactFormService) {}
+  constructor(private contactFormService: ContactFormService, private recaptchaV3Service: ReCaptchaV3Service) {}
 
   ngOnInit() {
     this.param = { year: new Date().getFullYear() };
@@ -30,19 +30,22 @@ export class FooterComponent implements OnInit {
         this.error = 'Email address is incorrect!';
         this.success = undefined;
       } else {
-        // Send form
-        this.contactFormService.post(this.input).subscribe((res) => {
-          console.log(res);
+        // Get reCAPTCHA token
+        this.recaptchaV3Service.execute('importantAction').subscribe((token) => {
+          this.input.token = token;
+          // Send form
+          this.contactFormService.post(this.input).subscribe((res) => {
+            console.log(res);
+          });
+          // Hide error message
+          this.error = undefined;
+          // Show success message.
+          this.success = 'Your message is sent!';
+          // Hide success message after 3 seconds
+          setTimeout(() => {
+            this.success = undefined;
+          }, 3000);
         });
-        console.log('Sending form....');
-        // Hide error message
-        this.error = undefined;
-        // Show success message.
-        this.success = 'Your message is sent!';
-        // Hide success message after 3 seconds
-        setTimeout(() => {
-          this.success = undefined;
-        }, 3000);
       }
     }
   }

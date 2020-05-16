@@ -23,7 +23,7 @@ import { MemberCardComponent } from './components/member-card/member-card.compon
 import { CookieBarComponent } from './components/cookie-bar/cookie-bar.component';
 
 import { FormsModule } from '@angular/forms';
-
+import { RECAPTCHA_V3_SITE_KEY, RecaptchaV3Module } from 'ng-recaptcha';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
@@ -47,13 +47,13 @@ export function HttpLoaderFactory(http: HttpClient) {
     DreamComponent,
     MemberCardComponent,
     CookieBarComponent,
-
-    ],
+  ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    RecaptchaV3Module,
     // The forRoot static method is a convention that provides and configures services at the same time
     // This method allows configuring the TranslateModule by specifying a loader, a parser and/or a missing translations handler
     // Only call this method in the root module (AppModule).
@@ -66,7 +66,7 @@ export function HttpLoaderFactory(http: HttpClient) {
       },
     }),
   ],
-  providers: [],
+  providers: [{ provide: RECAPTCHA_V3_SITE_KEY, useValue: '6LcHNPgUAAAAAH60HKHI8UKLkh0ogMnhxSWHFGL4' }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
