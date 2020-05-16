@@ -1,0 +1,10 @@
+{
+  "/translations": {
+    "target": "http://localhost:3000",
+    "secure": false
+  },
+  "/contact": {
+    "target": "http://localhost:3000",
+    "secure": false
+  }
+}

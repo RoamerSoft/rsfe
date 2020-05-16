@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { ContactForm } from 'src/app/models/contact-form/contact-form';
 
@@ -12,6 +12,6 @@ export class ContactFormService {
   constructor(private http: HttpClient) {}
 
   public post(contactForm: ContactForm) {
-    return this.http.post<ContactForm>(this.api, contactForm);
+    return this.http.post<ContactForm>(`${this.api}/contact`, contactForm);
   }
 }
