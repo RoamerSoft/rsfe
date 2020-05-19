@@ -31,12 +31,10 @@ export class FooterComponent implements OnInit {
         this.success = undefined;
       } else {
         // Get reCAPTCHA token
-        this.recaptchaV3Service.execute('importantAction').subscribe((token) => {
+        this.recaptchaV3Service.execute('contactFormPost').subscribe((token) => {
           this.input.token = token;
           // Send form
-          this.contactFormService.post(this.input).subscribe((res) => {
-            console.log(res);
-          });
+          this.contactFormService.post(this.input).subscribe();
           // Hide error message
           this.error = undefined;
           // Show success message.

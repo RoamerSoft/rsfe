@@ -12,6 +12,6 @@ export class ContactFormService {
   constructor(private http: HttpClient) {}
 
   public post(contactForm: ContactForm) {
-    return this.http.post<ContactForm>(`${this.api}/contact`, contactForm);
+    return this.http.post(`${this.api}/contact`, contactForm);
   }
 }
