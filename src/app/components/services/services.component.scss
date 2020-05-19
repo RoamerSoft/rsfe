@@ -1,0 +1,85 @@
+$webColor: #1abc9c;
+$appColor: #3498db;
+$wpColor: #34495e;
+
+.no-pointer {
+  cursor: default;
+}
+
+.text-box {
+  padding: 1rem 2rem;
+  text-align: center;
+  transition: background 0.4s ease 0s;
+  cursor: pointer;
+
+  p {
+    color: #4a4a4a;
+  }
+
+  h3 {
+    color: #112770;
+  }
+}
+.text-box:hover {
+  h3,
+  p {
+    color: white;
+  }
+}
+.box {
+  background-color: white;
+  border-top: 1px solid #e6e8eb;
+  border-left: 1px solid #e6e8eb;
+  border-bottom: 1px solid #e6e8eb;
+}
+
+.web {
+  a {
+    i {
+      background-color: $webColor;
+      padding: 1rem 1.3rem;
+      border-radius: 5px;
+      color: white;
+    }
+  }
+}
+
+.text-box.web:hover {
+  background-color: $webColor;
+}
+
+.app {
+  a {
+    i {
+      background-color: $appColor;
+      padding: 1rem 1.8rem;
+      border-radius: 5px;
+      color: white;
+    }
+  }
+}
+
+.text-box.app:hover {
+  background-color: $appColor;
+}
+
+.wp {
+  a {
+    i {
+      background-color: $wpColor;
+      padding: 1rem 1.3rem;
+      border-radius: 5px;
+      color: white;
+    }
+  }
+}
+
+.text-box.wp:hover {
+  background-color: $wpColor;
+}
+
+@media only screen and(max-width: 991px) {
+  .col-lg-4 {
+    padding: 0.5rem 0 !important;
+  }
+}

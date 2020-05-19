@@ -1,0 +1,95 @@
+<header id="header" data-transparent="true" data-responsive-fixed="true" class="light submenu-light">
+  <div class="header-inner">
+    <div class="container">
+      <!--Logo-->
+      <div id="logo">
+        <a href="#slider" class="scroll-to">
+          <img src="/assets/images/roamersoft/roamersoft-logo.svg" class="logo-default pt-3 pb-3" alt="RoamerSoft logo" />
+        </a>
+      </div>
+      <!--End: Logo-->
+      <!--Header Extras-->
+      <div class="header-extras">
+        <ul>
+          <li *ngIf="this.currentLang === 'en'"><img (click)="switchLang('nl')" class="flag-icon" src="/assets/flags/nl.png" /></li>
+          <li *ngIf="this.currentLang === 'nl'"><img (click)="switchLang('en')" class="flag-icon" src="/assets/flags/en.png" /></li>
+        </ul>
+      </div>
+      <!--end: Header Extras-->
+      <!--Navigation Resposnive Trigger-->
+      <div id="mainMenu-trigger">
+        <a class="lines-button x"><span class="lines"></span></a>
+      </div>
+      <!--end: Navigation Resposnive Trigger-->
+      <!--Navigation-->
+      <div id="mainMenu">
+        <div class="container">
+          <nav>
+            <ul>
+              <li>
+                <a href="#welcome" class="scroll-to">Software</a>
+              </li>
+              <li class="dropdown">
+                <a href="#services" class="scroll-to">{{ 'Services' | translate }}</a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a href="#services" class="scroll-to">{{ 'Web Development' | translate }}</a>
+                  </li>
+                  <li>
+                    <a href="#services" class="scroll-to">{{ 'App Development' | translate }}</a>
+                  </li>
+                  <li>
+                    <a href="#services" class="scroll-to">{{ 'WordPress Deals' | translate }}<span class="badge badge-danger">NEW</span></a>
+                  </li>
+                </ul>
+              </li>
+              <li class="dropdown">
+                <a href="#mission" class="scroll-to">{{ 'About' | translate }}</a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a href="#mission" class="scroll-to">{{ 'Mission' | translate }}</a>
+                  </li>
+                  <li>
+                    <a href="#promise" class="scroll-to">{{ 'Client Promise' | translate }}</a>
+                  </li>
+                  <li>
+                    <a href="#workingMethod" class="scroll-to">{{ 'Working Method' | translate }}</a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a href="#portfolio" class="scroll-to">{{ 'Portfolio' | translate }}</a>
+              </li>
+              <li>
+                <a href="#dream" class="scroll-to">{{ 'My Dream' | translate }}</a>
+              </li>
+              <li>
+                <a href="#footer" class="scroll-to">{{ 'Contact' | translate }}</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+      <!--end: Navigation-->
+    </div>
+    <!--Social icons-->
+    <li class="d-none d-sm-block">
+      <div class="social-icons social-icons-colored-hover">
+        <ul>
+          <li class="social-facebook">
+            <a href="https://www.facebook.com/RoamerSoft-287897755483538" target="_blanc"><i class="fab fa-facebook-f"></i></a>
+          </li>
+          <li class="social-linkedin">
+            <a href="https://www.linkedin.com/company/19186536" target="_blanc"><i class="fab fa-linkedin"></i></a>
+          </li>
+          <li class="social-github">
+            <a href="https://github.com/RoamerSoft" target="_blanc"><i class="fab fa-github"></i></a>
+          </li>
+        </ul>
+      </div>
+    </li>
+    <!--end: Social icons-->
+  </div>
+</header>
+<!-- Scroll top -->
+<a id="scrollTop"><i class="icon-chevron-up"></i><i class="icon-chevron-up"></i></a>
