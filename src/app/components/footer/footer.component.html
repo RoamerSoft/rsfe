@@ -3,7 +3,7 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-4">
-          <!-- Footer widget area 1 -->
+          <!-- RoamerSoft area -->
           <div
             class="widget widget-contact-us"
             style="background-image: url('assets/images/world-map.png'); background-position: 50% 20px; background-repeat: no-repeat;"
@@ -19,11 +19,11 @@
               <li><i class="fab fa-skype"></i><a href="https://join.skype.com/invite/lAz4cN9Ijnar">RoamerSoft</a></li>
             </ul>
           </div>
-          <!-- end: Footer widget area 1 -->
+          <!-- end: RoamerSoft area -->
         </div>
 
-        <div class="col-lg-4">
-          <!-- Footer widget area 2 -->
+        <div class="col-lg-4 d-none d-lg-block">
+          <!-- Info area for large screens -->
           <div class="widget">
             <h4>INFO</h4>
             <ul class="list">
@@ -43,15 +43,16 @@
               </li>
             </ul>
           </div>
-          <!-- end: Footer widget area 2 -->
+          <!-- end: Info area for large screens -->
         </div>
 
         <div class="col-lg-4">
+          <!-- Contact area -->
           <div *ngIf="this.error" class="alert alert-danger" role="alert">
-            {{this.error | translate}}
+            {{ this.error | translate }}
           </div>
           <div *ngIf="this.success" class="alert alert-success" role="alert">
-            {{this.success | translate}}
+            {{ this.success | translate }}
           </div>
           <form id="contactForm" class="widget-contact-form" novalidate method="">
             <div class="input-group mb-2">
@@ -98,7 +99,33 @@
               <button class="btn" (click)="onSubmit()"><i class="fa fa-paper-plane"></i>&nbsp;{{ 'Send message' | translate }}</button>
             </div>
           </form>
+          <!-- end: Contact area -->
         </div>
+
+        <div class="col-lg-4 d-block d-lg-none">
+          <!-- Info area for small screens -->
+          <div class="widget">
+            <h4>INFO</h4>
+            <ul class="list">
+              <li>
+                <a href="assets/documents/Privacy_Verklaring.pdf" target="_blank">{{ 'Privacy Disclaimer' | translate }}</a>
+              </li>
+              <li>
+                <a href="assets/documents/Algemene_Voorwaarden.pdf" target="_blank">{{ 'Terms and Conditions' | translate }}</a>
+              </li>
+              <li>
+                <a href="#footer" class="scroll-to">{{ 'VAT ID:' | translate }} NL002236315B59</a>
+              </li>
+              <li>
+                <a href="https://www.kvk.nl/orderstraat/product-kiezen/?kvknummer=749365570000" target="_blank"
+                  >{{ 'Chamber of Commerce No.:' | translate }} 74936557</a
+                >
+              </li>
+            </ul>
+          </div>
+          <!-- end: Info area for small screens -->
+        </div>
+
       </div>
     </div>
   </div>
