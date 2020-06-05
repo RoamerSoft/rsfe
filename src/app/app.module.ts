@@ -27,6 +27,14 @@ import { RECAPTCHA_V3_SITE_KEY, RecaptchaV3Module } from 'ng-recaptcha';
 import { WebdealPageComponent } from './pages/webdeal-page/webdeal-page.component';
 import { LandingSliderComponent } from './components/landing-slider/landing-slider.component';
 import { WebdealIconsComponent } from './components/webdeal-icons/webdeal-icons.component';
+import { InterruptionQuoteComponent } from './components/interruption-quote/interruption-quote.component';
+import { ImageTextComponent } from './components/image-text/image-text.component';
+import { TextImageComponent } from './components/text-image/text-image.component';
+import { WebDealBrandsComponent } from './components/web-deal-brands/web-deal-brands.component';
+import { ShapeDividerComponent } from './components/shape-divider/shape-divider.component';
+import { WebDealTestimonialsComponent } from './components/web-deal-testimonials/web-deal-testimonials.component';
+import { WebDealPriceComponent } from './components/web-deal-price/web-deal-price.component';
+import { WebDealFaqComponent } from './components/web-deal-faq/web-deal-faq.component';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
@@ -53,6 +61,14 @@ export function HttpLoaderFactory(http: HttpClient) {
     WebdealPageComponent,
     LandingSliderComponent,
     WebdealIconsComponent,
+    InterruptionQuoteComponent,
+    ImageTextComponent,
+    TextImageComponent,
+    WebDealBrandsComponent,
+    ShapeDividerComponent,
+    WebDealTestimonialsComponent,
+    WebDealPriceComponent,
+    WebDealFaqComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
