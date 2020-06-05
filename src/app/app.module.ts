@@ -26,6 +26,7 @@ import { FormsModule } from '@angular/forms';
 import { RECAPTCHA_V3_SITE_KEY, RecaptchaV3Module } from 'ng-recaptcha';
 import { WebdealPageComponent } from './pages/webdeal-page/webdeal-page.component';
 import { LandingSliderComponent } from './components/landing-slider/landing-slider.component';
+import { WebdealIconsComponent } from './components/webdeal-icons/webdeal-icons.component';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
@@ -51,6 +52,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     CookieBarComponent,
     WebdealPageComponent,
     LandingSliderComponent,
+    WebdealIconsComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
