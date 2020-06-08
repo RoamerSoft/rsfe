@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { WdInteruptionTextComponent } from './wd-interuption-text.component';
+import { WdInterruptionTextComponent } from './wd-interruption-text.component';
 
-describe('WdInteruptionTextComponent', () => {
-  let component: WdInteruptionTextComponent;
-  let fixture: ComponentFixture<WdInteruptionTextComponent>;
+describe('WdInterruptionTextComponent', () => {
+  let component: WdInterruptionTextComponent;
+  let fixture: ComponentFixture<WdInterruptionTextComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ WdInteruptionTextComponent ]
+      declarations: [ WdInterruptionTextComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(WdInteruptionTextComponent);
+    fixture = TestBed.createComponent(WdInterruptionTextComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
