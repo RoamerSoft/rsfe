@@ -6,7 +6,8 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./wd-interruption-text.component.scss'],
 })
 export class WdInterruptionTextComponent implements OnInit {
-  @Input() quote: string;
+  @Input() text1: string;
+  @Input() text2: string;
 
   constructor() {}
 
