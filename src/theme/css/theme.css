@@ -31,8 +31,8 @@ button.btn,
   .btn:not(.close):not(.mfp-close):focus,
   .btn:not(.close):not(.mfp-close):not(:disabled):not(.disabled):active,
   .btn:not(.close):not(.mfp-close):not(:disabled):not(.disabled).active, a.btn:not([href]):not([tabindex]):hover, a.btn:not([href]):not([tabindex]):focus, a.btn:not([href]):not([tabindex]):not(:disabled):not(.disabled):active, a.btn:not([href]):not([tabindex]):not(:disabled):not(.disabled).active {
-    background-color: #ff9933;
-    border-color: #ff9933; }
+    background-color: #E7892C;
+    border-color: #E7892C; }
   button.btn.btn-outline,
   .btn:not(.close):not(.mfp-close).btn-outline, a.btn:not([href]):not([tabindex]).btn-outline {
     border-color: #ff9933;

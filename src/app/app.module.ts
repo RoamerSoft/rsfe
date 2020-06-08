@@ -24,17 +24,16 @@ import { CookieBarComponent } from './components/cookie-bar/cookie-bar.component
 
 import { FormsModule } from '@angular/forms';
 import { RECAPTCHA_V3_SITE_KEY, RecaptchaV3Module } from 'ng-recaptcha';
-import { WebdealPageComponent } from './pages/webdeal-page/webdeal-page.component';
-import { LandingSliderComponent } from './components/landing-slider/landing-slider.component';
-import { WebdealIconsComponent } from './components/webdeal-icons/webdeal-icons.component';
-import { InterruptionQuoteComponent } from './components/interruption-quote/interruption-quote.component';
-import { ImageTextComponent } from './components/image-text/image-text.component';
-import { TextImageComponent } from './components/text-image/text-image.component';
-import { WebDealBrandsComponent } from './components/web-deal-brands/web-deal-brands.component';
-import { ShapeDividerComponent } from './components/shape-divider/shape-divider.component';
-import { WebDealTestimonialsComponent } from './components/web-deal-testimonials/web-deal-testimonials.component';
-import { WebDealPriceComponent } from './components/web-deal-price/web-deal-price.component';
-import { WebDealFaqComponent } from './components/web-deal-faq/web-deal-faq.component';
+
+import { WebDealPageComponent } from './pages/web-deal-page/web-deal-page.component';
+import { WdTestimonialsComponent } from './components/web-deal/wd-testimonials/wd-testimonials.component';
+import { WdSolutionComponent } from './components/web-deal/wd-solution/wd-solution.component';
+import { WdProblemComponent } from './components/web-deal/wd-problem/wd-problem.component';
+import { WdIconBoxesComponent } from './components/web-deal/wd-icon-boxes/wd-icon-boxes.component';
+import { WdLandingSliderComponent } from './components/web-deal/wd-landing-slider/wd-landing-slider.component';
+import { WdPricesComponent } from './components/web-deal/wd-prices/wd-prices.component';
+import { WdFaqComponent } from './components/web-deal/wd-faq/wd-faq.component';
+import { WdInteruptionTextComponent } from './components/web-deal/wd-interuption-text/wd-interuption-text.component';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
@@ -58,17 +57,15 @@ export function HttpLoaderFactory(http: HttpClient) {
     DreamComponent,
     MemberCardComponent,
     CookieBarComponent,
-    WebdealPageComponent,
-    LandingSliderComponent,
-    WebdealIconsComponent,
-    InterruptionQuoteComponent,
-    ImageTextComponent,
-    TextImageComponent,
-    WebDealBrandsComponent,
-    ShapeDividerComponent,
-    WebDealTestimonialsComponent,
-    WebDealPriceComponent,
-    WebDealFaqComponent,
+    WebDealPageComponent,
+    WdTestimonialsComponent,
+    WdSolutionComponent,
+    WdProblemComponent,
+    WdIconBoxesComponent,
+    WdLandingSliderComponent,
+    WdPricesComponent,
+    WdFaqComponent,
+    WdInteruptionTextComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
