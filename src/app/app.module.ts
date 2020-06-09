@@ -34,6 +34,7 @@ import { WdLandingSliderComponent } from './components/web-deal/wd-landing-slide
 import { WdPricesComponent } from './components/web-deal/wd-prices/wd-prices.component';
 import { WdFaqComponent } from './components/web-deal/wd-faq/wd-faq.component';
 import { WdInterruptionTextComponent } from './components/web-deal/wd-interruption-text/wd-interruption-text.component';
+import { WdBrandsComponent } from './components/web-deal/wd-brands/wd-brands.component';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
@@ -66,6 +67,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     WdPricesComponent,
     WdFaqComponent,
     WdInterruptionTextComponent,
+    WdBrandsComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
