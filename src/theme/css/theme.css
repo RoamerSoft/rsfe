@@ -63,7 +63,13 @@ button.btn,
     call-to-action (call to action)
 -------------------------------------------------------------------------*/
 .call-to-action.call-to-action-colored {
-  background-color: #ff9933; }
+  background-color: #9c27b0 !important;
+  border-color: #9c27b0 !important; }
+
+.call-to-action.call-to-action-colored:hover {
+  background-color: #7a1f8a !important;
+  border-color: #7a1f8a !important; }
+
 
 /* ----------------------------------------------------------------
 Carousels & Slider
@@ -138,7 +144,7 @@ Lables & Badgets
   background-color: #ff9933; }
 
 .list-icon.list-icon-colored li:before, .list-icon.icon-list-colored i {
-  color: #ff9933; }
+  color: #2ecc71; }
 
 .list-group-item.active {
   background-color: #ff9933;
