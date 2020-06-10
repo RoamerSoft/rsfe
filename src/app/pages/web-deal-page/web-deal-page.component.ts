@@ -16,9 +16,9 @@ export class WebDealPageComponent implements OnInit {
    * [2] = Keywords
    */
   private metaDataTranslateKeys = [
-    'RoamerSoft | Web and App Development',
-    'Mobile App Development for Android and Apple iOS. Advanced Web Applications, WordPress Websites and Web Shops. Remotely build by a Full-Stack Software Developer.',
-    'RoamerSoft, Bas Gerritsen, App Development, Web Development, WordPress Development, Websites, Web Shop, Remote, Full-Stack, Software, Developer',
+    'Webshop of Website laten maken? | RoamerSoft WebDeals!',
+    'Voorkom een slecht design, onvindbaarheid, belabberde security en niet behaalde doelen! Kies de totaaloplossing speciaal voor de startende ondernemer!',
+    'Website, Webshop, WebDeals, Totaaloplossing, Startende, Ondernemer',
   ];
 
   constructor(private title: Title, private meta: Meta, private translationService: TranslationService) {}
