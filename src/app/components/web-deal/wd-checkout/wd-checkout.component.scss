@@ -60,13 +60,19 @@ input:focus {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-@media only screen and(max-width: 991px) {
+@media only screen and(max-width: 1199px) {
   ::ng-deep.modal-xl {
-    max-width: 90%;
+    max-width: 95%;
   }
 }
 
-@media only screen and(max-width: 576px) {
+@media only screen and(max-width: 991px) {
+  ::ng-deep.modal-xl {
+    max-width: 60%;
+  }
+}
+
+@media only screen and(max-width: 768px) {
   ::ng-deep.modal-xl {
     max-width: 100%;
   }

@@ -1,6 +1,6 @@
 <section id="prices" class="p-t-120 p-b-120 background-grey">
   <div class="container">
-    <div class="col-lg-8 m-b-100 center">
+    <div class="col-lg-8 m-b-80 center">
       <div class="heading-text heading-section text-center">
         <h4>Klaar om je doel te bereiken?</h4>
         <h2><strong>Kies Jou WebDeal!</strong></h2>
@@ -32,7 +32,7 @@
               <li>Boekhoudingspakket Koppeling</li>
             </ul>
             <div class="plan-button">
-              <a href="#" class="btn call-to-action call-to-action-colored">Kies WebDeal!</a>
+              <a class="btn call-to-action call-to-action-colored" (click)="openCheckout('Webshop Plus Deal')">Kies Webshop Plus Deal!</a>
             </div>
           </div>
         </div>
@@ -59,7 +59,7 @@
               <li>PostNL of DHL Verzending</li>
             </ul>
             <div class="plan-button">
-              <a class="btn call-to-action call-to-action-colored" (click)="open(mymodal)">Kies WebDeal!</a>
+              <a class="btn call-to-action call-to-action-colored" (click)="openCheckout('Webshop Deal')">Kies Webshop Deal!</a>
             </div>
           </div>
         </div>
@@ -84,7 +84,7 @@
               <li>Gratis Support</li>
             </ul>
             <div class="plan-button">
-              <a href="#" class="btn call-to-action call-to-action-colored">Kies WebDeal!</a>
+              <a class="btn call-to-action call-to-action-colored" (click)="openCheckout('Website Deal')">Kies website Deal!</a>
             </div>
           </div>
         </div>
