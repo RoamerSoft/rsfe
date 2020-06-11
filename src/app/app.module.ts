@@ -36,6 +36,9 @@ import { WdFaqComponent } from './components/web-deal/wd-faq/wd-faq.component';
 import { WdInterruptionTextComponent } from './components/web-deal/wd-interruption-text/wd-interruption-text.component';
 import { WdBrandsComponent } from './components/web-deal/wd-brands/wd-brands.component';
 
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { WdCheckoutComponent } from './components/web-deal/wd-checkout/wd-checkout.component';
+
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -68,7 +71,9 @@ export function HttpLoaderFactory(http: HttpClient) {
     WdFaqComponent,
     WdInterruptionTextComponent,
     WdBrandsComponent,
+    WdCheckoutComponent,
   ],
+  entryComponents: [WdCheckoutComponent],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
@@ -86,6 +91,7 @@ export function HttpLoaderFactory(http: HttpClient) {
         deps: [HttpClient],
       },
     }),
+    NgbModule
   ],
   providers: [{ provide: RECAPTCHA_V3_SITE_KEY, useValue: '6LcHNPgUAAAAAH60HKHI8UKLkh0ogMnhxSWHFGL4' }],
   bootstrap: [AppComponent],
