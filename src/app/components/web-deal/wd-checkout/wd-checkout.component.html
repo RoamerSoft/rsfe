@@ -3,45 +3,46 @@
     <span aria-hidden="true">&times;</span>
   </a>
 </div>
+
 <div class="modal-body p-0">
   <div class="container-fluid">
+    <!-- Title -->
     <div class="row pb-3">
       <div class="col-lg-12 text-center">
         <h3 class="font-weight-800">Je bent er bijna!</h3>
         <h4>Zullen we kennismaken?</h4>
       </div>
     </div>
+    <!-- end: Title -->
+
     <div class="row pricing-table background-grey pl-0 pr-0">
+      <!-- Price card large screens -->
       <div class="col-lg-5 d-none d-lg-block">
         <div class="plan featured">
           <div class="plan-header">
-            <h4 class="font-weight-800">{{ this.deal }}</h4>
-            <p class="text-muted">De vol automatische webshop</p>
-            <h2 class="rateit-selected rateit-preset text-center p-0 m-0">★★★★★</h2>
-            <div class="plan-price">1295,-</div>
+            <h4 class="font-weight-800">{{ this.deal.title }}</h4>
+            <p class="text-muted">{{ this.deal.description }}</p>
+            <h2 class="rateit-selected rateit-preset text-center p-0 m-0">
+              {{ this.deal.stars | showStars }}
+            </h2>
+            <div class="plan-price">{{ this.deal.price }},-</div>
             <p class="text-muted btw">Exclusief 21% btw</p>
             <div class="row">
-              <div class="col-sm-6">
+              <div class="col-sm-6 p-0">
                 <div class="text-left">
                   <ul class="list-icon list-icon-check list-icon-colored">
-                    <li>Een Premium Design</li>
-                    <li>SEO en CRO Optimalisatie</li>
-                    <li>Live Bezoeker Statistieken</li>
-                    <li>Eigen Domeinnaam en E-mail</li>
-                    <li>Super Snelle Hosting</li>
-                    <li>Alles Veilig en Secure</li>
+                    <div *ngFor="let item of this.deal.list; index as i">
+                      <li *ngIf="isEven(i)">{{ item }}</li>
+                    </div>
                   </ul>
                 </div>
               </div>
-              <div class="col-sm-6">
+              <div class="col-sm-6 p-0">
                 <div class="text-left">
                   <ul class="list-icon list-icon-check list-icon-colored">
-                    <li>Spoedcursus WordPress</li>
-                    <li>Gratis Support</li>
-                    <li>Betaalsysteem Integratie</li>
-                    <li>PostNL of DHL Verzending</li>
-                    <li>Leverancier Koppeling</li>
-                    <li>Boekhoudings&shy;pakket Koppeling</li>
+                    <div *ngFor="let item of this.deal.list; index as i">
+                      <li *ngIf="!isEven(i)">{{ item }}</li>
+                    </div>
                   </ul>
                 </div>
               </div>
@@ -49,7 +50,9 @@
           </div>
         </div>
       </div>
+      <!-- end: Price card large screens -->
 
+      <!-- Contact form -->
       <div class="col-lg-7">
         <div class="card">
           <div class="card-body">
@@ -57,7 +60,7 @@
               <div class="row">
                 <div class="col-lg-12">
                   <div class="form-group">
-                    <input (input)="onInput($event)" type="text" name="txtName" class="form-control" placeholder="Naam*" required />
+                    <input (input)="getNameOnInput($event)" type="text" name="txtName" class="form-control" placeholder="Naam*" required />
                   </div>
                   <div class="form-group">
                     <input type="text" name="txtEmail" class="form-control" placeholder="E-mail*" required />
@@ -68,10 +71,10 @@
                     <textarea name="txtMsg" class="form-control" placeholder="" style="width: 100%; min-height: 200px;" required>
 Hi Bas,
 
-Ik heb wel interesse in de {{ this.deal }}! Graag maak ik vijblijvend een afspraak met jou om het een en ander te bespreken.
+Ik heb wel interesse in de {{ this.deal.title }}! Graag maak ik vijblijvend een afspraak met jou om het een en ander te bespreken.
 
 Groetjes,
-{{ this.name }}</textarea
+{{ this.contactForm.name }}</textarea
                     >
                   </div>
                 </div>
@@ -85,31 +88,26 @@ Groetjes,
           </div>
         </div>
       </div>
+      <!-- end: Contact form -->
 
+      <!-- Price card small screens -->
       <div class="col-lg-5 d-lg-none">
         <div class="plan featured">
           <div class="plan-header">
-            <h4 class="font-weight-800">{{ this.deal }}</h4>
-            <p class="text-muted">De vol automatische webshop</p>
-            <h2 class="rateit-selected rateit-preset text-center p-0 m-0">★★★★★</h2>
-            <div class="plan-price">1295,-</div>
+            <h4 class="font-weight-800">{{ this.deal.title }}</h4>
+            <p class="text-muted">{{ this.deal.description }}</p>
+            <h2 class="rateit-selected rateit-preset text-center p-0 m-0">
+              {{ this.deal.stars | showStars }}
+            </h2>
+            <div class="plan-price">{{ this.deal.price }},-</div>
             <p class="text-muted btw">Exclusief 21% btw</p>
             <div class="row">
               <div class="col-lg-12 pl-0">
                 <div class="plan-list pl-0 pb-0 text-left">
                   <ul class="list-icon list-icon-check list-icon-colored">
-                    <li>Een Premium Design</li>
-                    <li>SEO en CRO Optimalisatie</li>
-                    <li>Live Bezoeker Statistieken</li>
-                    <li>Eigen Domeinnaam en E-mail</li>
-                    <li>Super Snelle Hosting</li>
-                    <li>Alles Veilig en Secure</li>
-                    <li>Spoedcursus WordPress</li>
-                    <li>Gratis Support</li>
-                    <li>Betaalsysteem Integratie</li>
-                    <li>PostNL of DHL Verzending</li>
-                    <li>Leverancier Koppeling</li>
-                    <li>Boekhoudings&shy;pakket Koppeling</li>
+                    <div *ngFor="let item of this.deal.list; index as i">
+                      <li>{{ item }}</li>
+                    </div>
                   </ul>
                 </div>
               </div>
@@ -117,9 +115,11 @@ Groetjes,
           </div>
         </div>
       </div>
+      <!-- end: Price card small screens -->
     </div>
   </div>
 </div>
+
 <div class="modal-footer text-center">
   <p class="footNote text-muted"><i class="fa fa-lock mr-2"></i>Je gegevens zijn veilig en worden alleen gebruikt om contact te leggen.</p>
 </div>

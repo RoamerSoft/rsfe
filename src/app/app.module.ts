@@ -38,6 +38,7 @@ import { WdBrandsComponent } from './components/web-deal/wd-brands/wd-brands.com
 
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { WdCheckoutComponent } from './components/web-deal/wd-checkout/wd-checkout.component';
+import { ShowStarsPipe } from './pipes/show-stars/show-stars.pipe';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
@@ -72,6 +73,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     WdInterruptionTextComponent,
     WdBrandsComponent,
     WdCheckoutComponent,
+    ShowStarsPipe,
   ],
   entryComponents: [WdCheckoutComponent],
   imports: [

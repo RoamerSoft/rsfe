@@ -8,87 +8,74 @@
     </div>
     <hr class="space" />
     <div class="row pricing-table">
-      <div class="col-lg-4 col-md-12 col-12">
+      <!-- WebShop Plus Deal -->
+      <div class="col-lg-4">
         <div class="plan" data-animate="fadeInUp">
           <div class="plan-header pb-0 mb-0">
-            <h4 class="font-weight-800">Webshop Plus Deal</h4>
-            <p class="text-muted">De vol automatische webshop!</p>
-            <h2 class="rateit-selected rateit-preset text-center p-0 m-0">★★★★★</h2>
-            <div class="plan-price">1295,-</div>
+            <h4 class="font-weight-800">{{ this.webShopPlusDeal.title }}</h4>
+            <p class="text-muted">{{ this.webShopPlusDeal.description }}</p>
+            <h2 class="rateit-selected rateit-preset text-center p-0 m-0">
+              {{ this.webShopPlusDeal.stars | showStars }}
+            </h2>
+            <div class="plan-price">{{ this.webShopPlusDeal.price }},-</div>
           </div>
           <div class="plan-list">
             <ul class="list-icon list-icon-check list-icon-colored">
-              <li>Een Premium Design</li>
-              <li>SEO en CRO Optimalisatie</li>
-              <li>Live Bezoeker Statistieken</li>
-              <li>Eigen Domeinnaam en E-mail</li>
-              <li>Super Snelle Hosting</li>
-              <li>Alles Veilig en Secure</li>
-              <li>Spoedcursus WordPress</li>
-              <li>Gratis Support</li>
-              <li>Betaalsysteem Integratie</li>
-              <li>PostNL of DHL Verzending</li>
-              <li>Leverancier Koppeling</li>
-              <li>Boekhoudingspakket Koppeling</li>
+              <li *ngFor="let item of this.webShopPlusDeal.list">{{ item }}</li>
             </ul>
             <div class="plan-button">
-              <a class="btn call-to-action call-to-action-colored" (click)="openCheckout('Webshop Plus Deal')">Kies Webshop Plus Deal!</a>
+              <a class="btn call-to-action call-to-action-colored" (click)="openCheckout(this.webShopPlusDeal)">Kies {{this.webShopPlusDeal.title}}!</a>
             </div>
           </div>
         </div>
       </div>
-      <div class="col-lg-4 col-md-12 col-12">
+      <!-- end: WebShop Plus Deal -->
+
+      <!-- WebShop Deal -->
+      <div class="col-lg-4">
         <div class="plan featured" data-animate="fadeInUp">
           <div class="plan-header pb-0 mb-0">
-            <h4 class="font-weight-800">Webshop Deal</h4>
-            <p class="text-muted">De perfecte starters webshop!</p>
-            <h2 class="rateit-selected rateit-preset text-center p-0 m-0">★★★★</h2>
-            <div class="plan-price">995,-</div>
+            <h4 class="font-weight-800">{{ this.webShopDeal.title }}</h4>
+            <p class="text-muted">{{ this.webShopDeal.description }}</p>
+            <h2 class="rateit-selected rateit-preset text-center p-0 m-0">
+              {{ this.webShopDeal.stars | showStars }}
+            </h2>
+            <div class="plan-price">{{ this.webShopDeal.price }},-</div>
           </div>
           <div class="plan-list">
             <ul class="list-icon list-icon-check list-icon-colored">
-              <li>Een Premium Design</li>
-              <li>SEO en CRO Optimalisatie</li>
-              <li>Live Bezoeker Statistieken</li>
-              <li>Eigen Domeinnaam en E-mail</li>
-              <li>Super Snelle Hosting</li>
-              <li>Alles Veilig en Secure</li>
-              <li>Spoedcursus WordPress</li>
-              <li>Gratis Support</li>
-              <li>Betaalsysteem Integratie</li>
-              <li>PostNL of DHL Verzending</li>
+              <li *ngFor="let item of this.webShopDeal.list">{{ item }}</li>
             </ul>
             <div class="plan-button">
-              <a class="btn call-to-action call-to-action-colored" (click)="openCheckout('Webshop Deal')">Kies Webshop Deal!</a>
+              <a class="btn call-to-action call-to-action-colored" (click)="openCheckout(this.webShopDeal)">Kies {{this.webShopDeal.title}}!</a>
             </div>
           </div>
         </div>
       </div>
+      <!-- end: WebShop Deal -->
+
+      <!-- Website Deal -->
       <div class="col-lg-4 col-md-12 col-12">
         <div class="plan" data-animate="fadeInUp">
           <div class="plan-header pb-0 mb-0">
-            <h4 class="font-weight-800">Website Deal</h4>
-            <p class="text-muted">De website die je doelen realiseert!</p>
-            <h2 class="rateit-selected rateit-preset text-center p-0 m-0">★★★</h2>
-            <div class="plan-price">695,-</div>
+            <h4 class="font-weight-800">{{ this.websiteDeal.title }}</h4>
+            <p class="text-muted">{{ this.websiteDeal.description }}</p>
+            <h2 class="rateit-selected rateit-preset text-center p-0 m-0">
+              {{ this.websiteDeal.stars | showStars }}
+            </h2>
+            <div class="plan-price">{{ this.websiteDeal.price }},-</div>
           </div>
           <div class="plan-list">
             <ul class="list-icon list-icon-check list-icon-colored">
-              <li>Een Premium Design</li>
-              <li>SEO en CRO Optimalisatie</li>
-              <li>Live Bezoeker Statistieken</li>
-              <li>Eigen Domeinnaam en E-mail</li>
-              <li>Super Snelle Hosting</li>
-              <li>Alles Veilig en Secure</li>
-              <li>Spoedcursus WordPress</li>
-              <li>Gratis Support</li>
+              <li *ngFor="let item of this.websiteDeal.list">{{ item }}</li>
             </ul>
             <div class="plan-button">
-              <a class="btn call-to-action call-to-action-colored" (click)="openCheckout('Website Deal')">Kies website Deal!</a>
+              <a class="btn call-to-action call-to-action-colored" (click)="openCheckout(this.websiteDeal)">Kies {{this.websiteDeal.title}}!</a>
             </div>
           </div>
         </div>
       </div>
+      <!-- end: Website Deal -->
     </div>
   </div>
 </section>
