@@ -1,31 +1,31 @@
 $webColor: #1abc9c;
 $appColor: #3498db;
-$wpColor: #34495e;
+$wdColor: #ff9e30;
 
-.no-pointer {
-  cursor: default;
+.no-pointer{
+  cursor: default !important;
+}
+
+strong {
+  font-weight: 700;
 }
 
 .text-box {
-  padding: 1rem 2rem;
+  padding: 1rem 1rem 0 1rem;
   text-align: center;
   transition: background 0.4s ease 0s;
   cursor: pointer;
 
   p {
     color: #4a4a4a;
+    min-height: 200px;
   }
 
   h3 {
     color: #112770;
   }
 }
-.text-box:hover {
-  h3,
-  p {
-    color: white;
-  }
-}
+
 .box {
   background-color: white;
   border-top: 1px solid #e6e8eb;
@@ -44,10 +44,6 @@ $wpColor: #34495e;
   }
 }
 
-.text-box.web:hover {
-  background-color: $webColor;
-}
-
 .app {
   a {
     i {
@@ -59,14 +55,11 @@ $wpColor: #34495e;
   }
 }
 
-.text-box.app:hover {
-  background-color: $appColor;
-}
 
-.wp {
+.wd {
   a {
     i {
-      background-color: $wpColor;
+      background-color: $wdColor;
       padding: 1rem 1.3rem;
       border-radius: 5px;
       color: white;
@@ -74,12 +67,18 @@ $wpColor: #34495e;
   }
 }
 
-.text-box.wp:hover {
-  background-color: $wpColor;
+@media only screen and (max-width: 1199px) {
+  p {
+    min-height: 290px !important;
+  }
 }
 
 @media only screen and(max-width: 991px) {
   .col-lg-4 {
     padding: 0.5rem 0 !important;
+  }
+
+  p {
+    min-height: 0 !important;
   }
 }
