@@ -40,8 +40,6 @@ strong {
   margin: 0;
 }
 
-textarea:hover,
-input:hover,
 textarea:active,
 input:active,
 textarea:focus,
@@ -50,6 +48,11 @@ input:focus {
   -webkit-appearance: none;
   box-shadow: none !important;
   border: 1px solid #ced4da;
+}
+
+textarea {
+  width: 100%;
+  min-height: 200px;
 }
 
 .card {

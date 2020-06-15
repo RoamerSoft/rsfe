@@ -52,23 +52,47 @@
       </div>
       <!-- end: Price card large screens -->
 
-      <!-- Contact form -->
+      <!-- Contact card -->
       <div class="col-lg-7">
         <div class="card">
           <div class="card-body">
-            <form id="form2">
+            <!-- Contact form -->
+            <form *ngIf="showForm">
               <div class="row">
                 <div class="col-lg-12">
                   <div class="form-group">
-                    <input (input)="getNameOnInput($event)" type="text" name="txtName" class="form-control" placeholder="Naam*" required />
+                    <input
+                      (input)="getNameOnInput($event)"
+                      type="text"
+                      name="txtName"
+                      class="form-control"
+                      [ngClass]="{ 'is-invalid': this.nameIsInvalid }"
+                      placeholder="Naam*"
+                      required
+                    />
                   </div>
                   <div class="form-group">
-                    <input type="text" name="txtEmail" class="form-control" placeholder="E-mail*" required />
+                    <input
+                      (input)="getEmailOnInput($event)"
+                      type="text"
+                      name="txtEmail"
+                      class="form-control"
+                      [ngClass]="{ 'is-invalid': this.emailIsInvalid }"
+                      placeholder="E-mail*"
+                      required
+                    />
                   </div>
                 </div>
                 <div class="col-lg-12">
                   <div class="form-group">
-                    <textarea name="txtMsg" class="form-control" placeholder="" style="width: 100%; min-height: 200px;" required>
+                    <textarea
+                      id="textMsg"
+                      (input)="getMessageOnInput($event)"
+                      name="txtMsg"
+                      class="form-control"
+                      [ngClass]="{ 'is-invalid': this.messageIsInvalid }"
+                      required
+                    >
 Hi Bas,
 
 Ik heb wel interesse in de {{ this.deal.title }}! Graag maak ik vijblijvend een afspraak met jou om het een en ander te bespreken.
@@ -80,15 +104,26 @@ Groetjes,
                 </div>
                 <div class="col-md-12">
                   <div class="form-group">
-                    <button type="submit" class="btn btn-block">Verzenden</button>
+                    <button (click)="onSubmit()" class="btn btn-block">Verzenden</button>
                   </div>
                 </div>
               </div>
             </form>
+            <!-- end: Contact form -->
+
+            <!-- end: Success message -->
+            <div *ngIf="!showForm">
+              <div role="alert" class="alert alert-success text-light">
+                <h4>Gelukt! Het bericht is verzonden.</h4>
+                Ik neem zo spoedig mogelijk contact met je op om een kennismaking in te plannen.
+              </div>
+              <a class="btn btn-block" href="/">Naar Homepagina</a>
+            </div>
+            <!-- end: Success message -->
           </div>
         </div>
       </div>
-      <!-- end: Contact form -->
+      <!-- end: Contact card -->
 
       <!-- Price card small screens -->
       <div class="col-lg-5 d-lg-none">
