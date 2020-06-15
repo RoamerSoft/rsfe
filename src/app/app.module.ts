@@ -25,6 +25,21 @@ import { CookieBarComponent } from './components/cookie-bar/cookie-bar.component
 import { FormsModule } from '@angular/forms';
 import { RECAPTCHA_V3_SITE_KEY, RecaptchaV3Module } from 'ng-recaptcha';
 
+import { WebDealPageComponent } from './pages/web-deal-page/web-deal-page.component';
+import { WdTestimonialsComponent } from './components/web-deal/wd-testimonials/wd-testimonials.component';
+import { WdSolutionComponent } from './components/web-deal/wd-solution/wd-solution.component';
+import { WdProblemComponent } from './components/web-deal/wd-problem/wd-problem.component';
+import { WdIconBoxesComponent } from './components/web-deal/wd-icon-boxes/wd-icon-boxes.component';
+import { WdLandingSliderComponent } from './components/web-deal/wd-landing-slider/wd-landing-slider.component';
+import { WdPricesComponent } from './components/web-deal/wd-prices/wd-prices.component';
+import { WdFaqComponent } from './components/web-deal/wd-faq/wd-faq.component';
+import { WdInterruptionTextComponent } from './components/web-deal/wd-interruption-text/wd-interruption-text.component';
+import { WdBrandsComponent } from './components/web-deal/wd-brands/wd-brands.component';
+
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { WdCheckoutComponent } from './components/web-deal/wd-checkout/wd-checkout.component';
+import { ShowStarsPipe } from './pipes/show-stars/show-stars.pipe';
+
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -47,7 +62,20 @@ export function HttpLoaderFactory(http: HttpClient) {
     DreamComponent,
     MemberCardComponent,
     CookieBarComponent,
+    WebDealPageComponent,
+    WdTestimonialsComponent,
+    WdSolutionComponent,
+    WdProblemComponent,
+    WdIconBoxesComponent,
+    WdLandingSliderComponent,
+    WdPricesComponent,
+    WdFaqComponent,
+    WdInterruptionTextComponent,
+    WdBrandsComponent,
+    WdCheckoutComponent,
+    ShowStarsPipe,
   ],
+  entryComponents: [WdCheckoutComponent],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
@@ -65,6 +93,7 @@ export function HttpLoaderFactory(http: HttpClient) {
         deps: [HttpClient],
       },
     }),
+    NgbModule
   ],
   providers: [{ provide: RECAPTCHA_V3_SITE_KEY, useValue: '6LcHNPgUAAAAAH60HKHI8UKLkh0ogMnhxSWHFGL4' }],
   bootstrap: [AppComponent],
