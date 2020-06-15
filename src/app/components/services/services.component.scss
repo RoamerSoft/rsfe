@@ -1,9 +1,13 @@
 $webColor: #1abc9c;
 $appColor: #3498db;
-$wpColor: #34495e;
+$wdColor: #ff9e30;
 
-.no-pointer {
-  cursor: default;
+.no-pointer{
+  cursor: default !important;
+}
+
+strong {
+  font-weight: 700;
 }
 
 .text-box {
@@ -63,10 +67,10 @@ $wpColor: #34495e;
   background-color: $appColor;
 }
 
-.wp {
+.wd {
   a {
     i {
-      background-color: $wpColor;
+      background-color: $wdColor;
       padding: 1rem 1.3rem;
       border-radius: 5px;
       color: white;
@@ -74,8 +78,8 @@ $wpColor: #34495e;
   }
 }
 
-.text-box.wp:hover {
-  background-color: $wpColor;
+.text-box.wd:hover {
+  background-color: $wdColor;
 }
 
 @media only screen and(max-width: 991px) {
