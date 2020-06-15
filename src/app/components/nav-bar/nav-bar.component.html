@@ -3,13 +3,16 @@
     <div class="container">
       <!--Logo-->
       <div id="logo">
-        <a href="#slider" class="scroll-to">
+        <a *ngIf="homePage" href="#slider" class="scroll-to">
+          <img src="/assets/images/roamersoft/roamersoft-logo.svg" class="logo-default pt-3 pb-3" alt="RoamerSoft logo" />
+        </a>
+        <a *ngIf="!homePage" href="/" class="scroll-to">
           <img src="/assets/images/roamersoft/roamersoft-logo.svg" class="logo-default pt-3 pb-3" alt="RoamerSoft logo" />
         </a>
       </div>
       <!--End: Logo-->
       <!--Header Extras-->
-      <div class="header-extras">
+      <div *ngIf="!webDealPage" class="header-extras">
         <ul>
           <li *ngIf="this.currentLang === 'en'"><img (click)="switchLang('nl')" class="flag-icon" src="/assets/flags/nl.png" /></li>
           <li *ngIf="this.currentLang === 'nl'"><img (click)="switchLang('en')" class="flag-icon" src="/assets/flags/en.png" /></li>
@@ -26,12 +29,30 @@
         <div class="container">
           <nav>
             <ul>
-              <li>
+              <li *ngIf="!webDealPage">
                 <a href="#welcome" class="scroll-to">Software</a>
               </li>
-              <li class="dropdown">
+              <li *ngIf="webDealPage">
+                <a href="#iconBoxes" class="scroll-to">Voordelen</a>
+              </li>
+              <li *ngIf="webDealPage">
+                <a href="#problem" class="scroll-to">Mijn fout</a>
+              </li>
+              <li *ngIf="webDealPage">
+                <a href="#solution" class="scroll-to">Totaaloplossing</a>
+              </li>
+              <li *ngIf="webDealPage">
+                <a href="#testimonials" class="scroll-to">Beoordelingen</a>
+              </li>
+              <li *ngIf="webDealPage">
+                <a href="#prices" class="scroll-to">WebDeals</a>
+              </li>
+              <li *ngIf="webDealPage">
+                <a href="#faq" class="scroll-to">Faq</a>
+              </li>
+              <li *ngIf="!webDealPage" class="dropdown">
                 <a href="#services" class="scroll-to">{{ 'Services' | translate }}</a>
-                <ul class="dropdown-menu">
+                <ul *ngIf="!webDealPage" class="dropdown-menu">
                   <li>
                     <a href="#services" class="scroll-to">{{ 'Web Development' | translate }}</a>
                   </li>
@@ -39,11 +60,11 @@
                     <a href="#services" class="scroll-to">{{ 'App Development' | translate }}</a>
                   </li>
                   <li>
-                    <a href="#services" class="scroll-to">{{ 'WordPress Deals' | translate }}<span class="badge badge-danger">NEW</span></a>
+                    <a href="/webdeals" class="scroll-to">{{ 'WebDeals' | translate }}<span class="badge badge-danger">NEW</span></a>
                   </li>
                 </ul>
               </li>
-              <li class="dropdown">
+              <li *ngIf="!webDealPage" class="dropdown">
                 <a href="#mission" class="scroll-to">{{ 'About' | translate }}</a>
                 <ul class="dropdown-menu">
                   <li>
@@ -58,13 +79,13 @@
                 </ul>
               </li>
               <li>
-                <a href="#portfolio" class="scroll-to">{{ 'Portfolio' | translate }}</a>
+                <a *ngIf="!webDealPage" href="#portfolio" class="scroll-to">{{ 'Portfolio' | translate }}</a>
               </li>
               <li>
-                <a href="#dream" class="scroll-to">{{ 'My Dream' | translate }}</a>
+                <a *ngIf="!webDealPage" href="#dream" class="scroll-to">{{ 'My Dream' | translate }}</a>
               </li>
               <li>
-                <a href="#footer" class="scroll-to">{{ 'Contact' | translate }}</a>
+                <a *ngIf="!webDealPage" href="#footer" class="scroll-to">{{ 'Contact' | translate }}</a>
               </li>
             </ul>
           </nav>
@@ -73,7 +94,7 @@
       <!--end: Navigation-->
     </div>
     <!--Social icons-->
-    <li class="d-none d-sm-block">
+    <li *ngIf="!webDealPage" class="d-none d-sm-block">
       <div class="social-icons social-icons-colored-hover">
         <ul>
           <li class="social-facebook">
