@@ -31,8 +31,8 @@ button.btn,
   .btn:not(.close):not(.mfp-close):focus,
   .btn:not(.close):not(.mfp-close):not(:disabled):not(.disabled):active,
   .btn:not(.close):not(.mfp-close):not(:disabled):not(.disabled).active, a.btn:not([href]):not([tabindex]):hover, a.btn:not([href]):not([tabindex]):focus, a.btn:not([href]):not([tabindex]):not(:disabled):not(.disabled):active, a.btn:not([href]):not([tabindex]):not(:disabled):not(.disabled).active {
-    background-color: #ff9933;
-    border-color: #ff9933; }
+    background-color: #E7892C;
+    border-color: #E7892C; }
   button.btn.btn-outline,
   .btn:not(.close):not(.mfp-close).btn-outline, a.btn:not([href]):not([tabindex]).btn-outline {
     border-color: #ff9933;
@@ -63,7 +63,13 @@ button.btn,
     call-to-action (call to action)
 -------------------------------------------------------------------------*/
 .call-to-action.call-to-action-colored {
-  background-color: #ff9933; }
+  background-color: #9c27b0 !important;
+  border-color: #9c27b0 !important; }
+
+.call-to-action.call-to-action-colored:hover {
+  background-color: #7a1f8a !important;
+  border-color: #7a1f8a !important; }
+
 
 /* ----------------------------------------------------------------
 Carousels & Slider
@@ -138,7 +144,7 @@ Lables & Badgets
   background-color: #ff9933; }
 
 .list-icon.list-icon-colored li:before, .list-icon.icon-list-colored i {
-  color: #ff9933; }
+  color: #2ecc71; }
 
 .list-group-item.active {
   background-color: #ff9933;
