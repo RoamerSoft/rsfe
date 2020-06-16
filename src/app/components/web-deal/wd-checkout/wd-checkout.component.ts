@@ -46,7 +46,7 @@ export class WdCheckoutComponent implements OnInit {
 
   public getMessageOnInput(event) {
     this.messageIsInvalid = false;
-    this.contactForm.message = event.target.value;
+    document.getElementById('textMsg').textContent = event.target.value;
   }
 
   public isEven(n: number): boolean {
