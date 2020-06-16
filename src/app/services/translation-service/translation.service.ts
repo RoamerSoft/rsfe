@@ -37,7 +37,8 @@ export class TranslationService {
       lang = this.translate.getBrowserLang();
     } else {
       // Get language request on server side from header and sets it as default (Google web crawlers)
-      lang = (this.request.headers['accept-language'] || '').substring(0, 2);
+      // If no header is given, use NL as default.
+      lang = (this.request.headers['accept-language'] || 'nl').substring(0, 2);
     }
     return lang;
   }
