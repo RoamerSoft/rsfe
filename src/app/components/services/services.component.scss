@@ -2,83 +2,63 @@ $webColor: #1abc9c;
 $appColor: #3498db;
 $wdColor: #ff9e30;
 
-.no-pointer{
-  cursor: default !important;
-}
-
-strong {
-  font-weight: 700;
-}
-
-.text-box {
-  padding: 1rem 1rem 0 1rem;
-  text-align: center;
-  transition: background 0.4s ease 0s;
-  cursor: pointer;
-
+.card-body {
   p {
-    color: #4a4a4a;
     min-height: 200px;
   }
-
-  h3 {
-    color: #112770;
-  }
-}
-
-.box {
-  background-color: white;
-  border-top: 1px solid #e6e8eb;
-  border-left: 1px solid #e6e8eb;
-  border-bottom: 1px solid #e6e8eb;
 }
 
 .web {
-  a {
+  .card-body {
     i {
       background-color: $webColor;
       padding: 1rem 1.3rem;
+      font-size: 30px;
       border-radius: 5px;
       color: white;
+      margin-bottom: 10px;
     }
   }
 }
 
 .app {
-  a {
+  .card-body {
     i {
       background-color: $appColor;
-      padding: 1rem 1.8rem;
+      padding: .8rem 1.8rem;
+      font-size: 35px;
       border-radius: 5px;
       color: white;
+      margin-bottom: 10px;
     }
   }
 }
 
-
 .wd {
-  a {
+  .card-body {
     i {
       background-color: $wdColor;
-      padding: 1rem 1.3rem;
+      padding: .8rem 1.3rem;
+      font-size: 35px;
       border-radius: 5px;
       color: white;
+      margin-bottom: 10px;
     }
   }
 }
 
 @media only screen and (max-width: 1199px) {
-  p {
-    min-height: 290px !important;
+  .card-body {
+    p {
+      min-height: 300px;
+    }
   }
 }
 
 @media only screen and(max-width: 991px) {
-  .col-lg-4 {
-    padding: 0.5rem 0 !important;
-  }
-
-  p {
-    min-height: 0 !important;
+  .card-body {
+    p {
+      min-height: 0;
+    }
   }
 }
