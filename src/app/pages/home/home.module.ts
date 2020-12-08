@@ -13,6 +13,7 @@ import { ClientsComponent } from './components/clients/clients.component';
 import { CoreModule } from 'src/app/core/core.module';
 import { BreakerComponent } from './components/breaker/breaker.component';
 import { AboutComponent } from './components/about/about.component';
+import { TechnologiesComponent } from './components/technologies/technologies.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { AboutComponent } from './components/about/about.component';
     ClientsComponent,
     HomeHeaderComponent,
     AboutComponent,
+    TechnologiesComponent,
     PortfolioComponent,
     BreakerComponent,
     ServicesComponent,
