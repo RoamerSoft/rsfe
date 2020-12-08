@@ -14,6 +14,7 @@ import { BreakerComponent } from './components/breaker/breaker.component';
 import { AboutComponent } from './components/about/about.component';
 import { TechnologiesComponent } from './components/technologies/technologies.component';
 import { ContactComponent } from './components/contact/contact.component';
+import { FaqComponent } from './components/faq/faq.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { ContactComponent } from './components/contact/contact.component';
     BreakerComponent,
     ServicesComponent,
     WelcomeComponent,
+    FaqComponent,
   ],
   imports: [CoreModule, CommonModule, HomeRoutingModule, TranslateModule, FormsModule],
 })
