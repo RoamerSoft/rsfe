@@ -1,58 +1,63 @@
 <section id="services" class="background-grey">
   <div class="container">
-    <div class="heading-text heading-section text-center">
-      <h2>{{ 'Services' | translate }}</h2>
+    <div class="col-lg-8 m-b-80 center">
+      <div class="heading-text heading-section text-center">
+        <h2>{{ 'Diensten' | translate }}</h2>
+      </div>
     </div>
-    <div class="no-padding equalize" data-equalize-item=".text-box">
-      <div class="row">
-        <!--Box 1-->
-        <div class="card text-center shadow-sm col-lg-4 web p-0" data-animate="fadeInLeft">
-          <div class="card-body">
-            <i class="fa fa-desktop"></i>
-
-            <h3 class="card-title">{{ 'Web Development' | translate }}</h3>
-            <p class="card-text lead">
-              {{
-                'Your own reservation system, inventory management system, customer system or whatever system you need. I build your custom web application which perfectly supports your processes. Platform independent, no installation needed and with the fastest response time.'
-                  | translate
-              }}
-            </p>
-            <a href="#footer" class="btn scroll-to">{{ 'Contact Me' | translate }}</a>
+    <div class="row icon-boxes">
+      <div class="icon-boxx col-lg-4" data-animate="fadeInLeft" data-animate-delay="500">
+        <div class="icon-box medium clean text-center">
+          <div class="icon">
+            <i class="icon-monitor green"></i>
           </div>
+          <h3>{{ 'Web ontwikkeling!' | translate }}</h3>
+          <p
+            [innerHTML]="
+              '<strong>Frontend en backend development</strong> voor de ontwikkeling van jouw webapplicatie. Van idee tot product met de nieuwste <strong>web technologieën</strong>.'
+                | translate
+            "
+          ></p>
         </div>
-        <!--End: Box 1-->
-        <!--Box 2-->
-        <div class="card text-center shadow-sm col-lg-4 app p-0" data-animate="fadeInUp">
-          <div class="card-body">
-            <i class="fa fa-mobile-alt"></i>
-
-            <h3 class="card-title">{{ 'App Development' | translate }}</h3>
-            <p class="card-text lead">
-              {{
-                'Need an app with support for mobile phone, tablets and pc? Do you need it to be available on the Apple App Store as well as on the Google Play Store? I create your cross-platform app which runs on every device and I make it available for download in the both app stores.'
-                  | translate
-              }}
-            </p>
-            <a href="#footer" class="btn scroll-to">{{ 'Contact Me' | translate }}</a>
+        <a class="btn scroll-to call-to-action abso" href="#footer">{{
+          'Meer informatie!' | translate
+        }}</a>
+      </div>
+      <div class="icon-boxx col-lg-4" data-animate="fadeInUp">
+        <div class="icon-box medium clean text-center">
+          <div class="icon">
+            <i class="icon-tablet blue"></i>
           </div>
+          <h3>{{ 'App ontwikkeling!' | translate }}</h3>
+          <p
+            [innerHTML]="
+              'Je eigen app die draait op <strong>Android en Apple iOS</strong>. Laat jouw cross platform app ontwikkelen met hybride technologieën die garant staan voor <strong>de beste gebruikerservaring.</strong>'
+                | translate
+            "
+          ></p>
         </div>
-        <!--End: Box 2-->
-        <!--Box 3-->
-        <div class="card text-center shadow-sm col-lg-4 wd p-0" data-animate="fadeInRight">
-          <div class="card-body">
-            <i class="fa fa-cube"></i>
-
-            <h3 class="card-title">{{'The' | translate}} WebDeals!</h3>
-            <p class="card-text lead">
-              {{
-                'Avoid common mistakes when creating a Website or Web Shop with a RoamerSoft WebDeal! The total solution in where everything is taken care of. Especially designed for the starting entrepreneurs!'
-                  | translate
-              }}
-            </p>
-            <a href="/webdeals" class="btn scroll-to">{{ 'Checkout' | translate }} WebDeals!</a>
+        <a class="btn scroll-to call-to-action abso" href="#footer">{{
+          'Meer informatie!' | translate
+        }}</a>
+      </div>
+      <div class="icon-boxx col-lg-4" data-animate="fadeInRight" data-animate-delay="800">
+        <div class="icon-box medium clean text-center">
+          <div class="icon">
+            <i class="icon-box orange"></i>
           </div>
+          <h3>{{ 'De WebDeals!' | translate }}</h3>
+          <p
+            [innerHTML]="
+              'Voorkom de veelgemaakte fouten bij <strong>een Website of Webshop</strong> met een RoamerSoft WebDeal! De totaaloplossing waarbij aan alles is gedacht, speciaal voor de <strong>startende ondernemer! </strong>'
+                | translate
+            "
+          ></p>
         </div>
-        <!--End: Box 3-->
+        <a
+          class="btn scroll-to call-to-action abso"
+          href="/webdeals"
+          >{{ 'Bekijk webdeals!' | translate }}</a
+        >
       </div>
     </div>
   </div>

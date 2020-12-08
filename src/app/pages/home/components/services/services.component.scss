@@ -1,64 +1,46 @@
-$webColor: #1abc9c;
-$appColor: #3498db;
-$wdColor: #ff9e30;
-
-.card-body {
-  p {
-    min-height: 225px;
-  }
+.red {
+  color: red !important;
 }
 
-.web {
-  .card-body {
-    i {
-      background-color: $webColor;
-      padding: 1rem 1.3rem;
-      font-size: 30px;
-      border-radius: 5px;
-      color: white;
-      margin-bottom: 10px;
-    }
-  }
+.blue {
+  color: #4285f3 !important;
 }
 
-.app {
-  .card-body {
-    i {
-      background-color: $appColor;
-      padding: .8rem 1.8rem;
-      font-size: 35px;
-      border-radius: 5px;
-      color: white;
-      margin-bottom: 10px;
-    }
-  }
+.purple {
+  color: #b620e0 !important;
 }
 
-.wd {
-  .card-body {
-    i {
-      background-color: $wdColor;
-      padding: .8rem 1.3rem;
-      font-size: 35px;
-      border-radius: 5px;
-      color: white;
-      margin-bottom: 10px;
-    }
-  }
+.orange {
+  color: darkorange !important;
 }
 
-@media only screen and (max-width: 1199px) {
-  .card-body {
-    p {
-      min-height: 300px;
-    }
-  }
+.brown {
+  color: brown !important;
 }
 
-@media only screen and(max-width: 991px) {
-  .card-body {
-    p {
-      min-height: 0;
-    }
-  }
+.green {
+  color: green !important;
+}
+
+.green-bg {
+  background-color: green !important;
+}
+
+.icon-activity {
+  font-size: 150px !important;
+}
+
+.center {
+  text-align: center;
+}
+
+.icon-boxx {
+  position: relative;
+}
+
+.abso {
+  position: absolute !important;
+  bottom: 25px;
+  width: 50%;
+  left: 25%;
 }
