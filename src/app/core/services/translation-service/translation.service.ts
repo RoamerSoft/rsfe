@@ -1,11 +1,11 @@
 import { Injectable, Optional, Inject, PLATFORM_ID } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
-import { Translation } from 'src/app/entities/translation/translation';
 import { Observable } from 'rxjs';
 import { TranslateService } from '@ngx-translate/core';
 import { REQUEST } from '@nguniversal/express-engine/tokens';
 import { isPlatformBrowser } from '@angular/common';
+import { Translation } from '../../entities/translation/translation';
 
 @Injectable({
   providedIn: 'root',

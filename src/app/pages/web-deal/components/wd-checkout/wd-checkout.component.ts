@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
-import { PriceCard } from 'src/app/entities/price-card/price-card';
-import { ContactForm } from 'src/app/models/contact-form/contact-form';
-import { ContactFormService } from 'src/app/services/contact-form/contact-form.service';
 import { ReCaptchaV3Service } from 'ng-recaptcha';
+import { PriceCard } from 'src/app/core/entities/price-card/price-card';
+import { ContactForm } from 'src/app/core/models/contact-form/contact-form';
+import { ContactFormService } from 'src/app/core/services/contact-form/contact-form.service';
 
 @Component({
   selector: 'app-wd-checkout',

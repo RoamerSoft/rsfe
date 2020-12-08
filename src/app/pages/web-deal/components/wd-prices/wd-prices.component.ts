@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { PriceCard } from 'src/app/core/entities/price-card/price-card';
 import { WdCheckoutComponent } from '../wd-checkout/wd-checkout.component';
-import { PriceCard } from 'src/app/entities/price-card/price-card';
 
 @Component({
   selector: 'app-wd-prices',

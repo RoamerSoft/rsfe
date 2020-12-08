@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ContactForm } from 'src/app/models/contact-form/contact-form';
-import { ContactFormService } from 'src/app/services/contact-form/contact-form.service';
 import { ReCaptchaV3Service } from 'ng-recaptcha';
+import { ContactForm } from '../../models/contact-form/contact-form';
+import { ContactFormService } from '../../services/contact-form/contact-form.service';
 
 @Component({
   selector: 'app-footer',

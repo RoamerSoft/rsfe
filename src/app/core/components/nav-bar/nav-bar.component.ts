@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { TranslationService } from 'src/app/services/translation-service/translation.service';
-import { Router } from 'express';
 import { ActivatedRoute } from '@angular/router';
+import { TranslationService } from '../../services/translation-service/translation.service';
+import { UtilsService } from '../../services/utils-service/utils.service';
 
 @Component({
   selector: 'app-nav-bar',
@@ -14,12 +14,18 @@ export class NavBarComponent implements OnInit {
   public webDealPage = false;
   public homePage = true;
 
-  constructor(private translationService: TranslationService, public route: ActivatedRoute) {}
+  constructor(
+    private translationService: TranslationService,
+    public route: ActivatedRoute,
+    private utilService: UtilsService
+  ) {}
 
   ngOnInit() {
     this.currentLang = this.translationService.getLang();
 
-    if (this.route.snapshot.url[0].path === 'webdeals') {
+    const lastPartOfUrl = this.utilService.getLastPartOfUrl(location.href);
+
+    if (lastPartOfUrl === 'webdeals') {
       this.webDealPage = true;
       this.homePage = false;
     }
