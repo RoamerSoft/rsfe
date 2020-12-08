@@ -1,20 +1,15 @@
 <section id="about" class="background-grey">
   <div class="container-fluid">
     <div class="row">
-      <div class="col-lg-6 offset-lg-1 pb-4">
+      <div class="col-lg-6 offset-lg-1 pb-4" data-animate="fadeInLeft">
         <iframe
-          data-animate="fadeInLeft"
           src="https://www.youtube.com/embed/uflp13XLraw"
           frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowfullscreen
         ></iframe>
       </div>
-      <div
-        data-animate="fadeInRightBig"
-        data-animate-delay="500"
-        class="col-lg-5 pl-4 pl-lg-2 wrapper"
-      >
+      <div data-animate="fadeInRight" class="col-lg-5 pl-4 pl-lg-2 wrapper">
         <h4 class="m-b-10">{{ 'Vertrouw op RoamerSoft en' | translate }}</h4>
         <h2 class="m-b-10">{{ 'Kies voor' | translate }}</h2>
         <ul class="lead list-icon list-icon-check list-icon-colored pt-3">
@@ -24,7 +19,13 @@
           <li>{{ 'Betrokkenheid en advies;' | translate }}</li>
           <li>{{ 'Een remote werker met liefde voor zijn vak. ❤️' | translate }}</li>
         </ul>
-        <a href="#footer" class="btn scroll-to contact-btn">{{ 'Neem contact op' | translate }}</a>
+        <a
+          data-animate="fadeInRightBig"
+          data-animate-delay="100"
+          href="#contact"
+          class="mt-3 btn scroll-to contact-btn"
+          >{{ 'Neem contact op' | translate }}</a
+        >
       </div>
     </div>
   </div>

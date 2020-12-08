@@ -27,7 +27,7 @@ export class FooterComponent implements OnInit {
       // Check email.
       if (!this.validateEmail(this.input.email)) {
         // Show email error
-        this.error = 'Email address is incorrect!';
+        this.error = 'Het e-mailadres is incorrect!';
         this.success = undefined;
       } else {
         // Get reCAPTCHA token
@@ -38,7 +38,7 @@ export class FooterComponent implements OnInit {
           // Hide error message
           this.error = undefined;
           // Show success message.
-          this.success = 'Your message is sent!';
+          this.success = 'Je bericht is verzonden!';
           // Hide success message after 3 seconds
           setTimeout(() => {
             this.success = undefined;

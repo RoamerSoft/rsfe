@@ -1,21 +1,38 @@
-<header id="header" data-transparent="true" data-responsive-fixed="true" class="light submenu-light">
+<header
+  id="header"
+  data-transparent="true"
+  data-responsive-fixed="true"
+  class="light submenu-light"
+>
   <div class="header-inner">
     <div class="container">
       <!--Logo-->
       <div id="logo">
         <a *ngIf="homePage" href="#slider" class="scroll-to">
-          <img src="/assets/images/roamersoft/roamersoft-logo.svg" class="logo-default pt-3 pb-3" alt="RoamerSoft logo" />
+          <img
+            src="/assets/images/roamersoft/roamersoft-logo.svg"
+            class="logo-default pt-3 pb-3"
+            alt="RoamerSoft logo"
+          />
         </a>
         <a *ngIf="!homePage" href="/" class="scroll-to">
-          <img src="/assets/images/roamersoft/roamersoft-logo.svg" class="logo-default pt-3 pb-3" alt="RoamerSoft logo" />
+          <img
+            src="/assets/images/roamersoft/roamersoft-logo.svg"
+            class="logo-default pt-3 pb-3"
+            alt="RoamerSoft logo"
+          />
         </a>
       </div>
       <!--End: Logo-->
       <!--Header Extras-->
       <div *ngIf="!webDealPage" class="header-extras">
         <ul>
-          <li *ngIf="this.currentLang === 'en'"><img (click)="switchLang('nl')" class="flag-icon" src="/assets/flags/nl.png" /></li>
-          <li *ngIf="this.currentLang === 'nl'"><img (click)="switchLang('en')" class="flag-icon" src="/assets/flags/en.png" /></li>
+          <li *ngIf="this.currentLang === 'en'">
+            <img (click)="switchLang('nl')" class="flag-icon" src="/assets/flags/nl.png" />
+          </li>
+          <li *ngIf="this.currentLang === 'nl'">
+            <img (click)="switchLang('en')" class="flag-icon" src="/assets/flags/en.png" />
+          </li>
         </ul>
       </div>
       <!--end: Header Extras-->
@@ -51,41 +68,38 @@
                 <a href="#faq" class="scroll-to">Faq</a>
               </li>
               <li *ngIf="!webDealPage" class="dropdown">
+                <a href="#about" class="scroll-to">{{ 'Over mij' | translate }}</a>
+              </li>
+              <li *ngIf="!webDealPage" class="dropdown">
                 <a href="#services" class="scroll-to">{{ 'Services' | translate }}</a>
                 <ul *ngIf="!webDealPage" class="dropdown-menu">
                   <li>
-                    <a href="#services" class="scroll-to">{{ 'Web Development' | translate }}</a>
+                    <a href="#services" class="scroll-to">{{ 'Web ontwikkeling' | translate }}</a>
                   </li>
                   <li>
-                    <a href="#services" class="scroll-to">{{ 'App Development' | translate }}</a>
+                    <a href="#services" class="scroll-to">{{ 'App ontwikkeling' | translate }}</a>
                   </li>
                   <li>
-                    <a href="/webdeals" class="scroll-to">{{ 'WebDeals' | translate }}<span class="badge badge-danger">NEW</span></a>
-                  </li>
-                </ul>
-              </li>
-              <li *ngIf="!webDealPage" class="dropdown">
-                <a href="#mission" class="scroll-to">{{ 'About' | translate }}</a>
-                <ul class="dropdown-menu">
-                  <li>
-                    <a href="#mission" class="scroll-to">{{ 'Mission' | translate }}</a>
-                  </li>
-                  <li>
-                    <a href="#promise" class="scroll-to">{{ 'Client Promise' | translate }}</a>
-                  </li>
-                  <li>
-                    <a href="#workingMethod" class="scroll-to">{{ 'Working Method' | translate }}</a>
+                    <a href="/webdeals" class="scroll-to"
+                      >{{ 'WebDeals' | translate }}<span class="badge badge-danger">NEW</span></a
+                    >
                   </li>
                 </ul>
               </li>
               <li>
-                <a *ngIf="!webDealPage" href="#portfolio" class="scroll-to">{{ 'Portfolio' | translate }}</a>
+                <a *ngIf="!webDealPage" href="#portfolio" class="scroll-to">{{
+                  'Portfolio' | translate
+                }}</a>
               </li>
               <li>
-                <a *ngIf="!webDealPage" href="#dream" class="scroll-to">{{ 'My Dream' | translate }}</a>
+                <a *ngIf="!webDealPage" href="#contact" class="scroll-to">{{
+                  'Contact' | translate
+                }}</a>
               </li>
               <li>
-                <a *ngIf="!webDealPage" href="#footer" class="scroll-to">{{ 'Contact' | translate }}</a>
+                <a *ngIf="!webDealPage" href="#faq" class="scroll-to">{{
+                  'FAQ' | translate
+                }}</a>
               </li>
             </ul>
           </nav>
@@ -98,13 +112,19 @@
       <div class="social-icons social-icons-colored-hover">
         <ul>
           <li class="social-facebook">
-            <a href="https://www.facebook.com/RoamerSoft-287897755483538" target="_blanc"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.facebook.com/RoamerSoft-287897755483538" target="_blanc"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
           </li>
           <li class="social-linkedin">
-            <a href="https://www.linkedin.com/company/19186536" target="_blanc"><i class="fab fa-linkedin"></i></a>
+            <a href="https://www.linkedin.com/company/19186536" target="_blanc"
+              ><i class="fab fa-linkedin"></i
+            ></a>
           </li>
           <li class="social-github">
-            <a href="https://github.com/RoamerSoft" target="_blanc"><i class="fab fa-github"></i></a>
+            <a href="https://github.com/RoamerSoft" target="_blanc"
+              ><i class="fab fa-github"></i
+            ></a>
           </li>
         </ul>
       </div>
