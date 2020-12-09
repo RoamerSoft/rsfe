@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { WebDealComponent } from './pages/web-deal/web-deal.component';
 
 const routes: Routes = [
   {

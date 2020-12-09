@@ -1,20 +1,18 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { WebDealComponent } from './web-deal.component';
 
-import { WebDealPageComponent } from './web-deal-page.component';
-
-describe('WebDealPageComponent', () => {
-  let component: WebDealPageComponent;
-  let fixture: ComponentFixture<WebDealPageComponent>;
+describe('WebDealComponent', () => {
+  let component: WebDealComponent;
+  let fixture: ComponentFixture<WebDealComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ WebDealPageComponent ]
-    })
-    .compileComponents();
+      declarations: [WebDealComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(WebDealPageComponent);
+    fixture = TestBed.createComponent(WebDealComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
