@@ -8,8 +8,6 @@ import { TranslationService } from 'src/app/core/services/translation-service/tr
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-  public loadAPI: Promise<any>;
-
   /**
    * [0] = Title
    * [1] = Description
@@ -21,7 +19,11 @@ export class HomeComponent implements OnInit {
     'App ontwikkeling, Web ontwikkeling, RoamerSoft, Bas Gerritsen, Full stack software developer, Cross platform, Hybride app, Mobiele app, Webapplicatie',
   ];
 
-  constructor(private title: Title, private meta: Meta, private translationService: TranslationService) {}
+  constructor(
+    private title: Title,
+    private meta: Meta,
+    private translationService: TranslationService
+  ) {}
 
   async ngOnInit() {
     await this.setTranslationAndMetaData();
@@ -30,12 +32,20 @@ export class HomeComponent implements OnInit {
   public async setTranslationAndMetaData() {
     return new Promise((resolve) => {
       this.translationService.setTranslation().then(() => {
-        this.translationService.getTranslationByKey(this.metaDataTranslateKeys).subscribe((resAsJson) => {
-          this.title.setTitle(resAsJson[this.metaDataTranslateKeys[0]]);
-          this.meta.updateTag({ name: 'description', content: resAsJson[this.metaDataTranslateKeys[1]] });
-          this.meta.updateTag({ name: 'keywords', content: resAsJson[this.metaDataTranslateKeys[2]] });
-          resolve();
-        });
+        this.translationService
+          .getTranslationByKey(this.metaDataTranslateKeys)
+          .subscribe((resAsJson) => {
+            this.title.setTitle(resAsJson[this.metaDataTranslateKeys[0]]);
+            this.meta.updateTag({
+              name: 'description',
+              content: resAsJson[this.metaDataTranslateKeys[1]],
+            });
+            this.meta.updateTag({
+              name: 'keywords',
+              content: resAsJson[this.metaDataTranslateKeys[2]],
+            });
+            resolve();
+          });
       });
     });
   }
