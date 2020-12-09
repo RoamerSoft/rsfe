@@ -6,17 +6,32 @@
     <div class="container">
       <div class="slide-captions text-center text-dark">
         <div class="roamersoft-text">
-          <img class="img-fluid" src="/assets/images/roamersoft/roamersoft-text.svg" alt="RoamerSoft Logo" />
+          <img
+            class="img-fluid"
+            src="/assets/images/roamersoft/roamersoft-text.svg"
+            alt="RoamerSoft Logo"
+          />
         </div>
         <hr />
         <!-- Captions -->
-        <h1 class="services">
+        <h1 class="services" *ngIf="browserLanguage === 'en'; else nlLanguage">
           <span class="text-rotator mb-0" data-animation="fadeIn" data-speed="5000"
-            >Web and App Development, Cross-Platform Mobile Apps, Advanced Web Applications, Websites and Webshops</span
+            >Web and App Development, Cross-Platform Mobile Apps, Tailored Web Applications, Full Stack Developer</span
           >
         </h1>
+
+        <ng-template #nlLanguage>
+          <h1 class="services">
+            <span class="text-rotator mb-0" data-animation="fadeIn" data-speed="5000"
+              >Web en app ontwikkeling, Cross platform mobiele apps, Webapplicaties op maat, Full stack developer</span
+            >
+          </h1>
+        </ng-template>
+
         <div>
-          <a href="#welcome" class="btn btn-shadow scroll-to">{{ 'Meer informatie' | translate }}</a>
+          <a href="#welcome" class="btn btn-shadow scroll-to">{{
+            'Meer informatie' | translate
+          }}</a>
         </div>
         <!-- end: Captions -->
       </div>

@@ -16,9 +16,9 @@ export class HomeComponent implements OnInit {
    * [2] = Keywords
    */
   private metaDataTranslateKeys = [
-    'RoamerSoft | Web and App Development',
-    'Mobile App Development for Android and Apple iOS. Advanced Web Applications, WordPress Websites and Web Shops. Remotely build by a Full-Stack Software Developer.',
-    'RoamerSoft, Bas Gerritsen, App Development, Web Development, WordPress Development, Websites, Web Shop, Remote, Full-Stack, Software, Developer',
+    'RoamerSoft | Web en app ontwikkeling',
+    'Mobiele app laten ontwikkelen die op zowel Android als Apple iOS draait? Full stack software developer nodig voor de ontwikkeling van je webapplicatie op maat?',
+    'App ontwikkeling, Web ontwikkeling, RoamerSoft, Bas Gerritsen, Full stack software developer, Cross platform, Hybride app, Mobiele app, Webapplicatie',
   ];
 
   constructor(private title: Title, private meta: Meta, private translationService: TranslationService) {}
