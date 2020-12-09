@@ -34,7 +34,9 @@
               "src/theme/css/fonts.css",
               "src/theme/css/theme.css"
             ],
-            "scripts": [ ]
+            "scripts": [
+              "src/assets/js/popper.min.js.map"
+            ]
           },
           "configurations": {
             "production": {
