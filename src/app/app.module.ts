@@ -7,38 +7,13 @@ import { AppComponent } from './app.component';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { HomePageComponent } from './pages/home-page/home-page.component';
-import { HomeHeaderComponent } from './components/home-header/home-header.component';
-import { NavBarComponent } from './components/nav-bar/nav-bar.component';
-import { WelcomeComponent } from './components/welcome/welcome.component';
-import { ServicesComponent } from './components/services/services.component';
-import { FooterComponent } from './components/footer/footer.component';
-import { MissionComponent } from './components/mission/mission.component';
-import { PromiseComponent } from './components/promise/promise.component';
-import { ClientsComponent } from './components/clients/clients.component';
-import { WorkingMethodComponent } from './components/working-method/working-method.component';
-import { PortfolioComponent } from './components/portfolio/portfolio.component';
-import { DreamComponent } from './components/dream/dream.component';
-import { MemberCardComponent } from './components/member-card/member-card.component';
-import { CookieBarComponent } from './components/cookie-bar/cookie-bar.component';
 
 import { FormsModule } from '@angular/forms';
 import { RECAPTCHA_V3_SITE_KEY, RecaptchaV3Module } from 'ng-recaptcha';
 
-import { WebDealPageComponent } from './pages/web-deal-page/web-deal-page.component';
-import { WdTestimonialsComponent } from './components/web-deal/wd-testimonials/wd-testimonials.component';
-import { WdSolutionComponent } from './components/web-deal/wd-solution/wd-solution.component';
-import { WdProblemComponent } from './components/web-deal/wd-problem/wd-problem.component';
-import { WdIconBoxesComponent } from './components/web-deal/wd-icon-boxes/wd-icon-boxes.component';
-import { WdLandingSliderComponent } from './components/web-deal/wd-landing-slider/wd-landing-slider.component';
-import { WdPricesComponent } from './components/web-deal/wd-prices/wd-prices.component';
-import { WdFaqComponent } from './components/web-deal/wd-faq/wd-faq.component';
-import { WdInterruptionTextComponent } from './components/web-deal/wd-interruption-text/wd-interruption-text.component';
-import { WdBrandsComponent } from './components/web-deal/wd-brands/wd-brands.component';
-
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
-import { WdCheckoutComponent } from './components/web-deal/wd-checkout/wd-checkout.component';
-import { ShowStarsPipe } from './pipes/show-stars/show-stars.pipe';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { WebDealModule } from './pages/web-deal/web-deal.module';
+import { HomeModule } from './pages/home/home.module';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
@@ -47,40 +22,14 @@ export function HttpLoaderFactory(http: HttpClient) {
 
 @NgModule({
   declarations: [
-    AppComponent,
-    HomePageComponent,
-    HomeHeaderComponent,
-    NavBarComponent,
-    WelcomeComponent,
-    ServicesComponent,
-    FooterComponent,
-    MissionComponent,
-    PromiseComponent,
-    ClientsComponent,
-    WorkingMethodComponent,
-    PortfolioComponent,
-    DreamComponent,
-    MemberCardComponent,
-    CookieBarComponent,
-    WebDealPageComponent,
-    WdTestimonialsComponent,
-    WdSolutionComponent,
-    WdProblemComponent,
-    WdIconBoxesComponent,
-    WdLandingSliderComponent,
-    WdPricesComponent,
-    WdFaqComponent,
-    WdInterruptionTextComponent,
-    WdBrandsComponent,
-    WdCheckoutComponent,
-    ShowStarsPipe,
+    AppComponent
   ],
-  entryComponents: [WdCheckoutComponent],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
+    HomeModule,
+    WebDealModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule,
     RecaptchaV3Module,
     // The forRoot static method is a convention that provides and configures services at the same time
     // This method allows configuring the TranslateModule by specifying a loader, a parser and/or a missing translations handler
@@ -93,9 +42,11 @@ export function HttpLoaderFactory(http: HttpClient) {
         deps: [HttpClient],
       },
     }),
-    NgbModule
+    NgbModule,
   ],
-  providers: [{ provide: RECAPTCHA_V3_SITE_KEY, useValue: '6LcHNPgUAAAAAH60HKHI8UKLkh0ogMnhxSWHFGL4' }],
+  providers: [
+    { provide: RECAPTCHA_V3_SITE_KEY, useValue: '6LcHNPgUAAAAAH60HKHI8UKLkh0ogMnhxSWHFGL4' },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
