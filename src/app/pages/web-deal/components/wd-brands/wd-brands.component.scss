@@ -1,0 +1,16 @@
+li {
+  width: 200px;
+  height: 200px;
+  img{
+    width: 100%;
+    transition: transform .8s;
+  }
+}
+
+li:hover{
+  background-color: white;
+  img{
+    transform: scale(1.3);
+  }
+}
+

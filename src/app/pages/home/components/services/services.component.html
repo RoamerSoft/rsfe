@@ -1,0 +1,64 @@
+<section id="services" class="background-grey">
+  <div class="container">
+    <div class="col-lg-8 m-b-80 center">
+      <div class="heading-text heading-section text-center">
+        <h2>{{ 'Diensten' | translate }}</h2>
+      </div>
+    </div>
+    <div class="row icon-boxes">
+      <div class="icon-boxx col-lg-4" data-animate="fadeInLeft" data-animate-delay="500">
+        <div class="icon-box medium clean text-center">
+          <div class="icon">
+            <i class="icon-monitor green"></i>
+          </div>
+          <h3>{{ 'Web ontwikkeling!' | translate }}</h3>
+          <p
+            [innerHTML]="
+              '<strong>Frontend en backend development</strong> voor de ontwikkeling van jouw webapplicatie. Van idee tot product met de nieuwste <strong>web technologieën</strong>.'
+                | translate
+            "
+          ></p>
+        </div>
+        <a class="btn scroll-to call-to-action abso" href="#contact">{{
+          'Neem contact op' | translate
+        }}</a>
+      </div>
+      <div class="icon-boxx col-lg-4" data-animate="fadeInUp">
+        <div class="icon-box medium clean text-center">
+          <div class="icon">
+            <i class="icon-tablet blue"></i>
+          </div>
+          <h3>{{ 'App ontwikkeling!' | translate }}</h3>
+          <p
+            [innerHTML]="
+              'Je eigen app die draait op <strong>Android en Apple iOS</strong>. Laat jouw cross platform app ontwikkelen met hybride technologieën die garant staan voor <strong>de beste gebruikerservaring.</strong>'
+                | translate
+            "
+          ></p>
+        </div>
+        <a class="btn scroll-to call-to-action abso" href="#contact">{{
+          'Neem contact op' | translate
+        }}</a>
+      </div>
+      <div class="icon-boxx col-lg-4" data-animate="fadeInRight" data-animate-delay="800">
+        <div class="icon-box medium clean text-center">
+          <div class="icon">
+            <i class="icon-box orange"></i>
+          </div>
+          <h3>{{ 'De WebDeals!' | translate }}</h3>
+          <p
+            [innerHTML]="
+              'Voorkom de veelgemaakte fouten bij <strong>een Website of Webshop</strong> met een RoamerSoft WebDeal! De totaaloplossing waarbij aan alles is gedacht, speciaal voor de <strong>startende ondernemer!</strong>'
+                | translate
+            "
+          ></p>
+        </div>
+        <a
+          class="btn scroll-to call-to-action abso"
+          href="/webdeals"
+          >{{ 'Bekijk webdeals!' | translate }}</a
+        >
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,67 @@
+<section id="welcome">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-4 offset-lg-1 col-md-12 m-t-40">
+        <h4 data-animate="fadeInLeft" class="mt-3">{{ 'Op maat gemaakte' | translate }}</h4>
+        <h2 data-animate="fadeInLeft" data-animate-delay="300">
+          {{ 'Software voor elk apparaat' | translate }}
+        </h2>
+        <p
+          data-animate="fadeInLeft"
+          class="lead"
+          [innerHTML]="
+            'Een <strong>mobiele app laten ontwikkelen</strong> die op zowel Android als Apple iOS draait? Op zoek naar een full stack software developer voor de ontwikkeling van je <strong>webapplicatie op maat? </strong>'
+              | translate
+          "
+        ></p>
+        <!-- Device images only visible on phone -->
+        <div class="col-md-12 p-0 d-sm-block d-lg-none">
+          <div class="devices mb-2">
+            <div data-animate="fadeInRightBig" class="iphone">
+              <!-- iphone -->
+              <img src="/assets/images/devices/iphone.png" class="img-fluid" alt="devices" />
+            </div>
+            <div data-animate="fadeInRightBig" class="ipad">
+              <!-- ipad -->
+              <img src="/assets/images/devices/ipad.png" class="img-fluid" alt="devices" />
+            </div>
+            <div data-animate="fadeInRightBig" class="macbook">
+              <!-- macbook -->
+              <img src="/assets/images/devices/macbookpro.png" class="img-fluid" alt="devices" />
+            </div>
+          </div>
+        </div>
+        <!-- end: Device images -->
+        <p
+          data-animate="fadeInLeft"
+          class="lead"
+          [innerHTML]="
+            'Of het nu gaat om een <strong>hybride app</strong>, een webapplicatie een website of webshop. Ik maak de applicatie welke past bij je te behalen doel. Als <strong> full stack software developer </strong> heb ik alles in huis om van jouw project een succes te maken.'
+              | translate
+          "
+        ></p>
+        <a data-animate="fadeInUp" href="#contact" class="btn mt-3 mb-3 scroll-to">{{
+          'Neem contact op' | translate
+        }}</a>
+      </div>
+      <!-- Device images only visible on larger screens -->
+      <div class="col-lg-6 col-md-12 p-0 d-none d-sm-none d-lg-block">
+        <div class="devices mt-md-5">
+          <div data-animate="fadeInRightBig" class="iphone">
+            <!-- iphone -->
+            <img src="/assets/images/devices/iphone.png" class="img-fluid" alt="devices" />
+          </div>
+          <div data-animate="fadeInRightBig" class="ipad">
+            <!-- ipad -->
+            <img src="/assets/images/devices/ipad.png" class="img-fluid" alt="devices" />
+          </div>
+          <div data-animate="fadeInRightBig" class="macbook">
+            <!-- macbook -->
+            <img src="/assets/images/devices/macbookpro.png" class="img-fluid" alt="devices" />
+          </div>
+        </div>
+      </div>
+      <!-- end: Device images -->
+    </div>
+  </div>
+</section>
