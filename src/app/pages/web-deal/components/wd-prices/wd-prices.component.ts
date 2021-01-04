@@ -22,7 +22,7 @@ export class WdPricesComponent implements OnInit {
   }
 
   private createWebsiteDeal() {
-    this.websiteDeal = new PriceCard('Website Deal', 'De website die je doelen realiseert!', 3, 695);
+    this.websiteDeal = new PriceCard('Website Deal', 'De website die je doelen realiseert!', 3, 795);
   }
 
   private createWebShopDeal() {
