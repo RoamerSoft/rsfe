@@ -25,3 +25,9 @@
 .icon-activity{
   font-size: 150px !important;
 }
+
+.rotate {
+  transform: rotate(-90deg);
+  position: relative;
+  bottom: -60px;
+}
