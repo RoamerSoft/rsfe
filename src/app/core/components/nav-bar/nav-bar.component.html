@@ -27,12 +27,24 @@
       <!--Header Extras-->
       <div *ngIf="!webDealPage" class="header-extras">
         <ul>
-          <li *ngIf="this.currentLang === 'en'">
-            <img (click)="switchLang('nl')" class="flag-icon" src="/assets/flags/nl.png" />
+          <li *ngIf="this.currentLang === 'nl'; else nlFlag">
+            <!-- Show EN flag -->
+            <img
+              (click)="switchLang('en')"
+              class="flag-icon"
+              src="/assets/flags/en.png"
+            />
           </li>
-          <li *ngIf="this.currentLang === 'nl'">
-            <img (click)="switchLang('en')" class="flag-icon" src="/assets/flags/en.png" />
-          </li>
+          <ng-template #nlFlag>
+            <!-- Show NL flag -->
+            <li>
+              <img
+                (click)="switchLang('nl')"
+                class="flag-icon"
+                src="/assets/flags/nl.png"
+              />
+            </li>
+          </ng-template>
         </ul>
       </div>
       <!--end: Header Extras-->
@@ -68,37 +80,46 @@
                 <a href="#faq" class="scroll-to">Faq</a>
               </li>
               <li *ngIf="!webDealPage" class="dropdown">
-                <a href="#about" class="scroll-to">{{ 'Over mij' | translate }}</a>
+                <a href="#about" class="scroll-to">{{
+                  "Over mij" | translate
+                }}</a>
               </li>
               <li *ngIf="!webDealPage" class="dropdown">
-                <a href="#services" class="scroll-to">{{ 'Diensten' | translate }}</a>
+                <a href="#services" class="scroll-to">{{
+                  "Diensten" | translate
+                }}</a>
                 <ul *ngIf="!webDealPage" class="dropdown-menu">
                   <li>
-                    <a href="#services" class="scroll-to">{{ 'Web ontwikkeling' | translate }}</a>
+                    <a href="#services" class="scroll-to">{{
+                      "Web ontwikkeling" | translate
+                    }}</a>
                   </li>
                   <li>
-                    <a href="#services" class="scroll-to">{{ 'App ontwikkeling' | translate }}</a>
+                    <a href="#services" class="scroll-to">{{
+                      "App ontwikkeling" | translate
+                    }}</a>
                   </li>
                   <li>
                     <a href="/webdeals" class="scroll-to"
-                      >{{ 'WebDeals' | translate }}<span class="badge badge-danger">NEW</span></a
+                      >{{ "WebDeals" | translate
+                      }}<span class="badge badge-danger">NEW</span></a
                     >
                   </li>
                 </ul>
               </li>
               <li>
                 <a *ngIf="!webDealPage" href="#portfolio" class="scroll-to">{{
-                  'Portfolio' | translate
+                  "Portfolio" | translate
                 }}</a>
               </li>
               <li>
                 <a *ngIf="!webDealPage" href="#contact" class="scroll-to">{{
-                  'Contact' | translate
+                  "Contact" | translate
                 }}</a>
               </li>
               <li>
                 <a *ngIf="!webDealPage" href="#faq" class="scroll-to">{{
-                  'FAQ' | translate
+                  "FAQ" | translate
                 }}</a>
               </li>
             </ul>
@@ -112,7 +133,9 @@
       <div class="social-icons social-icons-colored-hover">
         <ul>
           <li class="social-facebook">
-            <a href="https://www.facebook.com/RoamerSoft-287897755483538" target="_blanc"
+            <a
+              href="https://www.facebook.com/RoamerSoft-287897755483538"
+              target="_blanc"
               ><i class="fab fa-facebook-f"></i
             ></a>
           </li>
@@ -133,4 +156,6 @@
   </div>
 </header>
 <!-- Scroll top -->
-<a id="scrollTop"><i class="icon-chevron-up"></i><i class="icon-chevron-up"></i></a>
+<a id="scrollTop"
+  ><i class="icon-chevron-up"></i><i class="icon-chevron-up"></i
+></a>
