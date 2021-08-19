@@ -14,17 +14,19 @@
         </div>
         <hr />
         <!-- Captions -->
-        <h1 class="services" *ngIf="browserLanguage === 'en'; else nlLanguage">
-          <span class="text-rotator mb-0" data-animation="fadeIn" data-speed="5000"
-            >Web and App Development, Cross-Platform Mobile Apps, Tailored Web Applications, Full Stack Developer</span
-          >
+        <h1 class="services" *ngIf="browserLanguage === 'nl'; else enLanguage">
+          <span class="text-rotator mb-0" data-animation="fadeIn" data-speed="5000">
+            Web en app ontwikkeling, Cross platform mobiele apps, Webapplicaties op maat, Full stack
+            developer
+          </span>
         </h1>
 
-        <ng-template #nlLanguage>
+        <ng-template #enLanguage>
           <h1 class="services">
-            <span class="text-rotator mb-0" data-animation="fadeIn" data-speed="5000"
-              >Web en app ontwikkeling, Cross platform mobiele apps, Webapplicaties op maat, Full stack developer</span
-            >
+            <span class="text-rotator mb-0" data-animation="fadeIn" data-speed="5000">
+              Web and App Development, Cross-Platform Mobile Apps, Tailored Web Applications, Full
+              Stack Developer
+            </span>
           </h1>
         </ng-template>
 
