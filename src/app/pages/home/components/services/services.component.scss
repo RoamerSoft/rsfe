@@ -1,46 +1,33 @@
-.red {
+.red{
   color: red !important;
 }
 
-.blue {
-  color: #4285f3 !important;
+.blue{
+  color: #4285F3 !important;
 }
 
-.purple {
-  color: #b620e0 !important;
+.purple{
+  color: #B620E0 !important;
 }
 
-.orange {
+.orange{
   color: darkorange !important;
 }
 
-.brown {
+.brown{
   color: brown !important;
 }
 
-.green {
+.green{
   color: green !important;
 }
 
-.green-bg {
-  background-color: green !important;
-}
-
-.icon-activity {
+.icon-activity{
   font-size: 150px !important;
 }
 
-.center {
-  text-align: center;
-}
-
-.icon-boxx {
+.rotate {
+  transform: rotate(-90deg);
   position: relative;
-}
-
-.abso {
-  position: absolute !important;
-  bottom: 25px;
-  width: 60%;
-  left: 20%;
+  bottom: -60px;
 }

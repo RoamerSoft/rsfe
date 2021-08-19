@@ -101,7 +101,9 @@ select:focus {
 	Headings
 -------------------------------------------------------------------------*/
 .heading-text.heading-section > h2:before {
-  background-color: #ff9933; }
+  background-color: #ff9933;
+  display: block !important;
+}
 
 .heading-creative strong {
   color: #ff9933; }
