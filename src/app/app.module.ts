@@ -4,15 +4,12 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-
-import { FormsModule } from '@angular/forms';
 import { RECAPTCHA_V3_SITE_KEY, RecaptchaV3Module } from 'ng-recaptcha';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { WebDealModule } from './pages/web-deal/web-deal.module';
 import { HomeModule } from './pages/home/home.module';
 
 // AoT requires an exported function for factories
@@ -27,7 +24,6 @@ export function HttpLoaderFactory(http: HttpClient) {
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     HomeModule,
-    WebDealModule,
     AppRoutingModule,
     HttpClientModule,
     RecaptchaV3Module,
@@ -49,4 +45,5 @@ export function HttpLoaderFactory(http: HttpClient) {
   ],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule {
+}
