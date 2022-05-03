@@ -15,6 +15,7 @@ import { AboutComponent } from './components/about/about.component';
 import { TechnologiesComponent } from './components/technologies/technologies.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { FaqComponent } from './components/faq/faq.component';
+import { TestimonialsComponent } from './components/testimonials/testimonials.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { FaqComponent } from './components/faq/faq.component';
     ServicesComponent,
     WelcomeComponent,
     FaqComponent,
+    TestimonialsComponent,
   ],
   imports: [CoreModule, CommonModule, HomeRoutingModule, TranslateModule, FormsModule],
 })
