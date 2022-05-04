@@ -15,9 +15,22 @@ export class TestimonialsComponent implements OnInit {
   }
 
   ngOnInit() {
+    // Create an empty reviews list
+    this.reviews = [new Review(), new Review(), new Review(), new Review(), new Review(), new Review()];
+    // Get reviews from server
     this.reviewService.getAll().subscribe(reviews => {
-      this.reviews = reviews.sort((a, b) => a.order - b.order);
+      // Sort reviews by order
+      reviews = reviews.sort((a, b) => a.order - b.order);
+      // Loop over reviews
+      for (let i = 0; i < reviews.length; i++) {
+        // Merge reviews with existing empty once
+        if (this.reviews[i]) {
+          Object.assign(this.reviews[i], reviews[i]);
+        } else {
+          // Push new once to the list
+          this.reviews.push(reviews[i]);
+        }
+      }
     });
   }
-
 }

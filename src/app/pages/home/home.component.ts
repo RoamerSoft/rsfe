@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Title, Meta } from '@angular/platform-browser';
+import { Meta, Title } from '@angular/platform-browser';
 import { TranslationService } from 'src/app/core/services/translation-service/translation.service';
 
 @Component({
@@ -23,7 +23,8 @@ export class HomeComponent implements OnInit {
     private title: Title,
     private meta: Meta,
     private translationService: TranslationService
-  ) {}
+  ) {
+  }
 
   async ngOnInit() {
     await this.setTranslationAndMetaData();

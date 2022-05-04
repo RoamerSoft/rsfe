@@ -14,15 +14,22 @@
             <!-- Testimonials items -->
             <ng-container *ngFor="let review of reviews">
                 <div class="testimonial-item">
-                    <img src="{{ review.picture }}"
-                         alt="">
+                    <img src="{{ review.picture || 'assets/images/clients/blank-profile.png' }}">
                     <span>{{ review.name }}</span>
                     <h2 class="rateit-selected rateit-preset text-center pt-2">
-                        {{ review.stars | showStars }}
+                        {{ review.stars || 5 | showStars }}
                     </h2>
                     <div class="comment">
                         <p class="mb-2">
-                            {{ review.comment }}
+                            <ng-container *ngIf="review.comment; else emptyComment">
+                                {{ review.comment }}
+                            </ng-container>
+                            <ng-template #emptyComment>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                            </ng-template>
                         </p>
                     </div>
                     <span>{{ review.roll }}, {{ review.company }}</span>
