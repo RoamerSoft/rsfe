@@ -8,14 +8,7 @@
         <div class="container">
             <!--Logo-->
             <div id="logo">
-                <a *ngIf="homePage" href="#slider" class="scroll-to">
-                    <img
-                            src="/assets/images/roamersoft/roamersoft-logo.svg"
-                            class="logo-default pt-3 pb-3"
-                            alt="RoamerSoft logo"
-                    />
-                </a>
-                <a *ngIf="!homePage" href="/" class="scroll-to">
+                <a href="/" class="scroll-to">
                     <img
                             src="/assets/images/roamersoft/roamersoft-logo.svg"
                             class="logo-default pt-3 pb-3"
@@ -25,7 +18,7 @@
             </div>
             <!--End: Logo-->
             <!--Header Extras-->
-            <div class="header-extras">
+            <div *ngIf="!conversionMode" class="header-extras">
                 <ul>
                     <li *ngIf="this.currentLang === 'nl'; else nlFlag">
                         <!-- Show EN flag -->
@@ -41,12 +34,12 @@
             </div>
             <!--end: Header Extras-->
             <!--Navigation Responsive Trigger-->
-            <div id="mainMenu-trigger">
+            <div *ngIf="!conversionMode" id="mainMenu-trigger">
                 <a class="lines-button x"><span class="lines"></span></a>
             </div>
             <!--end: Navigation Responsive Trigger-->
             <!--Navigation-->
-            <div id="mainMenu">
+            <div *ngIf="!conversionMode" id="mainMenu">
                 <div class="container">
                     <nav>
                         <ul>
@@ -84,7 +77,7 @@
             <!--end: Navigation-->
         </div>
         <!--Social icons-->
-        <li class="d-none d-sm-block">
+        <li *ngIf="!conversionMode" class="d-none d-sm-block">
             <div class="social-icons social-icons-colored-hover">
                 <ul>
                     <li class="social-facebook">
