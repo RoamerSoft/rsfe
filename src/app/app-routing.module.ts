@@ -1,10 +1,14 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
     path: '',
     loadChildren: () => import('./pages/home/home.module').then((m) => m.HomeModule),
+  },
+  {
+    path: 'app_idee_maar_waar_te_beginnen',
+    loadChildren: () => import('./pages/web-deal/web-deal.module').then((m) => m.WebDealModule),
   },
   { path: '**', redirectTo: '/', pathMatch: 'full' },
 ];
@@ -13,4 +17,5 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule {
+}

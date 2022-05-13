@@ -10,6 +10,7 @@ import { UtilsService } from './services/utils-service/utils.service';
 import { ContactForm } from './models/contact-form/contact-form';
 import { TranslationService } from './services/translation-service/translation.service';
 import { ShowStarsPipe } from './pipes/show-stars/show-stars.pipe';
+import { WdCheckoutComponent } from '../pages/web-deal/components/wd-checkout/wd-checkout.component';
 
 @NgModule({
   declarations: [
@@ -18,9 +19,12 @@ import { ShowStarsPipe } from './pipes/show-stars/show-stars.pipe';
     FooterComponent,
     MemberCardComponent,
     ShowStarsPipe,
+    WdCheckoutComponent
   ],
   imports: [CommonModule, TranslateModule, FormsModule],
   providers: [UtilsService, ContactForm, TranslationService],
-  exports: [CookieBarComponent, NavBarComponent, FooterComponent, MemberCardComponent, ShowStarsPipe],
+  entryComponents: [WdCheckoutComponent],
+  exports: [CookieBarComponent, NavBarComponent, FooterComponent, MemberCardComponent, ShowStarsPipe, WdCheckoutComponent],
 })
-export class CoreModule {}
+export class CoreModule {
+}

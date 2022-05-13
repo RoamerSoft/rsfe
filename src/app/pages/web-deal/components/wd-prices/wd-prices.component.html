@@ -1,0 +1,81 @@
+<section id="prices" class="p-t-120 p-b-120 background-grey">
+  <div class="container">
+    <div class="col-lg-8 m-b-80 center">
+      <div class="heading-text heading-section text-center">
+        <h4>Klaar om je doel te bereiken?</h4>
+        <h2><strong>Kies Jou WebDeal!</strong></h2>
+      </div>
+    </div>
+    <hr class="space" />
+    <div class="row pricing-table">
+      <!-- WebShop Plus Deal -->
+      <div class="col-lg-4 no-pointer">
+        <div class="plan" data-animate="fadeInUp">
+          <div class="plan-header pb-0 mb-0">
+            <h4 class="font-weight-800">{{ this.webShopPlusDeal.title }}</h4>
+            <p class="text-muted">{{ this.webShopPlusDeal.description }}</p>
+            <h2 class="rateit-selected rateit-preset text-center p-0 m-0">
+              {{ this.webShopPlusDeal.stars | showStars }}
+            </h2>
+            <div class="plan-price">{{ this.webShopPlusDeal.price }},-</div>
+          </div>
+          <div class="plan-list">
+            <ul class="list-icon list-icon-check list-icon-colored">
+              <li *ngFor="let item of this.webShopPlusDeal.list">{{ item }}</li>
+            </ul>
+            <div class="plan-button">
+              <a class="btn call-to-action call-to-action-colored" (click)="openCheckout(this.webShopPlusDeal)">Kies {{this.webShopPlusDeal.title}}!</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end: WebShop Plus Deal -->
+
+      <!-- WebShop Deal -->
+      <div class="col-lg-4 no-pointer">
+        <div class="plan featured" data-animate="fadeInUp">
+          <div class="plan-header pb-0 mb-0">
+            <h4 class="font-weight-800">{{ this.webShopDeal.title }}</h4>
+            <p class="text-muted">{{ this.webShopDeal.description }}</p>
+            <h2 class="rateit-selected rateit-preset text-center p-0 m-0">
+              {{ this.webShopDeal.stars | showStars }}
+            </h2>
+            <div class="plan-price">{{ this.webShopDeal.price }},-</div>
+          </div>
+          <div class="plan-list">
+            <ul class="list-icon list-icon-check list-icon-colored">
+              <li *ngFor="let item of this.webShopDeal.list">{{ item }}</li>
+            </ul>
+            <div class="plan-button">
+              <a class="btn call-to-action call-to-action-colored" (click)="openCheckout(this.webShopDeal)">Kies {{this.webShopDeal.title}}!</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end: WebShop Deal -->
+
+      <!-- Website Deal -->
+      <div class="col-lg-4 no-pointer">
+        <div class="plan" data-animate="fadeInUp">
+          <div class="plan-header pb-0 mb-0">
+            <h4 class="font-weight-800">{{ this.websiteDeal.title }}</h4>
+            <p class="text-muted">{{ this.websiteDeal.description }}</p>
+            <h2 class="rateit-selected rateit-preset text-center p-0 m-0">
+              {{ this.websiteDeal.stars | showStars }}
+            </h2>
+            <div class="plan-price">{{ this.websiteDeal.price }},-</div>
+          </div>
+          <div class="plan-list">
+            <ul class="list-icon list-icon-check list-icon-colored">
+              <li *ngFor="let item of this.websiteDeal.list">{{ item }}</li>
+            </ul>
+            <div class="plan-button">
+              <a class="btn call-to-action call-to-action-colored" (click)="openCheckout(this.websiteDeal)">Kies {{this.websiteDeal.title}}!</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end: Website Deal -->
+    </div>
+  </div>
+</section>
