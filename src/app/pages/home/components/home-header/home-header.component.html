@@ -4,7 +4,7 @@
   <div class="slide kenburns" data-bg-image="/assets/images/roamersoft/roamersoft-bg.jpg">
     <div class="bg-overlay"></div>
     <div class="container">
-      <div class="slide-captions text-center text-dark">
+      <div class="slide-captions text-center ">
         <div class="roamersoft-text">
           <img
             class="img-fluid"
@@ -14,7 +14,7 @@
         </div>
         <hr />
         <!-- Captions -->
-        <h1 class="services" *ngIf="browserLanguage === 'nl'; else enLanguage">
+        <h1 class="services text-dark" *ngIf="browserLanguage === 'nl'; else enLanguage">
           <span class="text-rotator mb-0" data-animation="fadeIn" data-speed="5000">
             Web en app ontwikkeling, Cross platform mobiele apps, Webapplicaties op maat, Full stack
             developer
@@ -23,7 +23,7 @@
 
         <ng-template #enLanguage>
           <h1 class="services">
-            <span class="text-rotator mb-0" data-animation="fadeIn" data-speed="5000">
+            <span class="text-rotator mb-0 text-dark" data-animation="fadeIn" data-speed="5000">
               Web and App Development, Cross-Platform Mobile Apps, Tailored Web Applications, Full
               Stack Developer
             </span>
@@ -31,7 +31,7 @@
         </ng-template>
 
         <div>
-          <a href="#welcome" class="btn btn-shadow scroll-to">{{
+          <a href="#welcome" class="btn btn-outline scroll-to">{{
             'Meer informatie' | translate
           }}</a>
         </div>
