@@ -63,6 +63,15 @@ textarea {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+.download-button {
+  margin: auto;
+  text-align: center;
+}
+
+img {
+  max-width: 100px;
+}
+
 @media only screen and(max-width: 1199px) {
   ::ng-deep.modal-xl {
     max-width: 95%;

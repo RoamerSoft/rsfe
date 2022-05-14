@@ -111,7 +111,7 @@ export class WebDealComponent implements OnInit {
 
   public openCheckout() {
     setTimeout(() => {
-      const modalRef = this.modalService.open(WdCheckoutComponent, { size: 'lg' });
+      const modalRef = this.modalService.open(WdCheckoutComponent);
       modalRef.componentInstance.deal = this.createWebShopPlusDeal();
     }, 150);
   }
