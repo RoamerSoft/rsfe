@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-wd-interruption-text',
@@ -6,10 +6,11 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./wd-interruption-text.component.scss'],
 })
 export class WdInterruptionTextComponent implements OnInit {
-  @Input() text1: string;
-  @Input() text2: string;
+  @Input() text: string;
 
-  constructor() {}
+  constructor() {
+  }
 
-  ngOnInit() {}
+  ngOnInit() {
+  }
 }

@@ -63,12 +63,12 @@ button.btn,
     call-to-action (call to action)
 -------------------------------------------------------------------------*/
 .call-to-action.call-to-action-colored {
-  background-color: #9c27b0 !important;
-  border-color: #9c27b0 !important; }
+  background-color: #F55321 !important;
+  border-color: #F55321 !important; }
 
 .call-to-action.call-to-action-colored:hover {
-  background-color: #7a1f8a !important;
-  border-color: #7a1f8a !important; }
+  background-color: #FF5E25 !important;
+  border-color: #FF5E25 !important; }
 
 
 /* ----------------------------------------------------------------

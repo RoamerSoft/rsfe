@@ -1,0 +1,74 @@
+section {
+  padding: 100px 0;
+}
+
+.lead {
+  font-size: 28px;
+}
+
+.list {
+  width: fit-content;
+  li {
+    font-size: 16px;
+    text-align: left;
+  }
+}
+
+img {
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  user-drag: none;
+}
+
+.sub-title {
+  font-size: 25px !important;
+  line-height: unset !important;
+}
+
+.e-book-container-right {
+  display: block;
+
+  img {
+    position: relative;
+    top: -25px;
+    max-width: 400px;
+  }
+}
+
+.e-book-container-top {
+  display: none;
+}
+
+h1 {
+  line-height: 60px !important;
+}
+
+// Only smaller screens
+@media only screen and (max-width: 1024px) {
+  .lead {
+    text-align: center;
+  }
+
+  .e-book-container-top {
+    display: block;
+    margin-bottom: 15px;
+
+    img {
+      max-width: 200px;
+    }
+  }
+
+  .e-book-container-right {
+    display: none;
+  }
+
+  .list {
+    margin: auto;
+  }
+
+  .download-button {
+    text-align: center;
+  }
+}

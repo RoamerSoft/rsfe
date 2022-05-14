@@ -7741,7 +7741,7 @@ Image Block
 }
 
 .text-light .heading-fancy-border {
-  border-color: #fff !important;
+  border-color: #FCFEF8 !important;
 }
 
 /*hero heading 2*/
@@ -8858,6 +8858,10 @@ Helpers
 
 .background-grey {
   background-color: #F7F9FB !important;
+}
+
+.background-blue {
+  background-color: #112670 !important;
 }
 
 .background-dark {
