@@ -2,92 +2,115 @@
 	Typography
 -----------------------------------------------------------------*/
 a:not(.btn):not(.badge):hover, a:not(.btn):not(.badge):focus, a:not(.btn):not(.badge):active {
-  color: #ff9933; }
+    color: #ff9933;
+}
 
 /* ----------------------------------------------------------------
 	Accordion
 -----------------------------------------------------------------*/
 .accordion.accordion-theme .ac-item {
-  background-color: #ff9933; }
+    background-color: #ff9933;
+}
 
 /* ----------------------------------------------------------------
 	Blockquotes
 -----------------------------------------------------------------*/
 .blockquote {
-  border-left: 3px solid #ff9933; }
+    border-left: 3px solid #ff9933;
+}
 
 .blockquote-color {
-  background-color: #ff9933; }
+    background-color: #ff9933;
+}
 
 /* ----------------------------------------------------------------------
 	Buttons
 -------------------------------------------------------------------------*/
 button.btn,
 .btn:not(.close):not(.mfp-close), a.btn:not([href]):not([tabindex]) {
-  background-color: #ff9933;
-  border-color: #ff9933; }
-  button.btn:hover, button.btn:focus, button.btn:not(:disabled):not(.disabled):active, button.btn:not(:disabled):not(.disabled).active,
-  .btn:not(.close):not(.mfp-close):hover,
-  .btn:not(.close):not(.mfp-close):focus,
-  .btn:not(.close):not(.mfp-close):not(:disabled):not(.disabled):active,
-  .btn:not(.close):not(.mfp-close):not(:disabled):not(.disabled).active, a.btn:not([href]):not([tabindex]):hover, a.btn:not([href]):not([tabindex]):focus, a.btn:not([href]):not([tabindex]):not(:disabled):not(.disabled):active, a.btn:not([href]):not([tabindex]):not(:disabled):not(.disabled).active {
-    background-color: #E7892C;
-    border-color: #E7892C; }
-  button.btn.btn-outline,
-  .btn:not(.close):not(.mfp-close).btn-outline, a.btn:not([href]):not([tabindex]).btn-outline {
-    border-color: #ff9933;
-    color: #ff9933; }
-    button.btn.btn-outline:hover, button.btn.btn-outline:focus, button.btn.btn-outline:active, button.btn.btn-outline.active,
-    .btn:not(.close):not(.mfp-close).btn-outline:hover,
-    .btn:not(.close):not(.mfp-close).btn-outline:focus,
-    .btn:not(.close):not(.mfp-close).btn-outline:active,
-    .btn:not(.close):not(.mfp-close).btn-outline.active, a.btn:not([href]):not([tabindex]).btn-outline:hover, a.btn:not([href]):not([tabindex]).btn-outline:focus, a.btn:not([href]):not([tabindex]).btn-outline:active, a.btn:not([href]):not([tabindex]).btn-outline.active {
-      background-color: #ff9933;
-      border-color: #ff9933; }
-  button.btn.btn-primary,
-  .btn:not(.close):not(.mfp-close).btn-primary, a.btn:not([href]):not([tabindex]).btn-primary {
     background-color: #ff9933;
-    border-color: #ff9933; }
-    button.btn.btn-primary:hover, button.btn.btn-primary:focus, button.btn.btn-primary:not(:disabled):not(.disabled):active, button.btn.btn-primary:not(:disabled):not(.disabled).active,
-    .btn:not(.close):not(.mfp-close).btn-primary:hover,
-    .btn:not(.close):not(.mfp-close).btn-primary:focus,
-    .btn:not(.close):not(.mfp-close).btn-primary:not(:disabled):not(.disabled):active,
-    .btn:not(.close):not(.mfp-close).btn-primary:not(:disabled):not(.disabled).active, a.btn:not([href]):not([tabindex]).btn-primary:hover, a.btn:not([href]):not([tabindex]).btn-primary:focus, a.btn:not([href]):not([tabindex]).btn-primary:not(:disabled):not(.disabled):active, a.btn:not([href]):not([tabindex]).btn-primary:not(:disabled):not(.disabled).active {
-      background-color: #ff9933;
-      border-color: #ff9933; }
-  button.btn.btn-icon-holder.btn-outline:before,
-  .btn:not(.close):not(.mfp-close).btn-icon-holder.btn-outline:before, a.btn:not([href]):not([tabindex]).btn-icon-holder.btn-outline:before {
-    border-left-color: #ff9933; }
+    border-color: #ff9933;
+}
+
+button.btn:hover, button.btn:focus, button.btn:not(:disabled):not(.disabled):active, button.btn:not(:disabled):not(.disabled).active,
+.btn:not(.close):not(.mfp-close):hover,
+.btn:not(.close):not(.mfp-close):focus,
+.btn:not(.close):not(.mfp-close):not(:disabled):not(.disabled):active,
+.btn:not(.close):not(.mfp-close):not(:disabled):not(.disabled).active, a.btn:not([href]):not([tabindex]):hover, a.btn:not([href]):not([tabindex]):focus, a.btn:not([href]):not([tabindex]):not(:disabled):not(.disabled):active, a.btn:not([href]):not([tabindex]):not(:disabled):not(.disabled).active {
+    background-color: #E7892C;
+    border-color: #E7892C;
+}
+
+button.btn.btn-outline,
+.btn:not(.close):not(.mfp-close).btn-outline, a.btn:not([href]):not([tabindex]).btn-outline {
+    border-color: #ff9933;
+    color: #ff9933;
+}
+
+button.btn.btn-outline:hover, button.btn.btn-outline:focus, button.btn.btn-outline:active, button.btn.btn-outline.active,
+.btn:not(.close):not(.mfp-close).btn-outline:hover,
+.btn:not(.close):not(.mfp-close).btn-outline:focus,
+.btn:not(.close):not(.mfp-close).btn-outline:active,
+.btn:not(.close):not(.mfp-close).btn-outline.active, a.btn:not([href]):not([tabindex]).btn-outline:hover, a.btn:not([href]):not([tabindex]).btn-outline:focus, a.btn:not([href]):not([tabindex]).btn-outline:active, a.btn:not([href]):not([tabindex]).btn-outline.active {
+    background-color: #ff9933;
+    border-color: #ff9933;
+}
+
+button.btn.btn-primary,
+.btn:not(.close):not(.mfp-close).btn-primary, a.btn:not([href]):not([tabindex]).btn-primary {
+    background-color: #ff9933;
+    border-color: #ff9933;
+}
+
+button.btn.btn-primary:hover, button.btn.btn-primary:focus, button.btn.btn-primary:not(:disabled):not(.disabled):active, button.btn.btn-primary:not(:disabled):not(.disabled).active,
+.btn:not(.close):not(.mfp-close).btn-primary:hover,
+.btn:not(.close):not(.mfp-close).btn-primary:focus,
+.btn:not(.close):not(.mfp-close).btn-primary:not(:disabled):not(.disabled):active,
+.btn:not(.close):not(.mfp-close).btn-primary:not(:disabled):not(.disabled).active, a.btn:not([href]):not([tabindex]).btn-primary:hover, a.btn:not([href]):not([tabindex]).btn-primary:focus, a.btn:not([href]):not([tabindex]).btn-primary:not(:disabled):not(.disabled):active, a.btn:not([href]):not([tabindex]).btn-primary:not(:disabled):not(.disabled).active {
+    background-color: #ff9933;
+    border-color: #ff9933;
+}
+
+button.btn.btn-icon-holder.btn-outline:before,
+.btn:not(.close):not(.mfp-close).btn-icon-holder.btn-outline:before, a.btn:not([href]):not([tabindex]).btn-icon-holder.btn-outline:before {
+    border-left-color: #ff9933;
+}
 
 /* ----------------------------------------------------------------------
     call-to-action (call to action)
 -------------------------------------------------------------------------*/
 .call-to-action.call-to-action-colored {
-  background-color: #F55321 !important;
-  border-color: #F55321 !important; }
+    background-color: #F55321 !important;
+    border-color: #F55321 !important;
+}
 
 .call-to-action.call-to-action-colored:hover {
-  background-color: #FF5E25 !important;
-  border-color: #FF5E25 !important; }
+    background-color: #ff9933 !important;
+    border-color: #ff9933 !important;
+}
 
 
 /* ----------------------------------------------------------------
 Carousels & Slider
 -----------------------------------------------------------------*/
 .inspiro-slider .flickity-button:hover {
-  background-color: #ff9933; }
+    background-color: #ff9933;
+}
 
 .carousel .flickity-button:hover {
-  background-color: #ff9933; }
+    background-color: #ff9933;
+}
 
 /* ----------------------------------------------------------------
     Dropcat & Highlight
 -----------------------------------------------------------------*/
 .dropcap.dropcap-colored {
-  background-color: #ff9933; }
+    background-color: #ff9933;
+}
 
 .highlight.highlight-colored {
-  background-color: #ff9933; }
+    background-color: #ff9933;
+}
 
 /* ----------------------------------------------------------------------
 Forms
@@ -95,105 +118,133 @@ Forms
 .form-control:focus,
 input:focus,
 select:focus {
-  border-color: #ff9933; }
+    border-color: #ff9933;
+}
 
 /* ----------------------------------------------------------------------
 	Headings
 -------------------------------------------------------------------------*/
 .heading-text.heading-section > h2:before {
-  background-color: #ff9933;
-  display: block !important;
+    background-color: #ff9933;
+    display: block !important;
 }
 
 .heading-creative strong {
-  color: #ff9933; }
+    color: #ff9933;
+}
 
 /* ----------------------------------------------------------------------
 	Icon Box
 -------------------------------------------------------------------------*/
 .icon-box.effect.dark .icon i:after {
-  box-shado: 0 0 0 3px #ff9933; }
+    box-shado: 0 0 0 3px #ff9933;
+}
+
 .icon-box.effect.dark .icon i:hover, .icon-box.effect.dark:hover .icon i {
-  background-color: #ff9933; }
+    background-color: #ff9933;
+}
 
 .text-box.text-box-light:hover {
-  background: #ff9933; }
+    background: #ff9933;
+}
 
 .feature-box:hover h2,
 .feature-box:hover h3,
 .feature-box:hover h4 {
-  color: #ff9933; }
+    color: #ff9933;
+}
 
 /* ----------------------------------------------------------------
 Lables & Badgets
 -----------------------------------------------------------------*/
 .badge-primary {
-  background-color: #ff9933; }
+    background-color: #ff9933;
+}
 
 /* ----------------------------------------------------------------------
 	Light Box
 -------------------------------------------------------------------------*/
 .mfp-ajax-holder .mfp-close:hover {
-  background: #ff9933; }
+    background: #ff9933;
+}
 
 /* ----------------------------------------------------------------------
 	Lists & Bullet Lists
 -------------------------------------------------------------------------*/
 .list-colored li a {
-  color: #ff9933; }
+    color: #ff9933;
+}
 
 .list-legend li span {
-  background-color: #ff9933; }
+    background-color: #ff9933;
+}
 
 .list-icon.list-icon-colored li:before, .list-icon.icon-list-colored i {
-  color: #2ecc71; }
+    color: #2ecc71;
+}
 
 .list-group-item.active {
-  background-color: #ff9933;
-  border: #ff9933; }
+    background-color: #ff9933;
+    border: #ff9933;
+}
 
 /* ----------------------------------------------------------------------
 	Pagination & Pager
 -------------------------------------------------------------------------*/
 .post-navigation a:hover {
-  color: #ff9933; }
+    color: #ff9933;
+}
 
 /* ----------------------------------------------------------------------
 	Pricing Table
 -------------------------------------------------------------------------*/
 .pricing-table.colored .plan-header {
-  background-color: #ff9933; }
+    background-color: #ff9933;
+}
 
 /* ----------------------------------------------------------------------
 	Progress Bar
 -------------------------------------------------------------------------*/
 .p-progress-bar,
 .progress-bar {
-  background-color: #ff9933; }
+    background-color: #ff9933;
+}
 
 /*--------------------------------------------------------
      Tabs
 ---------------------------------------------------------*/
 .tabs .nav-tabs .nav-link.active {
-  color: #ff9933;
-  border-bottom: 2px solid #ff9933; }
+    color: #ff9933;
+    border-bottom: 2px solid #ff9933;
+}
+
 .tabs.tabs-vertical .nav-link.active {
-  color: #ff9933;
-  border-right: 2px solid #ff9933; }
+    color: #ff9933;
+    border-right: 2px solid #ff9933;
+}
 
 /* ----------------------------------------------------------------
 	Date picker
 -----------------------------------------------------------------*/
 .datepicker tbody tr > td.day.today.active, .datepicker tbody tr > td.day.active, .datepicker tbody tr > td.day.selected {
-  background: #ff9933 !important; }
-  .datepicker tbody tr > td.day.today.active:hover, .datepicker tbody tr > td.day.active:hover, .datepicker tbody tr > td.day.selected:hover {
-    background: #ff9933; }
+    background: #ff9933 !important;
+}
+
+.datepicker tbody tr > td.day.today.active:hover, .datepicker tbody tr > td.day.active:hover, .datepicker tbody tr > td.day.selected:hover {
+    background: #ff9933;
+}
+
 .datepicker tbody tr > td.day.range.today {
-  background: #ff9933; }
+    background: #ff9933;
+}
+
 .datepicker tbody tr > td span.month.active {
-  background: #ff9933; }
-  .datepicker tbody tr > td span.month.active:hover {
-    background: #ff9933; }
+    background: #ff9933;
+}
+
+.datepicker tbody tr > td span.month.active:hover {
+    background: #ff9933;
+}
 
 .datetimepicker tbody tr > td.day.today,
 .datetimepicker table tr td.active:active,
@@ -212,7 +263,8 @@ Lables & Badgets
 .datetimepicker table tr td span.active:hover.active,
 .datetimepicker table tr td span.active.disabled.active,
 .datetimepicker table tr td span.active.disabled:hover.active {
-  background: #ff9933 !important; }
+    background: #ff9933 !important;
+}
 
 .datetimepicker table tr > td.today:hover,
 .datetimepicker table tr > td.today:hover:hover,
@@ -234,29 +286,49 @@ Lables & Badgets
 .datetimepicker table tr > td.today:hover[disabled],
 .datetimepicker table tr > td.today.disabled[disabled],
 .datetimepicker table tr > td.today.disabled:hover[disabled] {
-  background: #ff9933 !important; }
+    background: #ff9933 !important;
+}
 
 .daterangepicker .daterangepicker_input .input-mini.active, .daterangepicker .daterangepicker_input .input-mini:focus {
-  border: 1px solid #ff9933; }
+    border: 1px solid #ff9933;
+}
+
 .daterangepicker tbody td.today {
-  background: #ff9933; }
+    background: #ff9933;
+}
+
 .daterangepicker tbody td.active, .daterangepicker tbody td.in-range, .daterangepicker tbody td.active:hover, .daterangepicker tbody td.in-range:hover {
-  background: #ff9933; }
+    background: #ff9933;
+}
+
 .daterangepicker select.ampmselect.active, .daterangepicker select.ampmselect:focus {
-  border: 1px solid #ff9933; }
+    border: 1px solid #ff9933;
+}
+
 .daterangepicker select.hourselect.active, .daterangepicker select.hourselect:focus {
-  border: 1px solid #ff9933; }
+    border: 1px solid #ff9933;
+}
+
 .daterangepicker select.minuteselect.active, .daterangepicker select.minuteselect:focus {
-  border: 1px solid #ff9933; }
+    border: 1px solid #ff9933;
+}
+
 .daterangepicker select.monthselect.active, .daterangepicker select.monthselect:focus {
-  border: 1px solid #ff9933; }
+    border: 1px solid #ff9933;
+}
+
 .daterangepicker select.yearselect.active, .daterangepicker select.yearselect:focus {
-  border: 1px solid #ff9933; }
+    border: 1px solid #ff9933;
+}
+
 .daterangepicker .calendar-time i {
-  color: #b2b1c5; }
+    color: #b2b1c5;
+}
+
 .daterangepicker .ranges li.active {
-  background: #ff9933;
-  border: 1px solid #ff9933; }
+    background: #ff9933;
+    border: 1px solid #ff9933;
+}
 
 /* ----------------------------------------------------------------
 	Date range picker
@@ -264,11 +336,13 @@ Lables & Badgets
 .daterangepicker td.active:not(.off),
 .daterangepicker td.active:hover,
 .daterangepicker .active.end-date.in-range {
-  background: #ff9933 !important; }
+    background: #ff9933 !important;
+}
 
 input.daterange:after,
 input.dates:after {
-  background: #ff9933; }
+    background: #ff9933;
+}
 
 /* ----------------------------------------------------------------
 	Bootstrap Switch
@@ -276,119 +350,162 @@ input.dates:after {
 .bootstrap-switch .bootstrap-switch-on,
 .bootstrap-switch .bootstrap-switch-handle-on,
 .bootstrap-switch .bootstrap-switch-handle-off {
-  background-color: #ff9933;
-  border-color: #ff9933; }
+    background-color: #ff9933;
+    border-color: #ff9933;
+}
 
 .p-radio:checked + .p-radio-style:before {
-  border: 1px solid #ff9933;
-  background: #ff9933; }
+    border: 1px solid #ff9933;
+    background: #ff9933;
+}
 
 .p-checkbox:checked + .p-checkbox-style:before {
-  border: #ff9933;
-  background: #ff9933; }
+    border: #ff9933;
+    background: #ff9933;
+}
 
 .p-switch > input[type="checkbox"]:checked + .p-switch-style {
-  background-color: #ff9933; }
+    background-color: #ff9933;
+}
 
 /* ----------------------------------------------------------------
 	Ion Range Sliders
 -----------------------------------------------------------------*/
 .irs-bar {
-  background: #ff9933; }
+    background: #ff9933;
+}
 
 .irs-from,
 .irs-to,
 .irs-single {
-  background: #ff9933; }
+    background: #ff9933;
+}
 
 .irs-from:after,
 .irs-to:after,
 .irs-single:after {
-  border-top-color: #ff9933; }
+    border-top-color: #ff9933;
+}
 
 /* ----------------------------------------------------------------
 	Blog
 -----------------------------------------------------------------*/
 .post-item {
-  /*Types*/ }
-  .post-item .post-image .post-meta-category,
-  .post-item .post-slider .post-meta-category,
-  .post-item .post-video .post-meta-category,
-  .post-item .post-audio .post-meta-category,
-  .post-item .post-quote-img .post-meta-category {
-    background-color: #ff9933; }
-  .post-item .post-quote-img .post-meta-category {
-    color: #ff9933; }
-    .post-item .post-quote-img .post-meta-category a {
-      color: #ff9933; }
-  .post-item.quote .post-item-wrap {
-    background-color: #ff9933; }
+    /*Types*/
+}
+
+.post-item .post-image .post-meta-category,
+.post-item .post-slider .post-meta-category,
+.post-item .post-video .post-meta-category,
+.post-item .post-audio .post-meta-category,
+.post-item .post-quote-img .post-meta-category {
+    background-color: #ff9933;
+}
+
+.post-item .post-quote-img .post-meta-category {
+    color: #ff9933;
+}
+
+.post-item .post-quote-img .post-meta-category a {
+    color: #ff9933;
+}
+
+.post-item.quote .post-item-wrap {
+    background-color: #ff9933;
+}
 
 .post-author a {
-  color: #ff9933; }
+    color: #ff9933;
+}
 
 /* ----------------------------------------------------------------
 	Grid Filter
 -----------------------------------------------------------------*/
 .grid-filter li:hover a, .grid-filter li.active a {
-  background-color: #ff9933; }
+    background-color: #ff9933;
+}
+
 .grid-filter.gf-outline li:hover a, .grid-filter.gf-outline li.active a {
-  border-color: #ff9933;
-  color: #ff9933; }
+    border-color: #ff9933;
+    color: #ff9933;
+}
+
 .grid-filter.gf-lines li:hover a, .grid-filter.gf-lines li.active a {
-  color: #ff9933; }
-  .grid-filter.gf-lines li:hover a:after, .grid-filter.gf-lines li.active a:after {
-    background-color: #ff9933; }
+    color: #ff9933;
+}
+
+.grid-filter.gf-lines li:hover a:after, .grid-filter.gf-lines li.active a:after {
+    background-color: #ff9933;
+}
+
 .grid-filter.gf-classic li:hover a, .grid-filter.gf-classic li.active a {
-  background-color: #ff9933; }
+    background-color: #ff9933;
+}
+
 .grid-filter.gf-default li:hover a, .grid-filter.gf-default li.active a {
-  color: #ff9933; }
+    color: #ff9933;
+}
 
 /*------------------------------------------------------
      Comments
 ------------------------------------------------------*/
 .comments .comment_number span {
-  color: #ff9933; }
+    color: #ff9933;
+}
 
 .respond-comment span {
-  color: #ff9933; }
+    color: #ff9933;
+}
 
 /*------------------------------------------------------
      Extras
 ------------------------------------------------------*/
 .item-link {
-  color: #ff9933; }
-  .item-link:hover {
-    color: #ff9933; }
+    color: #ff9933;
+}
+
+.item-link:hover {
+    color: #ff9933;
+}
 
 .nav-link {
-  color: #ff9933; }
+    color: #ff9933;
+}
 
 .background-colored {
-  background-color: #ff9933; }
+    background-color: #ff9933;
+}
 
 /* ----------------------------------------------------------------
 Scroll top
 -----------------------------------------------------------------*/
 #scrollTop:after, #scrollTop:before {
-  background-color: #ff9933; }
+    background-color: #ff9933;
+}
 
 .fc-event-primary.fc-event {
-  background-color: #ff9933;
-  border-color: #ff9933; }
+    background-color: #ff9933;
+    border-color: #ff9933;
+}
 
 .icon-set-container .row > [class^="col-"] {
-  color: #ff9933; }
-  .icon-set-container .row > [class^="col-"]:hover {
-    background-color: #ff9933; }
-    .icon-set-container .row > [class^="col-"]:hover .icon-holder {
-      color: #ff9933; }
+    color: #ff9933;
+}
+
+.icon-set-container .row > [class^="col-"]:hover {
+    background-color: #ff9933;
+}
+
+.icon-set-container .row > [class^="col-"]:hover .icon-holder {
+    color: #ff9933;
+}
 
 /* ----------------------------------------------------------------
     Forum
 -----------------------------------------------------------------*/
 .forum thead tr > th {
-  background-color: #ff9933; }
+    background-color: #ff9933;
+}
 
 /* ----------------------------------------------------------------
     Header
@@ -396,101 +513,149 @@ Scroll top
 #header {
     /* ----------------------------------------------------------------
 Main Menu
------------------------------------------------------------------*/ }
-  #header.header-modern:not(.header-active).header-colored .header-inner,
-  #header.header-modern:not(.header-active).header-colored #header-wrap {
-    background-color: #ff9933; }
-  #header.header-colored .header-inner,
-  #header.header-colored #header-wrap {
-    background-color: #ff9933; }
-  #header #mainMenu nav > ul > li.hover-active > a,
-  #header #mainMenu nav > ul > li.hover-active > span, #header #mainMenu nav > ul > li.current > a,
-  #header #mainMenu nav > ul > li.current > span, #header #mainMenu nav > ul > li:hover > a,
-  #header #mainMenu nav > ul > li:hover > span, #header #mainMenu nav > ul > li:focus > a,
-  #header #mainMenu nav > ul > li:focus > span {
-    color: #ff9933; }
-  #header #mainMenu nav > ul > li .dropdown-menu > li > a:focus, #header #mainMenu nav > ul > li .dropdown-menu > li > a:hover, #header #mainMenu nav > ul > li .dropdown-menu > li > a:active,
-  #header #mainMenu nav > ul > li .dropdown-menu > li > span:focus,
-  #header #mainMenu nav > ul > li .dropdown-menu > li > span:hover,
-  #header #mainMenu nav > ul > li .dropdown-menu > li > span:active,
-  #header #mainMenu nav > ul > li .dropdown-menu > li [class*="col-"] > ul > li > a:focus,
-  #header #mainMenu nav > ul > li .dropdown-menu > li [class*="col-"] > ul > li > a:hover,
-  #header #mainMenu nav > ul > li .dropdown-menu > li [class*="col-"] > ul > li > a:active {
-    color: #ff9933; }
-  #header #mainMenu nav > ul > li .dropdown-menu > li.current > a,
-  #header #mainMenu nav > ul > li .dropdown-menu > li.current > span, #header #mainMenu nav > ul > li .dropdown-menu > li:hover > a,
-  #header #mainMenu nav > ul > li .dropdown-menu > li:hover > span, #header #mainMenu nav > ul > li .dropdown-menu > li:focus > a,
-  #header #mainMenu nav > ul > li .dropdown-menu > li:focus > span, #header #mainMenu nav > ul > li .dropdown-menu > li:active > a,
-  #header #mainMenu nav > ul > li .dropdown-menu > li:active > span, #header #mainMenu nav > ul > li .dropdown-menu > li.hover-active > a,
-  #header #mainMenu nav > ul > li .dropdown-menu > li.hover-active > span {
-    color: #ff9933; }
-  #header #mainMenu.menu-rounded nav > ul > li.current > a, #header #mainMenu.menu-rounded nav > ul > li:hover > a, #header #mainMenu.menu-rounded nav > ul > li:focus > a {
-    background-color: #ff9933; }
-  #header #mainMenu.menu-outline nav > ul > li.current > a, #header #mainMenu.menu-outline nav > ul > li:hover > a, #header #mainMenu.menu-outline nav > ul > li:focus > a {
+-----------------------------------------------------------------*/
+}
+
+#header.header-modern:not(.header-active).header-colored .header-inner,
+#header.header-modern:not(.header-active).header-colored #header-wrap {
+    background-color: #ff9933;
+}
+
+#header.header-colored .header-inner,
+#header.header-colored #header-wrap {
+    background-color: #ff9933;
+}
+
+#header #mainMenu nav > ul > li.hover-active > a,
+#header #mainMenu nav > ul > li.hover-active > span, #header #mainMenu nav > ul > li.current > a,
+#header #mainMenu nav > ul > li.current > span, #header #mainMenu nav > ul > li:hover > a,
+#header #mainMenu nav > ul > li:hover > span, #header #mainMenu nav > ul > li:focus > a,
+#header #mainMenu nav > ul > li:focus > span {
     color: #ff9933;
-    border-color: #ff9933; }
-  #header #mainMenu.menu-lines nav > ul > li.current > a, #header #mainMenu.menu-lines nav > ul > li:hover > a, #header #mainMenu.menu-lines nav > ul > li:focus > a {
-    color: #ff9933; }
-    #header #mainMenu.menu-lines nav > ul > li.current > a:after, #header #mainMenu.menu-lines nav > ul > li:hover > a:after, #header #mainMenu.menu-lines nav > ul > li:focus > a:after {
-      background-color: #ff9933; }
-  #header #mainMenu.menu-hover-background nav > ul > li.current, #header #mainMenu.menu-hover-background nav > ul > li:hover, #header #mainMenu.menu-hover-background nav > ul > li:focus {
-    background-color: #ff9933; }
-  #header #shopping-cart > a .shopping-cart-items {
-    background: #ff9933; }
+}
+
+#header #mainMenu nav > ul > li .dropdown-menu > li > a:focus, #header #mainMenu nav > ul > li .dropdown-menu > li > a:hover, #header #mainMenu nav > ul > li .dropdown-menu > li > a:active,
+#header #mainMenu nav > ul > li .dropdown-menu > li > span:focus,
+#header #mainMenu nav > ul > li .dropdown-menu > li > span:hover,
+#header #mainMenu nav > ul > li .dropdown-menu > li > span:active,
+#header #mainMenu nav > ul > li .dropdown-menu > li [class*="col-"] > ul > li > a:focus,
+#header #mainMenu nav > ul > li .dropdown-menu > li [class*="col-"] > ul > li > a:hover,
+#header #mainMenu nav > ul > li .dropdown-menu > li [class*="col-"] > ul > li > a:active {
+    color: #ff9933;
+}
+
+#header #mainMenu nav > ul > li .dropdown-menu > li.current > a,
+#header #mainMenu nav > ul > li .dropdown-menu > li.current > span, #header #mainMenu nav > ul > li .dropdown-menu > li:hover > a,
+#header #mainMenu nav > ul > li .dropdown-menu > li:hover > span, #header #mainMenu nav > ul > li .dropdown-menu > li:focus > a,
+#header #mainMenu nav > ul > li .dropdown-menu > li:focus > span, #header #mainMenu nav > ul > li .dropdown-menu > li:active > a,
+#header #mainMenu nav > ul > li .dropdown-menu > li:active > span, #header #mainMenu nav > ul > li .dropdown-menu > li.hover-active > a,
+#header #mainMenu nav > ul > li .dropdown-menu > li.hover-active > span {
+    color: #ff9933;
+}
+
+#header #mainMenu.menu-rounded nav > ul > li.current > a, #header #mainMenu.menu-rounded nav > ul > li:hover > a, #header #mainMenu.menu-rounded nav > ul > li:focus > a {
+    background-color: #ff9933;
+}
+
+#header #mainMenu.menu-outline nav > ul > li.current > a, #header #mainMenu.menu-outline nav > ul > li:hover > a, #header #mainMenu.menu-outline nav > ul > li:focus > a {
+    color: #ff9933;
+    border-color: #ff9933;
+}
+
+#header #mainMenu.menu-lines nav > ul > li.current > a, #header #mainMenu.menu-lines nav > ul > li:hover > a, #header #mainMenu.menu-lines nav > ul > li:focus > a {
+    color: #ff9933;
+}
+
+#header #mainMenu.menu-lines nav > ul > li.current > a:after, #header #mainMenu.menu-lines nav > ul > li:hover > a:after, #header #mainMenu.menu-lines nav > ul > li:focus > a:after {
+    background-color: #ff9933;
+}
+
+#header #mainMenu.menu-hover-background nav > ul > li.current, #header #mainMenu.menu-hover-background nav > ul > li:hover, #header #mainMenu.menu-hover-background nav > ul > li:focus {
+    background-color: #ff9933;
+}
+
+#header #shopping-cart > a .shopping-cart-items {
+    background: #ff9933;
+}
 
 /* ----------------------------------------------------------------
 Dots Menu
 -----------------------------------------------------------------*/
 #dotsMenu ul li:hover {
-  background-color: #ff9933; }
+    background-color: #ff9933;
+}
+
 #dotsMenu ul li.current {
-  background-color: #ff9933; }
+    background-color: #ff9933;
+}
+
 #dotsMenu ul li a:hover:before, #dotsMenu ul li a.active:before {
-  background-color: #ff9933; }
+    background-color: #ff9933;
+}
 
 /*Menu Dark*/
 #mainMenu.dark:not(.light):not(.menu-rounded) nav > ul > li .dropdown-menu > li > a:hover,
 #mainMenu.dark:not(.light):not(.menu-rounded) nav > ul > li .dropdown-menu > li > span:hover,
 #mainMenu.dark:not(.light):not(.menu-rounded) nav > ul > li .dropdown-menu > li [class*="col-"] > ul > li > a:hover {
-  color: #ff9933; }
+    color: #ff9933;
+}
+
 #mainMenu.dark:not(.light):not(.menu-rounded) nav > ul > li.current > a,
 #mainMenu.dark:not(.light):not(.menu-rounded) nav > ul > li.current > span, #mainMenu.dark:not(.light):not(.menu-rounded) nav > ul > li:hover > a,
 #mainMenu.dark:not(.light):not(.menu-rounded) nav > ul > li:hover > span, #mainMenu.dark:not(.light):not(.menu-rounded) nav > ul > li:focus > a,
 #mainMenu.dark:not(.light):not(.menu-rounded) nav > ul > li:focus > span, #mainMenu.dark:not(.light):not(.menu-rounded) nav > ul > li.hover-active > a,
 #mainMenu.dark:not(.light):not(.menu-rounded) nav > ul > li.hover-active > span {
-  color: #ff9933; }
+    color: #ff9933;
+}
 
 .page-menu nav > ul > li:hover > a, .page-menu nav > ul > li.active > a {
-  color: #ff9933; }
+    color: #ff9933;
+}
+
 .page-menu.menu-rounded nav > ul > li:hover > a, .page-menu.menu-rounded nav > ul > li.active > a {
-  background-color: #ff9933; }
+    background-color: #ff9933;
+}
+
 .page-menu.menu-outline nav > ul > li:hover > a, .page-menu.menu-outline nav > ul > li.active > a {
-  border-color: #ff9933;
-  color: #ff9933; }
+    border-color: #ff9933;
+    color: #ff9933;
+}
+
 .page-menu.menu-lines nav > ul > li:hover > a, .page-menu.menu-lines nav > ul > li.active > a {
-  color: #ff9933; }
-  .page-menu.menu-lines nav > ul > li:hover > a:after, .page-menu.menu-lines nav > ul > li.active > a:after {
-    background-color: #ff9933; }
+    color: #ff9933;
+}
+
+.page-menu.menu-lines nav > ul > li:hover > a:after, .page-menu.menu-lines nav > ul > li.active > a:after {
+    background-color: #ff9933;
+}
+
 .page-menu.menu-solid nav > ul > li:hover > a, .page-menu.menu-solid nav > ul > li.active > a {
-  background-color: #ff9933; }
+    background-color: #ff9933;
+}
 
 @media (max-width: 1024px) {
-  .page-menu.menu-rounded nav > ul > li:hover > a, .page-menu.menu-rounded nav > ul > li.active > a, .page-menu.menu-outline nav > ul > li:hover > a, .page-menu.menu-outline nav > ul > li.active > a, .page-menu.menu-lines nav > ul > li:hover > a, .page-menu.menu-lines nav > ul > li.active > a, .page-menu.menu-solid nav > ul > li:hover > a, .page-menu.menu-solid nav > ul > li.active > a, .page-menu.menu-light nav > ul > li:hover > a, .page-menu.menu-light nav > ul > li.active > a, .page-menu.menu-creative nav > ul > li:hover > a, .page-menu.menu-creative nav > ul > li.active > a, .page-menu.inverted nav > ul > li:hover > a, .page-menu.inverted nav > ul > li.active > a {
-    color: #ff9933; } }
+    .page-menu.menu-rounded nav > ul > li:hover > a, .page-menu.menu-rounded nav > ul > li.active > a, .page-menu.menu-outline nav > ul > li:hover > a, .page-menu.menu-outline nav > ul > li.active > a, .page-menu.menu-lines nav > ul > li:hover > a, .page-menu.menu-lines nav > ul > li.active > a, .page-menu.menu-solid nav > ul > li:hover > a, .page-menu.menu-solid nav > ul > li.active > a, .page-menu.menu-light nav > ul > li:hover > a, .page-menu.menu-light nav > ul > li.active > a, .page-menu.menu-creative nav > ul > li:hover > a, .page-menu.menu-creative nav > ul > li.active > a, .page-menu.inverted nav > ul > li:hover > a, .page-menu.inverted nav > ul > li.active > a {
+        color: #ff9933;
+    }
+}
+
 #search .btn-search-close {
-  background-color: #ff9933; }
+    background-color: #ff9933;
+}
 
 /* ----------------------------------------------------------------
 Topbar
 -----------------------------------------------------------------*/
 #topbar.topbar-colored, #topbar.topbar-colored.dark {
-  background-color: #ff9933; }
+    background-color: #ff9933;
+}
 
 /* ----------------------------------------------------------------
 Helpers
 -----------------------------------------------------------------*/
 .text-theme {
-  color: #ff9933 !important; }
+    color: #ff9933 !important;
+}
 
 /* ----------------------------------------------------------------
 Portfolio
@@ -501,18 +666,21 @@ Portfolio
 .grid-item .portfolio-description a:hover i,
 .grid-item .grid-description a:hover i,
 .grid-item .portfolio-links a:hover i {
-  background-color: #ff9933;
-  border: 1px solid #ff9933; }
+    background-color: #ff9933;
+    border: 1px solid #ff9933;
+}
 
 /* ----------------------------------------------------------------
 	Widgets
 -----------------------------------------------------------------*/
 .widget-tweeter li a,
 .widget-twitter li a {
-  color: #ff9933; }
+    color: #ff9933;
+}
 
 .tags a:hover, .tags a:focus, .tags a:active, .tags a.active {
-  background-color: #ff9933;
-  border-color: #ff9933; }
+    background-color: #ff9933;
+    border-color: #ff9933;
+}
 
 /*# sourceMappingURL=theme.css.map */
