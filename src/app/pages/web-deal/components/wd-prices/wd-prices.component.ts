@@ -42,7 +42,7 @@ export class WdPricesComponent implements OnInit {
 
   openCheckout(deal: PriceCard) {
     setTimeout(() => {
-      const modalRef = this.modalService.open(WdCheckoutComponent, { size: 'xl' });
+      const modalRef = this.modalService.open(WdCheckoutComponent, { size: 'lg' });
       modalRef.componentInstance.deal = deal;
     }, 150);
   }

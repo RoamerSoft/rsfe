@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-wd-landing-slider',
@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./wd-landing-slider.component.scss']
 })
 export class WdLandingSliderComponent implements OnInit {
+  @Output() buttonClicked = new EventEmitter<void>();
 
   constructor() { }
 

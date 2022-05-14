@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Title, Meta } from '@angular/platform-browser';
+import { Meta, Title } from '@angular/platform-browser';
 import { TranslationService } from 'src/app/core/services/translation-service/translation.service';
+import { PriceCard } from '../../core/entities/price-card/price-card';
+import { WdCheckoutComponent } from './components/wd-checkout/wd-checkout.component';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-web-deal',
@@ -25,7 +28,8 @@ export class WebDealComponent implements OnInit {
   constructor(
     private title: Title,
     private meta: Meta,
-    private translationService: TranslationService
+    private translationService: TranslationService,
+    private modalService: NgbModal
   ) {
     this.loadAPI = new Promise((resolve) => {
       this.loadScript();
@@ -90,5 +94,25 @@ export class WebDealComponent implements OnInit {
           });
       });
     });
+  }
+
+
+  private createWebShopPlusDeal() {
+    const webShopPlusDeal = new PriceCard('Webshop Plus Deal', 'De vol automatische webshop!', 5, 1295);
+    webShopPlusDeal.addExtraListItems([
+      'Betaalsysteem Integratie',
+      'PostNL of DHL Verzending',
+      'Leverancier Koppeling',
+      'Boekhoudingspakket Koppeling',
+    ]);
+
+    return webShopPlusDeal;
+  }
+
+  public openCheckout() {
+    setTimeout(() => {
+      const modalRef = this.modalService.open(WdCheckoutComponent, { size: 'lg' });
+      modalRef.componentInstance.deal = this.createWebShopPlusDeal();
+    }, 150);
   }
 }
