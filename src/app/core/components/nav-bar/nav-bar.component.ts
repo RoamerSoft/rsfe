@@ -10,6 +10,7 @@ import { TranslationService } from '../../services/translation-service/translati
 export class NavBarComponent implements OnInit {
   @Input() conversionMode: boolean;
   public currentLang: string;
+  public showEbookItem = true;
 
   constructor(
     private translationService: TranslationService,
@@ -19,10 +20,13 @@ export class NavBarComponent implements OnInit {
 
   ngOnInit() {
     this.currentLang = this.translationService.getLang();
+    this.showEbookItem = this.currentLang === 'nl';
   }
 
   public switchLang(lang: string) {
     this.translationService.switchLanguage(lang);
     this.currentLang = lang;
+    this.showEbookItem = lang === 'nl';
+
   }
 }
