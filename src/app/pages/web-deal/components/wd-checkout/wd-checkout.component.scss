@@ -53,6 +53,11 @@ img {
   margin: 0px 25px 10px 25px;
 }
 
+form {
+  margin-left: -5px;
+  padding-right: 25px;
+}
+
 @media only screen and(max-width: 1199px) {
   ::ng-deep.modal-xl {
     max-width: 95%;
@@ -60,6 +65,10 @@ img {
 }
 
 @media only screen and(max-width: 991px) {
+  form {
+    margin-left: 0;
+    padding-left: 40px;
+  }
   ::ng-deep.modal-xl {
     max-width: 60%;
   }
