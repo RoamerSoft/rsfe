@@ -18,15 +18,15 @@ export class WdCheckoutComponent implements OnInit {
 
   public nameIsInvalid = false;
   public emailIsInvalid = false;
-  public messageIsInvalid = false;
 
-  showForm = true;
+  public showForm = true;
 
   constructor(
     public activeModal: NgbActiveModal,
     private contactFormService: ContactFormService,
     private recaptchaV3Service: ReCaptchaV3Service
-  ) {}
+  ) {
+  }
 
   ngOnInit() {
     this.contactForm = new ContactForm();
@@ -44,25 +44,17 @@ export class WdCheckoutComponent implements OnInit {
     this.contactForm.email = event.target.value;
   }
 
-  public getMessageOnInput(event) {
-    this.messageIsInvalid = false;
-    document.getElementById('textMsg').textContent = event.target.value;
-  }
-
-  public isEven(n: number): boolean {
-    return n % 2 === 0;
-  }
 
   public onSubmit() {
-    // Check contactForm
-    if (!this.isEmpty(this.contactForm.name) && !this.isEmpty(this.contactForm.email) && !this.isEmpty(this.contactForm.message)) {
+    // Check form
+    if (!this.isEmpty(this.contactForm.name) && !this.isEmpty(this.contactForm.email)) {
       // Check email.
       if (!this.validateEmail(this.contactForm.email)) {
         // Show email error
         this.emailIsInvalid = true;
       } else {
-        // Set text from message because name is now set.
-        this.contactForm.message = document.getElementById('textMsg').textContent;
+        // Get text from message because name is now set.
+        this.contactForm.message = 'e-book';
         // Get reCAPTCHA token
         this.recaptchaV3Service.execute('contactFormPost').subscribe((token) => {
           this.contactForm.token = token;
@@ -78,10 +70,6 @@ export class WdCheckoutComponent implements OnInit {
 
       if (this.isEmpty(this.contactForm.email)) {
         this.emailIsInvalid = true;
-      }
-
-      if (this.isEmpty(this.contactForm.message)) {
-        this.messageIsInvalid = true;
       }
     }
   }

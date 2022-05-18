@@ -1,32 +1,10 @@
-.pricing-table .plan.featured {
-  margin-top: 0;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
 .modal-header {
   border-bottom: none;
 }
 
-.plan-price {
-  padding: 0 0 0 20px !important;
-}
-
-.pricing-table {
+.form-container {
   padding: 18px 18px 0 18px;
   cursor: default;
-}
-
-.pricing-table .plan {
-  margin-bottom: 18px;
-  min-height: 473px;
-}
-
-.btw {
-  margin-top: -15px;
-}
-
-strong {
-  color: black;
 }
 
 .modal-footer {
@@ -55,14 +33,6 @@ textarea {
   min-height: 200px;
 }
 
-.card {
-  height: calc(100% - 18px);
-  padding: 0;
-  border: none;
-  border-radius: 0;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
 .download-button {
   margin: auto;
   text-align: center;
@@ -70,6 +40,17 @@ textarea {
 
 img {
   max-width: 100px;
+}
+
+.percentage {
+  position: absolute;
+  top: 5px;
+  left: 47%;
+}
+
+.progress {
+  height: 30px;
+  margin: 0px 25px 10px 25px;
 }
 
 @media only screen and(max-width: 1199px) {
