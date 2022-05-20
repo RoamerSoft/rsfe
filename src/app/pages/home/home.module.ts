@@ -16,13 +16,15 @@ import { TechnologiesComponent } from './components/technologies/technologies.co
 import { ContactComponent } from './components/contact/contact.component';
 import { FaqComponent } from './components/faq/faq.component';
 import { TestimonialsComponent } from './components/testimonials/testimonials.component';
+import { HeaderComponent } from './components/header/header.component';
 
 @NgModule({
   declarations: [
     HomeComponent,
+    HomeHeaderComponent,
+    HeaderComponent,
     ContactComponent,
     ClientsComponent,
-    HomeHeaderComponent,
     AboutComponent,
     TechnologiesComponent,
     PortfolioComponent,
@@ -34,4 +36,5 @@ import { TestimonialsComponent } from './components/testimonials/testimonials.co
   ],
   imports: [CoreModule, CommonModule, HomeRoutingModule, TranslateModule, FormsModule],
 })
-export class HomeModule {}
+export class HomeModule {
+}
