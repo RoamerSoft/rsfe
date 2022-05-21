@@ -1,0 +1,11 @@
+
+img {
+  max-height: 350px;
+}
+
+// Only smaller screens
+@media only screen and (max-width: 1024px) {
+  .heading-text {
+    padding-bottom: 30px;
+  }
+}

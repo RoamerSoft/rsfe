@@ -17,6 +17,9 @@ import { ContactComponent } from './components/contact/contact.component';
 import { FaqComponent } from './components/faq/faq.component';
 import { TestimonialsComponent } from './components/testimonials/testimonials.component';
 import { HeaderComponent } from './components/header/header.component';
+import { ReviewQuoteComponent } from './components/review-quote/review-quote.component';
+import { AboutMeComponent } from './components/about-me/about-mecomponent';
+import { EBookComponent } from './components/e-book/e-book.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +36,9 @@ import { HeaderComponent } from './components/header/header.component';
     WelcomeComponent,
     FaqComponent,
     TestimonialsComponent,
+    ReviewQuoteComponent,
+    AboutMeComponent,
+    EBookComponent
   ],
   imports: [CoreModule, CommonModule, HomeRoutingModule, TranslateModule, FormsModule],
 })

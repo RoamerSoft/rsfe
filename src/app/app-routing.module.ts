@@ -7,7 +7,7 @@ const routes: Routes = [
     loadChildren: () => import('./pages/home/home.module').then((m) => m.HomeModule),
   },
   {
-    path: 'app_idee_maar_waar_te_beginnen',
+    path: 'app-idee-maar-waar-te-beginnen',
     loadChildren: () => import('./pages/web-deal/web-deal.module').then((m) => m.WebDealModule),
   },
   { path: '**', redirectTo: '/', pathMatch: 'full' },

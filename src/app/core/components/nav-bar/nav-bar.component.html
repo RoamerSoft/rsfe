@@ -45,24 +45,24 @@
                     <nav>
                         <ul>
                             <li>
-                                <a href="#welcome" class="scroll-to">Software</a>
+                                <a href="#aboutMe" class="scroll-to">{{ 'Over mij' | translate }}</a>
                             </li>
 
                             <li>
-                                <a href="#about" class="scroll-to">{{ 'Over mij' | translate }}</a>
+                                <a href="#services" class="scroll-to">{{ 'Mijn aanbod' | translate }}</a>
                             </li>
 
                             <li>
-                                <a href="#services" class="scroll-to">{{ 'Wat ik bied' | translate }}</a>
-                            </li>
-
-                            <li *ngIf="showEbookItem">
-                                <a href="app_idee_maar_waar_te_beginnen" target="_blank"
-                                   class="scroll-to">{{ 'Mijn e-book' | translate }}</a>
+                                <a href="#workingMethod" class="scroll-to">{{ 'Mijn werkwijze' | translate }}</a>
                             </li>
 
                             <li>
                                 <a href="#reviews" class="scroll-to">{{ 'Reviews' | translate }}</a>
+                            </li>
+                            
+                            <li *ngIf="showEbookItem">
+                                <a href="app-idee-maar-waar-te-beginnen" target="_blank"
+                                   class="scroll-to">{{ 'Mijn e-book' | translate }}</a>
                             </li>
 
                             <li>
