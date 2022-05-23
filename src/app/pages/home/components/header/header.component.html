@@ -20,18 +20,17 @@
 
         <div class="container pt-0">
             <div class="captions">
-                <!-- Captions -->
-                <h1 class="">
-                    App laten ontwikkelen?
+                <h1>
+                    {{ 'App ontwikkelen?' | translate}}
                 </h1>
-                <p class="lead">
-                    Ben jij een ondernemer en je hebt een webapplicatie of <br> mobiele app nodig die je helpt je doelen
-                    te bereiken?
+                <p class="lead"
+                   [innerHTML]="'Ben jij een ondernemer met een goed idee voor <br> een app of webapplicatie, maar heb je geen idee <br> waar je moet beginnen?' | translate">
                 </p>
                 <div class="cta-button">
-                    <a class="btn scroll-to call-to-action call-to-action-colored">Meer informatie</a>
+                    <a href="app-idee-maar-waar-te-beginnen" target="_blank"
+                       class="btn scroll-to call-to-action call-to-action-colored">{{ 'Begin hier' | translate}} <i
+                            class="fa fa-sign-out-alt"></i></a>
                 </div>
-                <!-- end: Captions -->
             </div>
         </div>
     </div>

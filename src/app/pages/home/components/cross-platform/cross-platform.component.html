@@ -2,12 +2,11 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-4 offset-lg-1 col-md-12 m-t-40 p-t-0">
-                <h4 data-animate="fadeInLeft" class="mt-3">{{ 'Een op maat gemaakte' | translate }}</h4>
-                <h2 data-animate="fadeInLeft" data-animate-delay="300">
+                <h4 class="mt-3">{{ 'Een op maat gemaakte' | translate }}</h4>
+                <h2>
                     {{ 'App voor alle apparaten' | translate }}
                 </h2>
                 <p
-                        data-animate="fadeInLeft"
                         class="lead text-dark"
                         [innerHTML]="
             'Met mijn bedrijf RoamerSoft help ik jou <strong>als ondernemer</strong> om op maat gemaakte webapplicaties en cross-platform mobiele apps te bouwen die je helpen je doelen te bereiken.'
@@ -31,20 +30,17 @@
                         </div>
                     </div>
                 </div>
-                <!-- end: Device images -->
+                <!-- end: Device images only visible on phone -->
                 <p
-                        data-animate="fadeInLeft"
                         class="lead text-dark"
                         [innerHTML]="
             'Daarbij bied ik je een <strong>all-in-one oplossing</strong>, waarin ik als full stack developer de front-end development, backend development en server deployment voor mijn rekening neem om je volledig te kunnen ontzorgen.'
               | translate
           "
                 ></p>
-<!--                <a data-animate="fadeInUp" href="#contact" class="btn mt-3 mb-3 scroll-to">{{-->
-<!--                  'Neem contact op' | translate-->
-<!--                    }}</a>-->
-                <div data-animate="fadeInUp" class="cta-button pt-4">
-                    <a href="#contact" class="btn scroll-to call-to-action call-to-action-colored">Vrijblijvend kennismaken</a>
+                <div data-animate="fadeInUp" data-animate-delay="300" class="cta-button pt-4">
+                    <a href="#contact"
+                       class="btn scroll-to call-to-action call-to-action-colored">{{ 'Nu vrijblijvend kennismaken' | translate }}</a>
                 </div>
             </div>
             <!-- Device images only visible on larger screens -->
@@ -64,7 +60,7 @@
                     </div>
                 </div>
             </div>
-            <!-- end: Device images -->
+            <!-- end: Device images only visible on larger screens -->
         </div>
     </div>
 </section>

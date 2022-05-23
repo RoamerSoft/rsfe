@@ -1,18 +1,18 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { BreakerComponent } from './breaker.component';
+import { WorkingMethodComponent } from './working-method.component';
 
-describe('BreakerComponent', () => {
-  let component: BreakerComponent;
-  let fixture: ComponentFixture<BreakerComponent>;
+describe('WorkingMethodComponent', () => {
+  let component: WorkingMethodComponent;
+  let fixture: ComponentFixture<WorkingMethodComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [BreakerComponent],
+      declarations: [WorkingMethodComponent],
     }).compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(BreakerComponent);
+    fixture = TestBed.createComponent(WorkingMethodComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
