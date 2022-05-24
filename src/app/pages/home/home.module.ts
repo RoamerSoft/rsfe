@@ -14,6 +14,7 @@ import { ReviewQuoteComponent } from './components/review-quote/review-quote.com
 import { AboutMeComponent } from './components/about-me/about-mecomponent';
 import { CrossPlatformComponent } from './components/cross-platform/cross-platform.component';
 import { WorkingMethodComponent } from './components/working-method/working-method.component';
+import { SharedModule } from '../../shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,7 @@ import { WorkingMethodComponent } from './components/working-method/working-meth
     ReviewQuoteComponent,
     AboutMeComponent,
   ],
-  imports: [CoreModule, CommonModule, HomeRoutingModule, TranslateModule, FormsModule],
+  imports: [CoreModule, CommonModule, HomeRoutingModule, TranslateModule, FormsModule, SharedModule],
 })
 export class HomeModule {
 }
