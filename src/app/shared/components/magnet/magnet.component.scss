@@ -1,0 +1,64 @@
+.wrapper {
+  width: 350px;
+  height: 300px;
+  border: 1px solid rgba(0, 0, 0, .2);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.header {
+  height: 20px;
+
+  .close {
+    color: white !important;
+    margin: 5px 10px;
+    opacity: 1;
+  }
+}
+
+.title {
+  text-align: center;
+  height: 50px;
+}
+
+.body {
+  height: 140px;
+
+  .e-book {
+    width: 120px;
+  }
+}
+
+.form {
+  padding-top: 20px;
+}
+
+.footer {
+  height: 100px;
+}
+
+
+.download-button {
+  padding-top: 15px;
+  text-align: center;
+}
+
+.foot-note {
+  text-align: center;
+  p {
+    font-size: 12px;
+    padding: 0;
+    margin: 0;
+  }
+}
+
+
+//.bas-figure {
+//  position: absolute;
+//  right: -15px;
+//  bottom: -50px;
+//  width: 160px;
+//  z-index: 1;
+//}
+
+

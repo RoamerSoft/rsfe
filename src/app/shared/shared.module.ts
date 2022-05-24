@@ -8,14 +8,15 @@ import { TranslateModule } from '@ngx-translate/core';
 import { FormsModule } from '@angular/forms';
 
 import { CheckoutComponent } from '../pages/app-model-canvas/components/checkout/checkout.component';
+import { MagnetComponent } from './components/magnet/magnet.component';
 
 @NgModule({
   declarations: [
-    CookieBarComponent, NavBarComponent, FooterComponent, MemberCardComponent, CheckoutComponent,
+    CookieBarComponent, NavBarComponent, FooterComponent, MemberCardComponent, CheckoutComponent, MagnetComponent,
   ],
   imports: [CommonModule, TranslateModule, FormsModule],
-  entryComponents: [CheckoutComponent],
-  exports: [CookieBarComponent, NavBarComponent, FooterComponent, MemberCardComponent, CheckoutComponent],
+  entryComponents: [CheckoutComponent, MagnetComponent],
+  exports: [CookieBarComponent, NavBarComponent, FooterComponent, MemberCardComponent, CheckoutComponent, MagnetComponent],
 })
 export class SharedModule {
 }

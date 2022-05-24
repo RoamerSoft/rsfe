@@ -1,13 +1,34 @@
 import { Component, OnInit } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { TranslationService } from 'src/app/core/services/translation-service/translation.service';
+import { animate, state, style, transition, trigger } from '@angular/animations';
 
 @Component({
   selector: 'app-home',
+  animations: [
+    trigger('openClose', [
+      state('open', style({
+        right: '5px',
+        bottom: '5px'
+      })),
+      state('closed', style({
+        right: '-375px',
+        bottom: '5px'
+      })),
+      transition('open => closed', [
+        animate('0.5s')
+      ]),
+      transition('closed => open', [
+        animate('0.5s')
+      ]),
+    ]),
+  ],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
+  public showMagnet = false;
+
   /**
    * [0] = Title
    * [1] = Description
@@ -22,12 +43,17 @@ export class HomeComponent implements OnInit {
   constructor(
     private title: Title,
     private meta: Meta,
-    private translationService: TranslationService
+    private translationService: TranslationService,
   ) {
   }
 
   async ngOnInit() {
     await this.setTranslationAndMetaData();
+
+    setTimeout(() => {
+      this.showMagnet = true;
+
+    }, 0);
   }
 
   public async setTranslationAndMetaData() {

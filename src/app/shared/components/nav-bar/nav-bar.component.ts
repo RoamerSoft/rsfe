@@ -10,6 +10,7 @@ import { TranslationService } from '../../../core/services/translation-service/t
 export class NavBarComponent implements OnInit {
   @Input() conversionMode: boolean;
   public currentLang: string;
+  @Input() showScrollToTop = true;
   public showEbookItem = true;
 
   constructor(
