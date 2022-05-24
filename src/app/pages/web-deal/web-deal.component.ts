@@ -20,9 +20,9 @@ export class WebDealComponent implements OnInit {
    * [2] = Keywords
    */
   private metaDataTranslateKeys = [
-    'Webshop of Website laten maken? | RoamerSoft WebDeals!',
-    'Voorkom een slecht design, onvindbaarheid, belabberde security en niet behaalde doelen! Kies de totaaloplossing speciaal voor de startende ondernemer!',
-    'Website, Webshop, WebDeals, Totaaloplossing, Startende, Ondernemer',
+    'App idee, maar waar te beginnen?',
+    'Werk je app idee uit met het App Model Canvas!',
+    'App Model Canvas, App idee, E-book, Bas Gerritsen, RoamerSoft',
   ];
 
   constructor(

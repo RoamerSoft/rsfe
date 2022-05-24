@@ -14,9 +14,9 @@ export class HomeComponent implements OnInit {
    * [2] = Keywords
    */
   private metaDataTranslateKeys = [
-    'RoamerSoft | Web en app ontwikkeling',
-    'Mobiele app laten ontwikkelen die op zowel Android als Apple iOS draait? Full stack software developer nodig voor de ontwikkeling van je webapplicatie op maat?',
-    'App ontwikkeling, Web ontwikkeling, RoamerSoft, Bas Gerritsen, Full stack software developer, Cross platform, Hybride app, Mobiele app, Webapplicatie',
+    'Web en app ontwikkeling',
+    'Op maat gemaakte webapplicaties en cross-platform mobiele apps die je helpen je doelen te bereiken.',
+    'App ontwikkeling, Web ontwikkeling, RoamerSoft, Bas Gerritsen, Full stack software developer, Cross platform, Mobiele app, Webapplicatie',
   ];
 
   constructor(
