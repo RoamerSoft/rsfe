@@ -11,9 +11,6 @@ import { ContactFormService } from 'src/app/core/services/contact-form/contact-f
   styleUrls: ['./wd-checkout.component.scss'],
 })
 export class WdCheckoutComponent implements OnInit {
-  // Comes from parent
-  public deal: PriceCard;
-
   public contactForm: ContactForm;
 
   public nameIsInvalid = false;
