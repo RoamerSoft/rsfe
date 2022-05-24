@@ -8,12 +8,10 @@ import { animate, state, style, transition, trigger } from '@angular/animations'
   animations: [
     trigger('openClose', [
       state('open', style({
-        right: '5px',
-        bottom: '5px'
+        right: '0',
       })),
       state('closed', style({
         right: '-375px',
-        bottom: '5px'
       })),
       transition('open => closed', [
         animate('0.5s')
@@ -53,7 +51,7 @@ export class HomeComponent implements OnInit {
     setTimeout(() => {
       this.showMagnet = true;
 
-    }, 0);
+    }, 1000);
   }
 
   public async setTranslationAndMetaData() {

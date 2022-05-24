@@ -1,6 +1,17 @@
 app-magnet {
   position: fixed;
+  margin: 10px 5px 5px 5px;
   right: 0;
   bottom: 0;
   z-index: 1;
+}
+
+@media only screen and (max-width: 450px) {
+  app-magnet {
+    right: unset;
+    bottom: unset;
+    top: 80px;
+    left: calc(50% - 180px);
+    z-index: 1;
+  }
 }
