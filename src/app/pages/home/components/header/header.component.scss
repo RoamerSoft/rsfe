@@ -1,5 +1,7 @@
 $color-white: #FFFFFF;
-
+#header {
+  display: none;
+}
 .captions {
   position: relative;
   text-align: left;
@@ -8,9 +10,7 @@ $color-white: #FFFFFF;
     margin-top: 25px;
     font-size: 40px;
     font-weight: 700;
-    //line-height: 80px;
     color: $color-white;
-    //margin-bottom: 30px;
   }
 
   h2 {
@@ -54,6 +54,7 @@ $color-white: #FFFFFF;
     font-size: 20px;
     font-weight: 400;
     margin-bottom: 32px;
+    max-width: 500px;
   }
 
   .text-dark.strong::after,
@@ -112,7 +113,7 @@ $color-white: #FFFFFF;
       font-size: 16px;
       font-weight: 400;
       line-height: 24px;
-      margin-bottom: 16px;
+      margin: auto auto 16px auto;
     }
 
     h3,

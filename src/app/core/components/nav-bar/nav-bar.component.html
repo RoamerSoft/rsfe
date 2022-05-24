@@ -9,7 +9,7 @@
         <div class="container">
             <!--Logo-->
             <div id="logo">
-                <a href="/" class="scroll-to">
+                <a href="{{ conversionMode ? '/' : '#header' }}" class="scroll-to">
                     <img
                             src="/assets/images/roamersoft/roamersoft-logo.svg"
                             class="logo-default pt-3 pb-3"
@@ -49,16 +49,16 @@
                             </li>
 
                             <li>
-                                <a href="#guarantees" class="scroll-to">{{ 'Mijn garanties' | translate }}</a>
+                                <a href="#guarantees" class="scroll-to">{{ 'Garanties' | translate }}</a>
                             </li>
 
                             <li>
-                                <a href="#workingMethod" class="scroll-to">{{ 'Mijn werkwijze' | translate }}</a>
+                                <a href="#workingMethod" class="scroll-to">{{ 'Werkwijze' | translate }}</a>
                             </li>
 
                             <li *ngIf="showEbookItem">
                                 <a href="app-idee-maar-waar-te-beginnen" target="_blank"
-                                   class="scroll-to">{{ 'Mijn e-book' | translate }}</a>
+                                   class="scroll-to">{{ 'E-book' | translate }}</a>
                             </li>
 
                             <li>

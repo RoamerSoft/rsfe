@@ -14,7 +14,7 @@
             <!-- Testimonials items -->
             <ng-container *ngFor="let review of reviews">
                 <div class="testimonial-item">
-                    <img src="{{ review.picture || 'assets/images/clients/blank-profile.png' }}">
+                    <img src="{{ review.picture }}">
                     <span>{{ review.name }}</span>
                     <h2 class="rateit-selected rateit-preset text-center pt-2">
                         {{ review.stars || 5 | showStars }}

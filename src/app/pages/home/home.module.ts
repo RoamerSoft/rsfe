@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HomeRoutingModule } from './home-routing.module';
-import { ServicesComponent } from './components/services/services.component';
+import { GuaranteesComponent } from './components/guarantees/guarantees.component';
 import { HomeComponent } from './home.component';
 import { TranslateModule } from '@ngx-translate/core';
 import { FormsModule } from '@angular/forms';
@@ -21,7 +21,7 @@ import { WorkingMethodComponent } from './components/working-method/working-meth
     HeaderComponent,
     ContactComponent,
     WorkingMethodComponent,
-    ServicesComponent,
+    GuaranteesComponent,
     CrossPlatformComponent,
     FaqComponent,
     TestimonialsComponent,
