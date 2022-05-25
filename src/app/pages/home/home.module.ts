@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { HostListener, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HomeRoutingModule } from './home-routing.module';
 import { GuaranteesComponent } from './components/guarantees/guarantees.component';
@@ -29,6 +29,7 @@ import { SharedModule } from '../../shared/shared.module';
     ReviewQuoteComponent,
     AboutMeComponent,
   ],
+  providers: [HostListener],
   imports: [CoreModule, CommonModule, HomeRoutingModule, TranslateModule, FormsModule, SharedModule],
 })
 export class HomeModule {

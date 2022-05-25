@@ -6,7 +6,7 @@ import { animate, state, style, transition, trigger } from '@angular/animations'
 @Component({
   selector: 'app-home',
   animations: [
-    trigger('openClose', [
+    trigger('openCloseDesktop', [
       state('open', style({
         right: '0',
       })),
@@ -20,12 +20,29 @@ import { animate, state, style, transition, trigger } from '@angular/animations'
         animate('0.5s')
       ]),
     ]),
+    trigger('openCloseMobile', [
+      state('open', style({
+        top: '80px',
+      })),
+      state('closed', style({
+        top: '-350px',
+      })),
+      transition('open => closed', [
+        animate('0.5s')
+      ]),
+      transition('closed => open', [
+        animate('0.5s')
+      ]),
+    ]),
+
   ],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-  public showMagnet = false;
+  public showDesktopMagnet = false;
+  public showMobileMagnet = false;
+  public screenWidth: number;
 
   /**
    * [0] = Title
@@ -41,17 +58,21 @@ export class HomeComponent implements OnInit {
   constructor(
     private title: Title,
     private meta: Meta,
-    private translationService: TranslationService,
+    private translationService: TranslationService
   ) {
   }
 
   async ngOnInit() {
     await this.setTranslationAndMetaData();
+    this.screenWidth = window.innerWidth;
 
     setTimeout(() => {
-      this.showMagnet = true;
-
-    }, 1000);
+      if (this.screenWidth > 450) {
+        this.showDesktopMagnet = true;
+      } else {
+        this.showMobileMagnet = true;
+      }
+    }, 2000);
   }
 
   public async setTranslationAndMetaData() {
