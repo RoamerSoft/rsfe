@@ -28,13 +28,12 @@ import { animate, state, style, transition, trigger } from '@angular/animations'
         top: '-350px',
       })),
       transition('open => closed', [
-        animate('0.5s')
+        animate('0.6s')
       ]),
       transition('closed => open', [
-        animate('0.5s')
+        animate('0.6s')
       ]),
     ]),
-
   ],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
