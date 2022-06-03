@@ -28,9 +28,13 @@
                    [innerHTML]="'Ben jij een ondernemer met een goed idee voor een app of webapplicatie, maar heb je geen idee waar je moet beginnen?' | translate">
                 </p>
                 <div class="cta-button">
-                    <a href="app-idee-maar-waar-te-beginnen" target="_blank"
+                    <a *ngIf="showEbookButton; else contactButton" href="app-idee-maar-waar-te-beginnen" target="_blank"
                        class="btn call-to-action call-to-action-colored">{{ 'Begin hier' | translate}} <i
                             class="fa fa-sign-out-alt"></i></a>
+                    <ng-template #contactButton>
+                        <a href="#contact" target="_blank"
+                           class="btn scroll-to call-to-action call-to-action-colored">{{ 'Plan nu een gratis adviesgesprek' | translate}} </a>
+                    </ng-template>
                 </div>
             </div>
         </div>

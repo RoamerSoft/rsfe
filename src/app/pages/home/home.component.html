@@ -1,7 +1,7 @@
 <div class="body-inner">
-    <app-nav-bar [showScrollToTop]="!showDesktopMagnet"></app-nav-bar>
+    <app-nav-bar [showScrollToTop]="!showDesktopMagnet" (eBookStatusChanged)="magnetEnabled = $event"></app-nav-bar>
 
-    <app-header></app-header>
+    <app-header [showEbookButton]="magnetEnabled"></app-header>
 
     <app-cross-platform></app-cross-platform>
 
@@ -15,15 +15,14 @@
             [quote]="'In welke uithoek van de wereld Bas ook zit, wij kunnen altijd op RoamerSoft bouwen.' | translate"
             [name]="'Maarten Duineveld'"></app-review-quote>
 
-    <app-services></app-services>
+    <div #magnetTrigger></div>
+    <app-guarantees></app-guarantees>
 
     <app-working-method></app-working-method>
 
     <app-review-quote
             [quote]="'Zeer prettig in het contact, snelle reactie en erg goede service!' | translate"
             [name]="'Berry Jansen'"></app-review-quote>
-
-    <div #magnetTrigger></div>
 
     <app-testimonials></app-testimonials>
 

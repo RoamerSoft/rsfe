@@ -2,6 +2,7 @@ import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular
 import { Meta, Title } from '@angular/platform-browser';
 import { TranslationService } from 'src/app/core/services/translation-service/translation.service';
 import { animate, state, style, transition, trigger } from '@angular/animations';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-home',
@@ -42,6 +43,7 @@ export class HomeComponent implements OnInit {
   public showDesktopMagnet = false;
   public showMobileMagnet = false;
   public screenWidth: number;
+  public magnetEnabled = environment.enableEbook;
 
   @ViewChild('magnetTrigger', { static: false }) private magnetTrigger: ElementRef<HTMLDivElement>;
   public magnetTriggerScrolledIntoView: boolean;
@@ -83,8 +85,8 @@ export class HomeComponent implements OnInit {
    */
   @HostListener('window:scroll', ['$event'])
   isScrolledIntoView(): void {
-    // Check if element exists
-    if (this.magnetTrigger) {
+    // Check if element exists and is enabled
+    if (this.magnetTrigger && this.magnetEnabled) {
       // Get element information
       const rect = this.magnetTrigger.nativeElement.getBoundingClientRect();
       const topShown = rect.top >= 0;
