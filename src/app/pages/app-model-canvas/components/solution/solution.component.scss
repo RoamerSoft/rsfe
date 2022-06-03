@@ -1,0 +1,46 @@
+.text-light {
+  color: #f8f9fa !important;
+
+  p {
+    color: #f8f9fa !important;
+    font-size: 16px;
+  }
+
+  strong {
+    color: #f8f9fa !important;
+
+  }
+}
+
+.download-button {
+  padding-left: 20px;
+  a {
+    transform: scale(1.2);
+  }
+
+  a:hover {
+    transform: scale(1.3);
+  }
+
+  margin-top: 60px;
+}
+
+@media only screen and (max-width: 1024px) {
+  section {
+    text-align: center;
+  }
+
+  .download-button {
+    margin-top: 30px;
+  }
+
+  .e-book-container {
+    padding-top: 30px;
+
+    img {
+      max-width: 200px;
+      position: relative;
+      right: -10px;
+    }
+  }
+}

@@ -1,22 +1,63 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { TranslationService } from 'src/app/core/services/translation-service/translation.service';
+import { animate, state, style, transition, trigger } from '@angular/animations';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-home',
+  animations: [
+    trigger('openCloseDesktop', [
+      state('open', style({
+        right: '0',
+      })),
+      state('closed', style({
+        right: '-375px',
+      })),
+      transition('open => closed', [
+        animate('0.5s')
+      ]),
+      transition('closed => open', [
+        animate('0.5s')
+      ]),
+    ]),
+    trigger('openCloseMobile', [
+      state('open', style({
+        top: '80px',
+      })),
+      state('closed', style({
+        top: '-350px',
+      })),
+      transition('open => closed', [
+        animate('0.6s')
+      ]),
+      transition('closed => open', [
+        animate('0.6s')
+      ]),
+    ]),
+  ],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
+  public showDesktopMagnet = false;
+  public showMobileMagnet = false;
+  public screenWidth: number;
+  public magnetEnabled = environment.enableEbook;
+
+  @ViewChild('magnetTrigger', { static: false }) private magnetTrigger: ElementRef<HTMLDivElement>;
+  public magnetTriggerScrolledIntoView: boolean;
+  public magnetStorageKey = 'showedMagnet';
+
   /**
    * [0] = Title
    * [1] = Description
    * [2] = Keywords
    */
   private metaDataTranslateKeys = [
-    'RoamerSoft | Web en app ontwikkeling',
-    'Mobiele app laten ontwikkelen die op zowel Android als Apple iOS draait? Full stack software developer nodig voor de ontwikkeling van je webapplicatie op maat?',
-    'App ontwikkeling, Web ontwikkeling, RoamerSoft, Bas Gerritsen, Full stack software developer, Cross platform, Hybride app, Mobiele app, Webapplicatie',
+    'Web en app ontwikkeling',
+    'Op maat gemaakte webapplicaties en cross-platform mobiele apps die je helpen je doelen te bereiken.',
+    'App ontwikkeling, Web ontwikkeling, RoamerSoft, Bas Gerritsen, Full stack software developer, Cross platform, Mobiele app, Webapplicatie',
   ];
 
   constructor(
@@ -28,6 +69,41 @@ export class HomeComponent implements OnInit {
 
   async ngOnInit() {
     await this.setTranslationAndMetaData();
+    this.screenWidth = window.innerWidth;
+  }
+
+  public showMagnet(): void {
+    if (this.screenWidth > 450) {
+      this.showDesktopMagnet = true;
+    } else {
+      this.showMobileMagnet = true;
+    }
+  }
+
+  /**
+   * Runs on every scroll and checks if magnet should be triggered.
+   */
+  @HostListener('window:scroll', ['$event'])
+  isScrolledIntoView(): void {
+    // Check if element exists and is enabled
+    if (this.magnetTrigger && this.magnetEnabled) {
+      // Get element information
+      const rect = this.magnetTrigger.nativeElement.getBoundingClientRect();
+      const topShown = rect.top >= 0;
+      const bottomShown = rect.bottom <= window.innerHeight;
+      this.magnetTriggerScrolledIntoView = topShown && bottomShown;
+      // Check if element is visible
+      if (this.magnetTriggerScrolledIntoView) {
+        // Check if magnet was showed before in this session
+        const magnetHasBeenShowed = sessionStorage.getItem(this.magnetStorageKey);
+        if (!magnetHasBeenShowed) {
+          // Show magnet if not showed before
+          this.showMagnet();
+          // Set magnet as showed in this session
+          sessionStorage.setItem(this.magnetStorageKey, 'true');
+        }
+      }
+    }
   }
 
   public async setTranslationAndMetaData() {

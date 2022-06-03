@@ -1,0 +1,65 @@
+<section id="aboutMe">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 center">
+                <div class="text-center pb-2">
+                    <h3>{{ 'Mijn naam is' | translate }}</h3>
+                </div>
+                <div class="heading-text heading-section text-center">
+                    <h2>{{ 'Bas Gerritsen' | translate }}</h2>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <p class="lead text-dark"
+                   [innerHTML]="'<strong>Reizen is een</strong> van mijn grootste passies. Het avontuur aangaan, een vreemde omgeving je eigen maken en leren van andere culturen is iets waar ik veel energie van krijg.' | translate">
+                </p>
+
+                <p class="lead text-dark"
+                   [innerHTML]="'Naast reizen heb ik ook een grote passie voor <strong>software development</strong>. Met de nieuwste technieken stap voor stap applicaties ontwikkelen en zorgen dat ze de achterliggende doelen bereiken.' | translate">
+                </p>
+
+                <!-- Image only on mobile -->
+                <div class="col-md-12 pt-3 pr-5 d-md-none" data-animate="fadeInRight">
+                    <img
+                            src="assets/images/roamersoft/Bas-Gerritsen-San-Fransico.jpg"
+                            class="rounded mx-auto d-block"
+                            data-toggle="tooltip"
+                            data-placement="top"
+                            title="{{'Als digital nomad heb succesvol reizen en software ontwikkeling gecombineerd!' | translate}}"
+                            alt="Bas Gerritsen - RoamerSoft"
+                    />
+                    <p class="text-center pt-2">
+                        <strong>Bas Gerritsen</strong>
+                        <br/>
+                        {{ 'Eigenaar' | translate }} RoamerSoft
+                    </p>
+                </div>
+                <!-- end: Image only on mobile -->
+
+                <p class=" lead text-dark"
+                   [innerHTML]="'Vanaf 2019 begon ik mijn twee grootste passies te combineren en richtte ik mijn eenmansbedrijf RoamerSoft op. Met RoamerSoft maak ik <strong>volledig op maat</strong> gemaakte webapplicaties en cross-platform mobiele apps voor (startende) ondernemers en het MKB.' | translate"></p>
+
+                <p class="lead text-dark"
+                   [innerHTML]="'Dit doe ik als <strong>Digital Nomad</strong> 100% remote en vanuit alle uithoeken van de wereld. Zo heb ik bijvoorbeeld succesvolle projecten gedraaid vanuit Zuidoost-Azië, De Canarische eilanden, Mexico en de Verendigde Staten.' | translate"></p>
+            </div>
+
+            <!-- Only on large screens -->
+            <div class="col-md-4 d-none d-md-block" data-animate="fadeInRight">
+                <img
+                        src="assets/images/roamersoft/Bas-Gerritsen-Tenerife.jpg"
+                        class="rounded mx-auto d-block"
+                        data-toggle="tooltip"
+                        data-placement="top"
+                        title="{{'Als digital nomad heb succesvol reizen en software ontwikkeling gecombineerd!' | translate}}"
+                        alt="Bas Gerritsen - RoamerSoft"
+                />
+                <p class="text-center pt-2">
+                    <strong>Bas Gerritsen</strong>
+                    <br/>
+                    {{ 'Eigenaar' | translate }} RoamerSoft
+                </p>
+            </div>
+            <!-- end: Only on large screens -->
+        </div>
+    </div>
+</section>

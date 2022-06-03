@@ -7741,7 +7741,7 @@ Image Block
 }
 
 .text-light .heading-fancy-border {
-  border-color: #fff !important;
+  border-color: #FCFEF8 !important;
 }
 
 /*hero heading 2*/
@@ -8858,6 +8858,18 @@ Helpers
 
 .background-grey {
   background-color: #F7F9FB !important;
+}
+
+.background-blue {
+  background-color: #112670 !important;
+}
+
+.background-light-blue {
+  background-color: #3199DA !important;
+}
+
+.background-orange {
+  background-color: #FF9933 !important;
 }
 
 .background-dark {
@@ -11238,7 +11250,7 @@ button.btn.btn-white, button.btn.btn-light,
 .btn:not(.close):not(.mfp-close).btn-light,
 a.btn:not([href]):not([tabindex]).btn-white,
 a.btn:not([href]):not([tabindex]).btn-light {
-  background-color: #fff;
+  background-color: #f8f9fa;
   border-color: #e6e8eb;
   color: #4c5667;
 }
@@ -11268,9 +11280,9 @@ button.btn.btn-white.btn-outline, button.btn.btn-light.btn-outline,
 .btn:not(.close):not(.mfp-close).btn-light.btn-outline,
 a.btn:not([href]):not([tabindex]).btn-white.btn-outline,
 a.btn:not([href]):not([tabindex]).btn-light.btn-outline {
-  border-color: #ffffff;
+  border-color: #f8f9fa;
   background-color: transparent;
-  color: #ffffff;
+  color: #f8f9fa;
 }
 button.btn.btn-white.btn-outline:hover, button.btn.btn-white.btn-outline:focus, button.btn.btn-white.btn-outline:active, button.btn.btn-white.btn-outline.active, button.btn.btn-light.btn-outline:hover, button.btn.btn-light.btn-outline:focus, button.btn.btn-light.btn-outline:active, button.btn.btn-light.btn-outline.active,
 .btn:not(.close):not(.mfp-close).btn-white.btn-outline:hover,
@@ -11289,8 +11301,8 @@ a.btn:not([href]):not([tabindex]).btn-light.btn-outline:hover,
 a.btn:not([href]):not([tabindex]).btn-light.btn-outline:focus,
 a.btn:not([href]):not([tabindex]).btn-light.btn-outline:active,
 a.btn:not([href]):not([tabindex]).btn-light.btn-outline.active {
-  background-color: #ffffff;
-  border-color: #ffffff;
+  background-color: #f8f9fa;
+  border-color: #f8f9fa;
   color: #4c5667;
 }
 button.btn.btn-white.btn-white-hover:hover, button.btn.btn-white.btn-white-hover:focus, button.btn.btn-white.btn-white-hover:active, button.btn.btn-white.btn-white-hover.active, button.btn.btn-white.btn-light-hover:hover, button.btn.btn-white.btn-light-hover:focus, button.btn.btn-white.btn-light-hover:active, button.btn.btn-white.btn-light-hover.active, button.btn.btn-light.btn-white-hover:hover, button.btn.btn-light.btn-white-hover:focus, button.btn.btn-light.btn-white-hover:active, button.btn.btn-light.btn-white-hover.active, button.btn.btn-light.btn-light-hover:hover, button.btn.btn-light.btn-light-hover:focus, button.btn.btn-light.btn-light-hover:active, button.btn.btn-light.btn-light-hover.active,
@@ -11326,7 +11338,7 @@ a.btn:not([href]):not([tabindex]).btn-light.btn-light-hover:hover,
 a.btn:not([href]):not([tabindex]).btn-light.btn-light-hover:focus,
 a.btn:not([href]):not([tabindex]).btn-light.btn-light-hover:active,
 a.btn:not([href]):not([tabindex]).btn-light.btn-light-hover.active {
-  background-color: #ffffff;
+  background-color: #f8f9fa;
   border-color: #ebebeb;
   color: #4c5667;
 }

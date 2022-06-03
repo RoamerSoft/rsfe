@@ -1,0 +1,42 @@
+<div id="header"></div>
+<div
+        id="slider"
+        class="inspiro-slider slider-halfscreen dots-creative dots-grey"
+        data-height="475"
+        data-height-xs="360"
+        data-autoplay="2600"
+        data-animate-in="false"
+        data-animate-out="false"
+        data-arrows="false"
+        data-animate="false"
+        data-items="1"
+        data-loop="false"
+        data-autoplay="false"
+>
+    <div
+            class="slide background-image"
+            style="background-image: url('assets/images/roamersoft/Bas-Gerritsen-New-York.jpg'); background-position: 30% 65%;"
+    >
+        <div class="bg-overlay" data-style="0"></div>
+
+        <div class="container pt-0">
+            <div class="captions">
+                <h1>
+                    {{ 'App ontwikkelen?' | translate}}
+                </h1>
+                <p class="lead"
+                   [innerHTML]="'Ben jij een ondernemer met een goed idee voor een app of webapplicatie, maar heb je geen idee waar je moet beginnen?' | translate">
+                </p>
+                <div class="cta-button">
+                    <a *ngIf="showEbookButton; else contactButton" href="app-idee-maar-waar-te-beginnen" target="_blank"
+                       class="btn call-to-action call-to-action-colored">{{ 'Begin hier' | translate}} <i
+                            class="fa fa-sign-out-alt"></i></a>
+                    <ng-template #contactButton>
+                        <a href="#contact" target="_blank"
+                           class="btn scroll-to call-to-action call-to-action-colored">{{ 'Plan nu een gratis adviesgesprek' | translate}} </a>
+                    </ng-template>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

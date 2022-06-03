@@ -1,37 +1,36 @@
-import { NgModule } from '@angular/core';
+import { HostListener, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HomeRoutingModule } from './home-routing.module';
-import { HomeHeaderComponent } from './components/home-header/home-header.component';
-import { PortfolioComponent } from './components/portfolio/portfolio.component';
-import { ServicesComponent } from './components/services/services.component';
-import { WelcomeComponent } from './components/welcome/welcome.component';
+import { GuaranteesComponent } from './components/guarantees/guarantees.component';
 import { HomeComponent } from './home.component';
 import { TranslateModule } from '@ngx-translate/core';
 import { FormsModule } from '@angular/forms';
-import { ClientsComponent } from './components/clients/clients.component';
 import { CoreModule } from 'src/app/core/core.module';
-import { BreakerComponent } from './components/breaker/breaker.component';
-import { AboutComponent } from './components/about/about.component';
-import { TechnologiesComponent } from './components/technologies/technologies.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { FaqComponent } from './components/faq/faq.component';
 import { TestimonialsComponent } from './components/testimonials/testimonials.component';
+import { HeaderComponent } from './components/header/header.component';
+import { ReviewQuoteComponent } from './components/review-quote/review-quote.component';
+import { AboutMeComponent } from './components/about-me/about-mecomponent';
+import { CrossPlatformComponent } from './components/cross-platform/cross-platform.component';
+import { WorkingMethodComponent } from './components/working-method/working-method.component';
+import { SharedModule } from '../../shared/shared.module';
 
 @NgModule({
   declarations: [
     HomeComponent,
+    HeaderComponent,
     ContactComponent,
-    ClientsComponent,
-    HomeHeaderComponent,
-    AboutComponent,
-    TechnologiesComponent,
-    PortfolioComponent,
-    BreakerComponent,
-    ServicesComponent,
-    WelcomeComponent,
+    WorkingMethodComponent,
+    GuaranteesComponent,
+    CrossPlatformComponent,
     FaqComponent,
     TestimonialsComponent,
+    ReviewQuoteComponent,
+    AboutMeComponent,
   ],
-  imports: [CoreModule, CommonModule, HomeRoutingModule, TranslateModule, FormsModule],
+  providers: [HostListener],
+  imports: [CoreModule, CommonModule, HomeRoutingModule, TranslateModule, FormsModule, SharedModule],
 })
-export class HomeModule {}
+export class HomeModule {
+}

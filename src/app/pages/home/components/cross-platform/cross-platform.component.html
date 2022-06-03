@@ -1,0 +1,66 @@
+<section id="welcome">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-4 offset-lg-1 col-md-12 m-t-40 p-t-0">
+                <h4 class="mt-3">{{ 'Een op maat gemaakte' | translate }}</h4>
+                <h2>
+                    {{ 'App voor alle apparaten' | translate }}
+                </h2>
+                <p
+                        class="lead text-dark"
+                        [innerHTML]="
+            'Met mijn bedrijf RoamerSoft help ik jou <strong>als ondernemer</strong> om op maat gemaakte webapplicaties en cross-platform mobiele apps te bouwen die je helpen je doelen te bereiken.'
+              | translate
+          "
+                ></p>
+                <!-- Device images only visible on phone -->
+                <div class="col-md-12 p-0 d-sm-block d-lg-none">
+                    <div class="devices mb-2">
+                        <div data-animate="fadeInRightBig" class="iphone">
+                            <!-- iphone -->
+                            <img src="/assets/images/devices/iphone.png" class="img-fluid" alt="devices"/>
+                        </div>
+                        <div data-animate="fadeInRightBig" class="ipad">
+                            <!-- ipad -->
+                            <img src="/assets/images/devices/ipad.png" class="img-fluid" alt="devices"/>
+                        </div>
+                        <div data-animate="fadeInRightBig" class="macbook">
+                            <!-- macbook -->
+                            <img src="/assets/images/devices/macbookpro.png" class="img-fluid" alt="devices"/>
+                        </div>
+                    </div>
+                </div>
+                <!-- end: Device images only visible on phone -->
+                <p
+                        class="lead text-dark"
+                        [innerHTML]="
+            'Daarbij bied ik je een <strong>all-in-one oplossing</strong>, waarin ik als full stack developer de front-end development, backend development en server deployment voor mijn rekening neem om je volledig te kunnen ontzorgen.'
+              | translate
+          "
+                ></p>
+                <div data-animate="fadeInUp" data-animate-delay="300" class="cta-button pt-4">
+                    <a href="#contact"
+                       class="btn scroll-to call-to-action call-to-action-colored">{{ 'Nu vrijblijvend kennismaken' | translate }}</a>
+                </div>
+            </div>
+            <!-- Device images only visible on larger screens -->
+            <div class="col-lg-6 col-md-12 p-0 d-none d-sm-none d-lg-block">
+                <div class="devices mt-md-5">
+                    <div data-animate="fadeInRightBig" class="iphone">
+                        <!-- iphone -->
+                        <img src="/assets/images/devices/iphone.png" class="img-fluid" alt="devices"/>
+                    </div>
+                    <div data-animate="fadeInRightBig" class="ipad">
+                        <!-- ipad -->
+                        <img src="/assets/images/devices/ipad.png" class="img-fluid" alt="devices"/>
+                    </div>
+                    <div data-animate="fadeInRightBig" class="macbook">
+                        <!-- macbook -->
+                        <img src="/assets/images/devices/macbookpro.png" class="img-fluid" alt="devices"/>
+                    </div>
+                </div>
+            </div>
+            <!-- end: Device images only visible on larger screens -->
+        </div>
+    </div>
+</section>

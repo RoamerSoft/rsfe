@@ -1,0 +1,66 @@
+<div class="wrapper">
+    <div class="container-fullwidth">
+        <div class="background-info">
+            <div class="row header">
+                <div class="col-12 p-0">
+                    <a (click)="closeMagnet.emit()" type="button" class="close" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </a>
+                </div>
+            </div>
+            <div class="row title text-white">
+                <div class="col-12">
+                    <h5><strong>{{ 'Idee voor een app?' | translate }}</strong></h5>
+                    <h6 class="m-b-0">{{ 'Zet de eerste stap met dit gratis e-book!' | translate}}</h6>
+                </div>
+            </div>
+
+            <div class="row body ">
+                <div class="col-4 p-0">
+                    <a href="app-idee-maar-waar-te-beginnen" target="_blank">
+                        <img class="img-fluid e-book" src="assets/images/ebook/App_idee_maar_waar_te_beginnen.png"
+                             alt="Het App Model Canvas">
+                    </a>
+                </div>
+                <div class="col-8 form">
+                    <div class="form-group">
+                        <input
+                                (input)="getNameOnInput($event)"
+                                type="text"
+                                name="txtName"
+                                class="form-control"
+                                [ngClass]="{ 'is-invalid': this.nameIsInvalid }"
+                                placeholder="Voornaam*"
+                                required
+                        />
+                    </div>
+                    <div class="form-group">
+                        <input
+                                (input)="getEmailOnInput($event)"
+                                type="text"
+                                name="txtEmail"
+                                class="form-control"
+                                [ngClass]="{ 'is-invalid': this.emailIsInvalid }"
+                                placeholder="E-mail*"
+                                required
+                        />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row footer background-white">
+            <div class="col-12">
+                <div class="download-button">
+                    <a (click)="onSubmit()"
+                       class="btn">{{ 'Nu downloaden' | translate}} <i
+                            class="fa fa-download"></i></a>
+                </div>
+
+                <div class="foot-note">
+                    <p class="text-muted">{{ 'Je ontvangt het e-book direct in je e-mail.' | translate }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

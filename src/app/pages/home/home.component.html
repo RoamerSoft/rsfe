@@ -1,39 +1,48 @@
-<!-- Body Inner -->
 <div class="body-inner">
-    <app-nav-bar></app-nav-bar>
+    <app-nav-bar [showScrollToTop]="!showDesktopMagnet" (eBookStatusChanged)="magnetEnabled = $event"></app-nav-bar>
 
-    <app-home-header></app-home-header>
+    <app-header [showEbookButton]="magnetEnabled"></app-header>
 
-    <app-welcome></app-welcome>
+    <app-cross-platform></app-cross-platform>
 
-    <app-about></app-about>
+    <app-review-quote
+            [quote]="'Hij neemt je goed mee in zijn planning & voortgang en belangrijkste, levert kwaliteit.' | translate"
+            [name]="'Job van der Lans'"></app-review-quote>
 
-    <app-breaker
-            [text]="'Kies voor een full stack software developer, gespecialiseerd in cross platform mobiele apps en web development.' | translate"></app-breaker>
+    <app-about-me></app-about-me>
 
-    <app-services></app-services>
+    <app-review-quote
+            [quote]="'In welke uithoek van de wereld Bas ook zit, wij kunnen altijd op RoamerSoft bouwen.' | translate"
+            [name]="'Maarten Duineveld'"></app-review-quote>
 
-    <app-technologies></app-technologies>
+    <div #magnetTrigger></div>
+    <app-guarantees></app-guarantees>
 
-    <app-breaker
-            [text]="'Blijf op de hoogte met een duidelijke planning, een altijd inzichtelijke status en periodieke voortgangrapportages.' | translate"></app-breaker>
+    <app-working-method></app-working-method>
 
-    <app-clients></app-clients>
+    <app-review-quote
+            [quote]="'Zeer prettig in het contact, snelle reactie en erg goede service!' | translate"
+            [name]="'Berry Jansen'"></app-review-quote>
 
     <app-testimonials></app-testimonials>
 
-    <app-breaker
-            [text]="'Geen ongemakkelijke nerd, maar een ondernemer die met je meedenkt, adviseert en zijn vak verstaat.' | translate"></app-breaker>
+    <app-review-quote
+            [quote]="'Een software developer waar je op kan vertrouwen!' | translate"
+            [name]="'Wouter Moll'"></app-review-quote>
 
     <app-contact></app-contact>
-
-    <app-breaker
-            [text]="'Blijf onafhankelijk met toekomstgerichte, uitbreidbare software en een plug-and-play overdracht functionaliteit.' | translate"></app-breaker>
 
     <app-faq></app-faq>
 
     <app-footer></app-footer>
 
     <app-cookie-bar></app-cookie-bar>
+
+    <app-magnet class="magnet-right" (closeMagnet)="showDesktopMagnet = false"
+                [@openCloseDesktop]="showDesktopMagnet ? 'open' : 'closed'"></app-magnet>
+
+    <app-magnet class="magnet-top" (closeMagnet)="showMobileMagnet = false"
+                [@openCloseMobile]="showMobileMagnet ? 'open' : 'closed'"></app-magnet>
+
 </div>
-<!-- end: Body Inner -->
+

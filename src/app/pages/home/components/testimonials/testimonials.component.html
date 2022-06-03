@@ -2,10 +2,10 @@
     <div class="container">
         <div class="col-lg-8 m-b-80 center">
             <div class="text-center pb-2">
-                <h3>{{ 'En hun Google' | translate }}</h3>
+                <h3>{{ 'Op Google geven ze deze' | translate }}</h3>
             </div>
             <div class="heading-text heading-section text-center">
-                <h2>{{ 'Reviews' | translate }}</h2>
+                <h2>Reviews</h2>
             </div>
         </div>
         <!-- Testimonials -->
@@ -14,7 +14,7 @@
             <!-- Testimonials items -->
             <ng-container *ngFor="let review of reviews">
                 <div class="testimonial-item">
-                    <img src="{{ review.picture || 'assets/images/clients/blank-profile.png' }}">
+                    <img src="{{ review.picture }}">
                     <span>{{ review.name }}</span>
                     <h2 class="rateit-selected rateit-preset text-center pt-2">
                         {{ review.stars || 5 | showStars }}

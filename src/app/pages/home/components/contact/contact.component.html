@@ -5,7 +5,7 @@
         <h3>{{ 'Even kennismaken?' | translate }}</h3>
       </div>
       <div class="heading-text heading-section text-center">
-        <h2>{{ 'Maak contact' | translate }}</h2>
+        <h2>{{ 'Maak nu contact' | translate }}</h2>
       </div>
     </div>
     <div class="row">
@@ -16,7 +16,7 @@
             <form *ngIf="showForm">
               <p class="text-center text-bold">
                 {{
-                  'Vul het contactformulier in en dan neem ik zo spoedig mogelijk contact met je op. 😃'
+                  'Vul het contactformulier in en dan neem ik zo spoedig mogelijk contact met je op.'
                     | translate
                 }}
               </p>
@@ -69,8 +69,8 @@ Hi Bas,
                 </div>
                 <div class="col-md-12">
                   <div class="form-group">
-                    <button (click)="onSubmit()" class="btn btn-block">
-                      {{ 'Verzenden' | translate }}
+                    <button (click)="onSubmit()" class="btn btn-block call-to-action call-to-action-colored">
+                      {{ 'Verzenden' | translate }} <i class="fa fa-paper-plane"></i>
                     </button>
                   </div>
                 </div>
@@ -78,7 +78,7 @@ Hi Bas,
               <p class="foot-note text-muted text-center">
                 <i class="fa fa-lock mr-2"></i>
                 {{
-                  'Je gegevens zijn veilig en worden alleen gebruikt om contact te leggen.'
+                  'Je gegevens zijn 100% veilig en worden met de grootse zorg behandeld.'
                     | translate
                 }}
               </p>
