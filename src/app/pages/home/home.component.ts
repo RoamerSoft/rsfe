@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { TranslationService } from 'src/app/core/services/translation-service/translation.service';
 import { animate, state, style, transition, trigger } from '@angular/animations';
@@ -43,6 +43,10 @@ export class HomeComponent implements OnInit {
   public showMobileMagnet = false;
   public screenWidth: number;
 
+  @ViewChild('magnetTrigger', { static: false }) private magnetTrigger: ElementRef<HTMLDivElement>;
+  public magnetTriggerScrolledIntoView: boolean;
+  public magnetStorageKey = 'showedMagnet';
+
   /**
    * [0] = Title
    * [1] = Description
@@ -64,14 +68,40 @@ export class HomeComponent implements OnInit {
   async ngOnInit() {
     await this.setTranslationAndMetaData();
     this.screenWidth = window.innerWidth;
+  }
 
-    setTimeout(() => {
-      if (this.screenWidth > 450) {
-        this.showDesktopMagnet = true;
-      } else {
-        this.showMobileMagnet = true;
+  public showMagnet(): void {
+    if (this.screenWidth > 450) {
+      this.showDesktopMagnet = true;
+    } else {
+      this.showMobileMagnet = true;
+    }
+  }
+
+  /**
+   * Runs on every scroll and checks if magnet should be triggered.
+   */
+  @HostListener('window:scroll', ['$event'])
+  isScrolledIntoView(): void {
+    // Check if element exists
+    if (this.magnetTrigger) {
+      // Get element information
+      const rect = this.magnetTrigger.nativeElement.getBoundingClientRect();
+      const topShown = rect.top >= 0;
+      const bottomShown = rect.bottom <= window.innerHeight;
+      this.magnetTriggerScrolledIntoView = topShown && bottomShown;
+      // Check if element is visible
+      if (this.magnetTriggerScrolledIntoView) {
+        // Check if magnet was showed before in this session
+        const magnetHasBeenShowed = sessionStorage.getItem(this.magnetStorageKey);
+        if (!magnetHasBeenShowed) {
+          // Show magnet if not showed before
+          this.showMagnet();
+          // Set magnet as showed in this session
+          sessionStorage.setItem(this.magnetStorageKey, 'true');
+        }
       }
-    }, 2000);
+    }
   }
 
   public async setTranslationAndMetaData() {

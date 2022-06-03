@@ -23,6 +23,8 @@
             [quote]="'Zeer prettig in het contact, snelle reactie en erg goede service!' | translate"
             [name]="'Berry Jansen'"></app-review-quote>
 
+    <div #magnetTrigger></div>
+
     <app-testimonials></app-testimonials>
 
     <app-review-quote
@@ -37,9 +39,11 @@
 
     <app-cookie-bar></app-cookie-bar>
 
-    <app-magnet class="magnet-right" (closeMagnet)="showDesktopMagnet = false" [@openCloseDesktop]="showDesktopMagnet ? 'open' : 'closed'"></app-magnet>
+    <app-magnet class="magnet-right" (closeMagnet)="showDesktopMagnet = false"
+                [@openCloseDesktop]="showDesktopMagnet ? 'open' : 'closed'"></app-magnet>
 
-    <app-magnet class="magnet-top" (closeMagnet)="showMobileMagnet = false" [@openCloseMobile]="showMobileMagnet ? 'open' : 'closed'"></app-magnet>
+    <app-magnet class="magnet-top" (closeMagnet)="showMobileMagnet = false"
+                [@openCloseMobile]="showMobileMagnet ? 'open' : 'closed'"></app-magnet>
 
 </div>
 
