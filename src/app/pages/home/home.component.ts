@@ -83,7 +83,7 @@ export class HomeComponent implements OnInit {
   /**
    * Runs on every scroll and checks if magnet should be triggered.
    */
-  @HostListener('window:scroll', ['$event'])
+  @HostListener('window:scroll', [])
   isScrolledIntoView(): void {
     // Check if element exists and is enabled
     if (this.magnetTrigger && this.magnetEnabled) {
