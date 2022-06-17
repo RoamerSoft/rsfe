@@ -8,7 +8,10 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 export class ServerOnlineComponent implements OnInit {
   @Output() buttonClicked = new EventEmitter<void>();
 
-  constructor() { }
+  public showShadow: boolean;
+
+  constructor() {
+  }
 
   ngOnInit() {
   }
