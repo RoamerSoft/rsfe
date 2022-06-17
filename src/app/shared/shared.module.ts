@@ -9,12 +9,13 @@ import { FormsModule } from '@angular/forms';
 
 import { CheckoutComponent } from '../pages/app-model-canvas/components/checkout/checkout.component';
 import { MagnetComponent } from './components/magnet/magnet.component';
+import { CoreModule } from '../core/core.module';
 
 @NgModule({
   declarations: [
-    CookieBarComponent, NavBarComponent, FooterComponent, MemberCardComponent, CheckoutComponent, MagnetComponent,
+    CookieBarComponent, NavBarComponent, FooterComponent, MemberCardComponent, CheckoutComponent, MagnetComponent
   ],
-  imports: [CommonModule, TranslateModule, FormsModule],
+  imports: [CommonModule, TranslateModule, FormsModule, CoreModule],
   entryComponents: [CheckoutComponent, MagnetComponent],
   exports: [CookieBarComponent, NavBarComponent, FooterComponent, MemberCardComponent, CheckoutComponent, MagnetComponent],
 })
