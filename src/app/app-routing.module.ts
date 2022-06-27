@@ -11,7 +11,7 @@ const routes: Routes = [
     loadChildren: () => import('./pages/app-model-canvas/app-model-canvas.module').then((m) => m.AppModelCanvasModule),
   },
   {
-    path: 'deal',
+    path: 'beheer-en-onderhoud',
     loadChildren: () => import('./pages/deal/deal.module').then((m) => m.DealModule),
   },
   { path: '**', redirectTo: '/', pathMatch: 'full' },

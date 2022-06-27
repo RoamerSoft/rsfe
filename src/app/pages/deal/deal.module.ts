@@ -5,11 +5,11 @@ import { SharedModule } from '../../shared/shared.module';
 import { FormsModule } from '@angular/forms';
 import { DealRoutingModule } from './deal-routing.module';
 import { CoreModule } from '../../core/core.module';
-import { ServerOnlineComponent } from './components/server-online/server-online.component';
+import { MaintenanceComponent } from './components/maintenance/maintenance.component';
 
 
 @NgModule({
-  declarations: [DealComponent, ServerOnlineComponent],
+  declarations: [DealComponent, MaintenanceComponent],
   imports: [
     CommonModule,
     CoreModule,

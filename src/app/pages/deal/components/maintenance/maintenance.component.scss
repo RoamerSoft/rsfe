@@ -1,0 +1,62 @@
+section {
+  overflow: auto;
+  position: absolute;
+  width: 100%;
+  height: calc(100% - 80px);
+  padding: 60px 0 60px 0;
+}
+
+.card {
+  height: 100%;
+}
+
+.col-pad {
+  padding-top: 15px;
+}
+
+.card-body {
+  position: relative;
+}
+
+.line-through {
+  text-decoration: line-through;
+}
+
+.exception {
+  font-style: italic;
+  text-align: center;
+}
+
+.exception-mobile {
+  position: relative;
+  top: -15px;
+}
+
+.exception-big {
+  display: none;
+}
+
+@media only screen and (min-width: 991px) {
+  .price {
+    position: absolute;
+    bottom: 20px;
+    width: 85%;
+  }
+
+  .col-pad {
+    padding-top: 0;
+  }
+
+  .exception-mobile {
+    display: none;
+  }
+
+  .exception-big {
+    display: block;
+    font-size: 15px;
+  }
+
+  .box-shadow {
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
+  }
+}
