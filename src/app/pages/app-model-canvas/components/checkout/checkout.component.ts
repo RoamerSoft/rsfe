@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { ReCaptchaV3Service } from 'ng-recaptcha';
-import { ContactForm } from 'src/app/core/models/contact-form/contact-form';
-import { ContactFormService } from 'src/app/core/services/contact-form/contact-form.service';
+import { SubscriptionService } from '../../../../core/services/subscription/subscription.service';
+import { SubscribeForm } from '../../../../core/models/subscribe-form';
 
 @Component({
   selector: 'app-checkout',
@@ -10,7 +10,7 @@ import { ContactFormService } from 'src/app/core/services/contact-form/contact-f
   styleUrls: ['./checkout.component.scss'],
 })
 export class CheckoutComponent implements OnInit {
-  public contactForm: ContactForm;
+  public subscribeForm: SubscribeForm;
 
   public nameIsInvalid = false;
   public emailIsInvalid = false;
@@ -19,52 +19,48 @@ export class CheckoutComponent implements OnInit {
 
   constructor(
     public activeModal: NgbActiveModal,
-    private contactFormService: ContactFormService,
+    private subscriptionServices: SubscriptionService,
     private recaptchaV3Service: ReCaptchaV3Service
   ) {
   }
 
   ngOnInit() {
-    this.contactForm = new ContactForm();
-    // Workaround for showing error when default text is untouched
-    this.contactForm.message = 'Default';
+    this.subscribeForm = new SubscribeForm();
   }
 
-  public getNameOnInput(event) {
+  public getNameOnInput(firstname: string) {
     this.nameIsInvalid = false;
-    this.contactForm.name = event.target.value;
+    this.subscribeForm.firstName = firstname;
   }
 
-  public getEmailOnInput(event) {
+  public getEmailOnInput(email: string) {
     this.emailIsInvalid = false;
-    this.contactForm.email = event.target.value;
+    this.subscribeForm.email = email;
   }
 
 
   public onSubmit() {
     // Check form
-    if (!this.isEmpty(this.contactForm.name) && !this.isEmpty(this.contactForm.email)) {
+    if (!this.isEmpty(this.subscribeForm.firstName) && !this.isEmpty(this.subscribeForm.email)) {
       // Check email.
-      if (!this.validateEmail(this.contactForm.email)) {
+      if (!this.validateEmail(this.subscribeForm.email)) {
         // Show email error
         this.emailIsInvalid = true;
       } else {
-        // Get text from message because name is now set.
-        this.contactForm.message = 'e-book';
         // Get reCAPTCHA token
-        this.recaptchaV3Service.execute('contactFormPost').subscribe((token) => {
-          this.contactForm.token = token;
+        this.recaptchaV3Service.execute('EbookSubscription').subscribe((token) => {
+          this.subscribeForm.token = token;
           // Send form
-          this.contactFormService.post(this.contactForm).subscribe();
+          this.subscriptionServices.subscribeToEbook(this.subscribeForm).subscribe();
           this.showForm = false;
         });
       }
     } else {
-      if (this.isEmpty(this.contactForm.name)) {
+      if (this.isEmpty(this.subscribeForm.firstName)) {
         this.nameIsInvalid = true;
       }
 
-      if (this.isEmpty(this.contactForm.email)) {
+      if (this.isEmpty(this.subscribeForm.email)) {
         this.emailIsInvalid = true;
       }
     }
