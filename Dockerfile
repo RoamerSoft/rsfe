@@ -8,7 +8,7 @@
 #  ---------------------------------------------------------------
 
 # Stage 1: Build an Angular Docker Image
-FROM node:14-alpine as build
+FROM node:16-alpine as build
 
 # Create app directory
 WORKDIR /usr/src/app
