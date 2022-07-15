@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ReCaptchaV3Service } from 'ng-recaptcha';
-import { ContactForm } from '../../../core/models/contact-form/contact-form';
+import { ContactForm } from '../../../core/models/contact-form';
 import { ContactFormService } from '../../../core/services/contact-form/contact-form.service';
 
 @Component({
