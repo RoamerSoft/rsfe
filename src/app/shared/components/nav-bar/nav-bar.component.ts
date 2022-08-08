@@ -15,7 +15,7 @@ export class NavBarComponent implements OnInit {
 
   public enableEbook = environment.enableEbook;
   public showEbookItem: boolean;
-  @Output() eBookStatusChanged = new EventEmitter<boolean>();
+  @Output() languageChanged = new EventEmitter<string>();
 
   constructor(
     private translationService: TranslationService,
@@ -31,7 +31,7 @@ export class NavBarComponent implements OnInit {
   public switchLang(lang: string) {
     this.translationService.switchLanguage(lang);
     this.currentLang = lang;
-    this.showEbookItem = lang === 'nl' && this.enableEbook;
-    this.eBookStatusChanged.emit(this.showEbookItem);
+    this.showEbookItem = this.currentLang === 'nl' ? this.enableEbook : false;
+    this.languageChanged.emit(lang);
   }
 }

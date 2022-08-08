@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { TranslationService } from '../../../../core/services/translation-service/translation.service';
 
 @Component({
   selector: 'app-working-method',
@@ -6,11 +7,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./working-method.component.scss']
 })
 export class WorkingMethodComponent implements OnInit {
+  public currentLang: string;
 
-  constructor() {
+  @Input() showLeadMagnetButton: boolean;
+  @Output() buttonClicked = new EventEmitter<void>();
+
+  constructor(private translationService: TranslationService) {
   }
 
   ngOnInit() {
+    this.currentLang = this.translationService.getLang();
   }
 
 }

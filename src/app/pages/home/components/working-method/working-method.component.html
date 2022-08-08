@@ -1,20 +1,29 @@
 <section id="workingMethod" class="background-grey">
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-lg-8 center">
-        <div class="text-center pb-2">
-          <h3>{{ "Geniet van mijn zorgeloze" | translate }}</h3>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-8 center">
+                <div class="text-center pb-2">
+                    <h3>{{ "Geniet van mijn zorgeloze" | translate }}</h3>
+                </div>
+                <div class="heading-text heading-section text-center">
+                    <h2>{{ "Werkwijze" | translate }}</h2>
+                </div>
+            </div>
+            <div class="col-lg-8 offset-lg-2 video">
+                <iframe
+                        src="https://www.youtube.com/embed/uflp13XLraw?modestbranding=1&showinfo=0&rel=0"
+                        frameborder="0"
+                ></iframe>
+            </div>
         </div>
-        <div class="heading-text heading-section text-center">
-          <h2>{{ "Werkwijze" | translate }}</h2>
+
+        <div class="row mt-5" *ngIf="showLeadMagnetButton">
+            <div class="col-12 text-center">
+                <div class="cta-button">
+                    <a (click)="buttonClicked.emit()"
+                       class="btn scroll-to call-to-action call-to-action-colored">{{ 'Bekijk mijn werkwijze infographic' | translate }}</a>
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="col-lg-8 offset-lg-2 video" data-animate="fadeInUp">
-        <iframe
-          src="https://www.youtube.com/embed/uflp13XLraw?modestbranding=1&showinfo=0&rel=0"
-          frameborder="0"
-        ></iframe>
-      </div>
     </div>
-  </div>
 </section>

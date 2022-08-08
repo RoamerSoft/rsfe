@@ -6,11 +6,12 @@ import { SubscribeForm } from '../../../../core/models/subscribe-form';
 import { ScrollService } from '../../../../core/services/scroll-service/scroll.service';
 
 @Component({
-  selector: 'app-checkout',
-  templateUrl: './checkout.component.html',
-  styleUrls: ['./checkout.component.scss'],
+  selector: 'app-infographic-checkout',
+  templateUrl: './infographic-checkout.component.html',
+  styleUrls: ['./infographic-checkout.component.scss'],
 })
-export class CheckoutComponent implements OnInit, OnDestroy {
+export class InfographicCheckoutComponent implements OnInit, OnDestroy {
+
   public subscribeForm: SubscribeForm;
 
   public nameIsInvalid = false;
@@ -55,10 +56,10 @@ export class CheckoutComponent implements OnInit, OnDestroy {
         this.emailIsInvalid = true;
       } else {
         // Get reCAPTCHA token
-        this.recaptchaV3Service.execute('EbookSubscription').subscribe((token) => {
+        this.recaptchaV3Service.execute('InfographicSubscription').subscribe((token) => {
           this.subscribeForm.token = token;
           // Send form
-          this.subscriptionServices.subscribeToEbook(this.subscribeForm).subscribe();
+          this.subscriptionServices.subscribeToInfographic(this.subscribeForm).subscribe();
           this.showForm = false;
         });
       }

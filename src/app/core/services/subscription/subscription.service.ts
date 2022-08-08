@@ -15,4 +15,8 @@ export class SubscriptionService {
   public subscribeToEbook(subscribeForm: SubscribeForm) {
     return this.http.post(`${this.api}/ebook`, subscribeForm);
   }
+
+  public subscribeToInfographic(subscribeForm: SubscribeForm) {
+    return this.http.post(`${this.api}/infographic`, subscribeForm);
+  }
 }

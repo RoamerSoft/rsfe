@@ -1,5 +1,5 @@
 <div class="body-inner">
-    <app-nav-bar [showScrollToTop]="!showDesktopMagnet" (eBookStatusChanged)="magnetEnabled = $event"></app-nav-bar>
+    <app-nav-bar [showScrollToTop]="!showDesktopMagnet" (languageChanged)="languageChanged($event)"></app-nav-bar>
 
     <app-header [showEbookButton]="magnetEnabled"></app-header>
 
@@ -15,16 +15,18 @@
             [quote]="'In welke uithoek van de wereld Bas ook zit, wij kunnen altijd op RoamerSoft bouwen.' | translate"
             [name]="'Maarten Duineveld'"></app-review-quote>
 
-    <div #magnetTrigger></div>
     <app-guarantees></app-guarantees>
 
-    <app-working-method></app-working-method>
+    <app-working-method (buttonClicked)="openInfographicCheckout()"
+                        [showLeadMagnetButton]="showInfographicButton"></app-working-method>
 
     <app-review-quote
             [quote]="'Zeer prettig in het contact, snelle reactie en erg goede service!' | translate"
             [name]="'Berry Jansen'"></app-review-quote>
 
     <app-testimonials></app-testimonials>
+
+    <div #magnetTrigger></div>
 
     <app-review-quote
             [quote]="'Een software developer waar je op kan vertrouwen!' | translate"

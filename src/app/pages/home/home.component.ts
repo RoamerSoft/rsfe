@@ -3,6 +3,8 @@ import { Meta, Title } from '@angular/platform-browser';
 import { TranslationService } from 'src/app/core/services/translation-service/translation.service';
 import { animate, state, style, transition, trigger } from '@angular/animations';
 import { environment } from '../../../environments/environment';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { InfographicCheckoutComponent } from './components/infographic-checkout/infographic-checkout.component';
 
 @Component({
   selector: 'app-home',
@@ -43,7 +45,10 @@ export class HomeComponent implements OnInit {
   public showDesktopMagnet = false;
   public showMobileMagnet = false;
   public screenWidth: number;
-  public magnetEnabled = environment.enableEbook;
+  public enableEbook = environment.enableEbook;
+  public magnetEnabled: boolean;
+
+  public showInfographicButton: boolean;
 
   @ViewChild('magnetTrigger', { static: false }) private magnetTrigger: ElementRef<HTMLDivElement>;
   public magnetTriggerScrolledIntoView: boolean;
@@ -63,13 +68,23 @@ export class HomeComponent implements OnInit {
   constructor(
     private title: Title,
     private meta: Meta,
-    private translationService: TranslationService
+    private translationService: TranslationService,
+    private modalService: NgbModal
   ) {
   }
 
   async ngOnInit() {
     await this.setTranslationAndMetaData();
     this.screenWidth = window.innerWidth;
+    const currentLang = this.translationService.getLang();
+    this.magnetEnabled = currentLang === 'nl' && this.enableEbook;
+    this.showInfographicButton = currentLang === 'nl';
+
+  }
+
+  languageChanged(language: string) {
+    this.magnetEnabled = language === 'nl' && this.enableEbook;
+    this.showInfographicButton = language === 'nl';
   }
 
   public showMagnet(): void {
@@ -104,6 +119,12 @@ export class HomeComponent implements OnInit {
         }
       }
     }
+  }
+
+  public openInfographicCheckout() {
+    setTimeout(() => {
+      this.modalService.open(InfographicCheckoutComponent);
+    }, 150);
   }
 
   public async setTranslationAndMetaData() {
