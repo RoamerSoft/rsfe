@@ -22,7 +22,7 @@
                              alt="Het App Model Canvas">
                     </a>
                 </div>
-                <div class="col-8 form">
+                <form class="col-8 form">
                     <div class="form-group">
                         <input
                                 (input)="getNameOnInput($event)"
@@ -45,7 +45,8 @@
                                 required
                         />
                     </div>
-                </div>
+                    <input type='hidden' id="zc_gad" name="zc_gad" value=""/>
+                </form>
             </div>
         </div>
 
