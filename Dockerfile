@@ -26,7 +26,7 @@ RUN npm run build:ssr
 #  ---------------------------------------------------------------
 
 # Stage 2: Use only the compiled app for production
-FROM node:18-alpine as production
+FROM node:alpine as production
 
 # Create app directory
 WORKDIR /usr/src/app
