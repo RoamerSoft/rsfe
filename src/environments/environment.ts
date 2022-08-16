@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   api: 'https://api.roamersoft.com',
-  enableEbook: false
+  enableEbook: true
 };
 
 /*
