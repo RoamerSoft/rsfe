@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { TranslationService } from '../../../../core/services/translation-service/translation.service';
 
 @Component({
   selector: 'app-cross-platform',
@@ -6,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./cross-platform.component.scss']
 })
 export class CrossPlatformComponent implements OnInit {
+  @Input() currentLang: string;
 
   constructor() {
   }

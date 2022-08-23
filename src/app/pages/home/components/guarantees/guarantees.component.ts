@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-guarantees',
@@ -6,8 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./guarantees.component.scss']
 })
 export class GuaranteesComponent implements OnInit {
+  @Input() currentLang: string;
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
   }

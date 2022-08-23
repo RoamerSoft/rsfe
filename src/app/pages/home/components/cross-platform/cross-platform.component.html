@@ -39,10 +39,14 @@
           "
                 ></p>
                 <div data-animate="fadeInUp" data-animate-delay="300" class="cta-button pt-4">
-                    <a href="#contact"
-                       class="btn scroll-to call-to-action call-to-action-colored">{{ 'Nu vrijblijvend kennismaken' | translate }}</a>
+                    <a *ngIf="currentLang === 'nl'; else foreignLang" href="gratis-adviesgesprek" target="_blank"
+                       class="btn  call-to-action call-to-action-colored">{{ 'Nu vrijblijvend kennismaken' | translate }}</a>
+                    <ng-template #foreignLang>
+                        <a href="mailto:info@roamersoft.com"
+                           class="btn scroll-to call-to-action call-to-action-colored">{{ 'Nu vrijblijvend kennismaken' | translate }}</a>
+                    </ng-template>
                 </div>
-            </div>
+            </div>Ï
             <!-- Device images only visible on larger screens -->
             <div class="col-lg-6 col-md-12 p-0 d-none d-sm-none d-lg-block">
                 <div class="devices mt-md-5">

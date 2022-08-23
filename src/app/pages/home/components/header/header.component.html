@@ -32,8 +32,13 @@
                        class="btn call-to-action call-to-action-colored">{{ 'Begin hier' | translate}} <i
                             class="fa fa-sign-out-alt"></i></a>
                     <ng-template #contactButton>
-                        <a href="#contact" target="_blank"
-                           class="btn scroll-to call-to-action call-to-action-colored">{{ 'Plan nu een gratis adviesgesprek' | translate}} </a>
+                        <a *ngIf="currentLang === 'nl'; else foreignLang" href="gratis-adviesgesprek" target="_blank"
+                           class="btn call-to-action call-to-action-colored">{{ 'Plan nu een gratis adviesgesprek' | translate}} </a>
+
+                        <ng-template #foreignLang>
+                            <a href="mailto:info@roamersoft.com"
+                               class="btn scroll-to call-to-action call-to-action-colored">{{ 'Nu vrijblijvend kennismaken' | translate }}</a>
+                        </ng-template>
                     </ng-template>
                 </div>
             </div>

@@ -54,6 +54,8 @@ export class HomeComponent implements OnInit {
   public magnetTriggerScrolledIntoView: boolean;
   public magnetStorageKey = 'showedMagnet';
 
+  public currentLang: string;
+
   /**
    * [0] = Title
    * [1] = Description
@@ -76,13 +78,14 @@ export class HomeComponent implements OnInit {
   async ngOnInit() {
     await this.setTranslationAndMetaData();
     this.screenWidth = window.innerWidth;
-    const currentLang = this.translationService.getLang();
-    this.magnetEnabled = currentLang === 'nl' && this.enableEbook;
-    this.showInfographicButton = currentLang === 'nl';
+    this.currentLang = this.translationService.getLang();
+    this.magnetEnabled = this.currentLang === 'nl' && this.enableEbook;
+    this.showInfographicButton = this.currentLang === 'nl';
 
   }
 
   languageChanged(language: string) {
+    this.currentLang = language;
     this.magnetEnabled = language === 'nl' && this.enableEbook;
     this.showInfographicButton = language === 'nl';
   }
