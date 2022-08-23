@@ -1,14 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { TranslationService } from 'src/app/core/services/translation-service/translation.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import * as typeformEmbed from '@typeform/embed';
 
 @Component({
   selector: 'app-free-consultation',
   templateUrl: './free-consultation.component.html',
   styleUrls: ['./free-consultation.component.scss'],
 })
-export class FreeConsultationComponent implements OnInit {
+export class FreeConsultationComponent implements OnInit, AfterViewInit {
   public loadAPI: Promise<any>;
 
 
@@ -71,6 +72,11 @@ export class FreeConsultationComponent implements OnInit {
 
   async ngOnInit() {
     await this.setTranslationAndMetaData();
+  }
+
+  ngAfterViewInit(): void {
+    const height = screen.height - 286;
+    typeformEmbed.createWidget('PBlRwu4k', { container: document.querySelector('#formContainer'), height });
   }
 
   public async setTranslationAndMetaData() {
