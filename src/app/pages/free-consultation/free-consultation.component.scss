@@ -4,6 +4,10 @@
 }
 
 .body-inner {
-  overflow-y: hidden;
+  overflow: hidden;
   background-color: #122771;
+}
+
+html {
+  overflow-y: hidden;
 }

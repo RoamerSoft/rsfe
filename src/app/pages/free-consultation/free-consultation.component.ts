@@ -1,8 +1,8 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { TranslationService } from 'src/app/core/services/translation-service/translation.service';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import * as typeformEmbed from '@typeform/embed';
+import { ScrollService } from '../../core/services/scroll-service/scroll.service';
 
 @Component({
   selector: 'app-free-consultation',
@@ -19,7 +19,7 @@ export class FreeConsultationComponent implements OnInit, AfterViewInit {
    * [2] = Keywords
    */
   private metaDataTranslateKeys = [
-    'Gratis adviesgesprek',
+    'Adviesgesprek plannen',
     'Plan hier jou gratis adviesgesprek!',
     'Adviesgesprek, App ontwikkeling, Bas Gerritsen, RoamerSoft',
   ];
@@ -28,7 +28,7 @@ export class FreeConsultationComponent implements OnInit, AfterViewInit {
     private title: Title,
     private meta: Meta,
     private translationService: TranslationService,
-    private modalService: NgbModal
+    private scrollService: ScrollService
   ) {
     this.loadAPI = new Promise((resolve) => {
       this.loadScript();
@@ -72,11 +72,19 @@ export class FreeConsultationComponent implements OnInit, AfterViewInit {
 
   async ngOnInit() {
     await this.setTranslationAndMetaData();
+    this.scrollService.disableScrolling();
   }
 
   ngAfterViewInit(): void {
-    const height = screen.height - 286;
-    typeformEmbed.createWidget('PBlRwu4k', { container: document.querySelector('#formContainer'), height });
+    // Get screen height
+    const height = window.innerHeight - 80;
+    // Show form
+    typeformEmbed.createWidget('PBlRwu4k', {
+      container: document.querySelector('#formContainer'),
+      height,
+      hideFooter: true,
+      hideHeaders: true,
+    });
   }
 
   public async setTranslationAndMetaData() {
@@ -98,12 +106,5 @@ export class FreeConsultationComponent implements OnInit, AfterViewInit {
           });
       });
     });
-  }
-
-  public openCheckout() {
-    setTimeout(() => {
-      alert('Hi');
-      // this.modalService.open(CheckoutComponent);
-    }, 150);
   }
 }
