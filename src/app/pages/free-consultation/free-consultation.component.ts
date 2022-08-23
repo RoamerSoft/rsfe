@@ -19,9 +19,9 @@ export class FreeConsultationComponent implements OnInit, AfterViewInit {
    * [2] = Keywords
    */
   private metaDataTranslateKeys = [
-    'App idee, maar waar te beginnen?',
-    'Werk je app idee uit met het App Model Canvas!',
-    'App Model Canvas, App idee, E-book, Bas Gerritsen, RoamerSoft',
+    'Gratis adviesgesprek',
+    'Plan hier jou gratis adviesgesprek!',
+    'Adviesgesprek, App ontwikkeling, Bas Gerritsen, RoamerSoft',
   ];
 
   constructor(
