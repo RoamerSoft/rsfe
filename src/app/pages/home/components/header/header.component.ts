@@ -7,6 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
   @Input() showEbookButton: boolean;
+  @Input() currentLang: string;
 
   constructor() {
   }

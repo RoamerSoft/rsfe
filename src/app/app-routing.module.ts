@@ -14,6 +14,10 @@ const routes: Routes = [
     path: 'beheer-en-onderhoud',
     loadChildren: () => import('./pages/deal/deal.module').then((m) => m.DealModule),
   },
+  {
+    path: 'gratis-adviesgesprek',
+    loadChildren: () => import('./pages/free-consultation/free-consultation.module').then((m) => m.FreeConsultationModule),
+  },
   { path: '**', redirectTo: '/', pathMatch: 'full' },
 ];
 
