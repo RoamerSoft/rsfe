@@ -46,9 +46,12 @@ export class HomeComponent implements OnInit {
   public showMobileMagnet = false;
   public screenWidth: number;
   public enableEbook = environment.enableEbook;
+  public contactFormId = environment.contactFormId;
+  public contactFormIdMobile = environment.contactFormIdMobile;
   public magnetEnabled: boolean;
-
   public showInfographicButton: boolean;
+  public minimalWidthForDesktopMagnet = 450;
+  public minimalWidthForDesktopTypeForm = 1227;
 
   @ViewChild('magnetTrigger', { static: false }) private magnetTrigger: ElementRef<HTMLDivElement>;
   public magnetTriggerScrolledIntoView: boolean;
@@ -71,7 +74,7 @@ export class HomeComponent implements OnInit {
     private title: Title,
     private meta: Meta,
     private translationService: TranslationService,
-    private modalService: NgbModal
+    private modalService: NgbModal,
   ) {
   }
 
@@ -91,7 +94,7 @@ export class HomeComponent implements OnInit {
   }
 
   public showMagnet(): void {
-    if (this.screenWidth > 450) {
+    if (this.screenWidth > this.minimalWidthForDesktopMagnet) {
       this.showDesktopMagnet = true;
     } else {
       this.showMobileMagnet = true;

@@ -20,17 +20,32 @@
     <app-working-method (buttonClicked)="openInfographicCheckout()"
                         [showLeadMagnetButton]="showInfographicButton"></app-working-method>
 
+    <div #magnetTrigger></div>
+
     <app-review-quote
             [quote]="'Zeer prettig in het contact, snelle reactie en erg goede service!' | translate"
             [name]="'Berry Jansen'"></app-review-quote>
 
     <app-testimonials></app-testimonials>
 
-    <div #magnetTrigger></div>
+    <section *ngIf="currentLang === 'nl'; else quote" id="contact" class="background-blue p-0 contact">
+        <div class="container-fluid background-blue p-0">
+            <div class="col-lg-10 center p-0">
+                <app-type-form *ngIf="screenWidth > this.minimalWidthForDesktopTypeForm; else mobileTypeForm"
+                               [formId]="contactFormId"></app-type-form>
 
-    <app-review-quote
-            [quote]="'Een software developer waar je op kan vertrouwen!' | translate"
-            [name]="'Wouter Moll'"></app-review-quote>
+                <ng-template #mobileTypeForm>
+                    <app-type-form [formId]="contactFormIdMobile"></app-type-form>
+                </ng-template>
+            </div>
+        </div>
+    </section>
+
+    <ng-template #quote>
+        <app-review-quote
+                [quote]="'Een software developer waar je op kan vertrouwen!' | translate"
+                [name]="'Wouter Moll'"></app-review-quote>
+    </ng-template>
 
     <app-faq></app-faq>
 
@@ -43,6 +58,4 @@
 
     <app-magnet class="magnet-top" (closeMagnet)="showMobileMagnet = false"
                 [@openCloseMobile]="showMobileMagnet ? 'open' : 'closed'"></app-magnet>
-
 </div>
-
