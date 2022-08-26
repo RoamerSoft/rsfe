@@ -11,16 +11,17 @@ import { CheckoutComponent } from '../pages/app-model-canvas/components/checkout
 import { MagnetComponent } from './components/magnet/magnet.component';
 import { CoreModule } from '../core/core.module';
 import { InfographicCheckoutComponent } from '../pages/home/components/infographic-checkout/infographic-checkout.component';
+import { TypeFormComponent } from './components/type-form/type-form.component';
 
 @NgModule({
   declarations: [
     CookieBarComponent, NavBarComponent, FooterComponent, MemberCardComponent,
-    CheckoutComponent, MagnetComponent, InfographicCheckoutComponent
+    CheckoutComponent, MagnetComponent, InfographicCheckoutComponent, TypeFormComponent
   ],
   imports: [CommonModule, TranslateModule, FormsModule, CoreModule],
   entryComponents: [CheckoutComponent, MagnetComponent, InfographicCheckoutComponent],
   exports: [CookieBarComponent, NavBarComponent, FooterComponent, MemberCardComponent,
-    CheckoutComponent, MagnetComponent, InfographicCheckoutComponent],
+    CheckoutComponent, MagnetComponent, InfographicCheckoutComponent, TypeFormComponent],
 })
 export class SharedModule {
 }

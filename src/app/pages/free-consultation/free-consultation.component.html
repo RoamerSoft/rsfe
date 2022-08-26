@@ -1,7 +1,6 @@
-<div class="body-inner">
+<div class="body-inner" [ngStyle]="{'height': height + 'px'}">
     <app-nav-bar [conversionMode]="true"></app-nav-bar>
-
-    <div id="formContainer"></div>
-
+    <app-type-form [formId]="consultationFormId" [height]="height"
+                   [heightCorrection]="heightCorrection"></app-type-form>
     <app-cookie-bar></app-cookie-bar>
 </div>

@@ -1,17 +1,19 @@
-import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { TranslationService } from 'src/app/core/services/translation-service/translation.service';
-import * as typeformEmbed from '@typeform/embed';
 import { ScrollService } from '../../core/services/scroll-service/scroll.service';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-free-consultation',
   templateUrl: './free-consultation.component.html',
   styleUrls: ['./free-consultation.component.scss'],
 })
-export class FreeConsultationComponent implements OnInit, AfterViewInit {
+export class FreeConsultationComponent implements OnInit {
   public loadAPI: Promise<any>;
-
+  public consultationFormId = environment.consultationFormId;
+  public height = window.innerHeight;
+  public heightCorrection = 110;
 
   /**
    * [0] = Title
@@ -73,18 +75,6 @@ export class FreeConsultationComponent implements OnInit, AfterViewInit {
   async ngOnInit() {
     await this.setTranslationAndMetaData();
     this.scrollService.disableScrolling();
-  }
-
-  ngAfterViewInit(): void {
-    // Get screen height
-    const height = window.innerHeight - 80;
-    // Show form
-    typeformEmbed.createWidget('PBlRwu4k', {
-      container: document.querySelector('#formContainer'),
-      height,
-      hideFooter: true,
-      hideHeaders: true,
-    });
   }
 
   public async setTranslationAndMetaData() {
