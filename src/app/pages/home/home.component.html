@@ -33,7 +33,6 @@
             <div class="col-lg-10 center p-0">
                 <app-type-form *ngIf="screenWidth > this.minimalWidthForDesktopTypeForm; else mobileTypeForm"
                                [formId]="contactFormId"></app-type-form>
-
                 <ng-template #mobileTypeForm>
                     <app-type-form [formId]="contactFormIdMobile"></app-type-form>
                 </ng-template>
