@@ -28,7 +28,7 @@
 
     <app-testimonials></app-testimonials>
 
-    <section *ngIf="currentLang === 'nl'; else quote" id="contact" class="background-blue p-0 contact">
+    <section *ngIf="currentLang === 'nl'" id="contact" class="background-blue p-0 contact">
         <div class="container-fluid background-blue p-0">
             <div class="col-lg-10 center p-0">
                 <app-type-form *ngIf="screenWidth > this.minimalWidthForDesktopTypeForm; else mobileTypeForm"
@@ -40,11 +40,10 @@
         </div>
     </section>
 
-    <ng-template #quote>
-        <app-review-quote
-                [quote]="'Een software developer waar je op kan vertrouwen!' | translate"
-                [name]="'Wouter Moll'"></app-review-quote>
-    </ng-template>
+    <app-review-quote
+            [hidden]="currentLang === 'nl'"
+            [quote]="'Een software developer waar je op kan vertrouwen!' | translate"
+            [name]="'Wouter Moll'"></app-review-quote>
 
     <app-faq></app-faq>
 

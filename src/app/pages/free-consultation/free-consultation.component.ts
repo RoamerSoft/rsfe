@@ -13,7 +13,7 @@ export class FreeConsultationComponent implements OnInit {
   public loadAPI: Promise<any>;
   public consultationFormId = environment.consultationFormId;
   public height = window.innerHeight;
-  public heightCorrection = 110;
+  public heightCorrection = 200;
 
   /**
    * [0] = Title

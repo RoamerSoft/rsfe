@@ -9,7 +9,7 @@ import * as typeformEmbed from '@typeform/embed';
 export class TypeFormComponent implements OnInit, AfterViewInit {
   @Input() formId: string;
   @Input() height: number;
-  @Input() heightCorrection = 110;
+  @Input() heightCorrection = 0;
 
   constructor() {
   }
