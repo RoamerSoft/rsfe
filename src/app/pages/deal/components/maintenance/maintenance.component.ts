@@ -8,7 +8,6 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 export class MaintenanceComponent implements OnInit {
   @Input() showOrderButtons: boolean;
   @Output() buttonClicked = new EventEmitter<void>();
-  public showShadow: boolean;
 
   constructor() {
   }
