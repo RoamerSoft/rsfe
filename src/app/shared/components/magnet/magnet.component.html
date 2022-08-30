@@ -1,4 +1,4 @@
-<div class="wrapper">
+<div class="wrapper" [ngStyle]="!showForm &&{ 'height': '210px' }">
     <div class="container-fullwidth">
         <div class="background-info">
             <div class="row header">
@@ -8,49 +8,70 @@
                     </a>
                 </div>
             </div>
-            <div class="row title text-white">
+
+            <ng-container *ngIf="showForm; else succeededMessage">
+                <div class="row title text-white">
+                    <div class="col-12">
+                        <h5><strong>{{ 'Idee voor een app?' | translate }}</strong></h5>
+                        <h6 class="m-b-0">{{ 'Zet de eerste stap met dit gratis e-book!' | translate}}</h6>
+                    </div>
+                </div>
+
+                <div class="row body">
+                    <div class="col-4 p-0">
+                        <a href="app-idee-maar-waar-te-beginnen" target="_blank">
+                            <img class="img-fluid e-book" src="assets/images/ebook/App_idee_maar_waar_te_beginnen.png"
+                                 alt="Het App Model Canvas">
+                        </a>
+                    </div>
+                    <form class="col-8 form">
+                        <div class="form-group">
+                            <input
+                                    (input)="getNameOnInput($event)"
+                                    type="text"
+                                    name="txtName"
+                                    class="form-control"
+                                    [ngClass]="{ 'is-invalid': this.nameIsInvalid }"
+                                    placeholder="Voornaam*"
+                                    required
+                            />
+                        </div>
+                        <div class="form-group">
+                            <input
+                                    (input)="getEmailOnInput($event)"
+                                    type="text"
+                                    name="txtEmail"
+                                    class="form-control"
+                                    [ngClass]="{ 'is-invalid': this.emailIsInvalid }"
+                                    placeholder="E-mail*"
+                                    required
+                            />
+                        </div>
+                        <input type='hidden' id="zc_gad" name="zc_gad" value=""/>
+                    </form>
+                </div>
+            </ng-container>
+        </div>
+
+        <ng-template #succeededMessage>
+            <div class="row title text-white ">
                 <div class="col-12">
-                    <h5><strong>{{ 'Idee voor een app?' | translate }}</strong></h5>
-                    <h6 class="m-b-0">{{ 'Zet de eerste stap met dit gratis e-book!' | translate}}</h6>
+                    <h5><strong>{{ 'Gelukt!' | translate }}</strong></h5>
+                    <h6 class="m-b-0">{{ 'Het e-book is naar je e-mail verzonden.' | translate}}</h6>
                 </div>
             </div>
 
-            <div class="row body ">
-                <div class="col-4 p-0">
+            <div class="row body">
+                <div class="col-11 p-0 text-center">
                     <a href="app-idee-maar-waar-te-beginnen" target="_blank">
                         <img class="img-fluid e-book" src="assets/images/ebook/App_idee_maar_waar_te_beginnen.png"
                              alt="Het App Model Canvas">
                     </a>
                 </div>
-                <form class="col-8 form">
-                    <div class="form-group">
-                        <input
-                                (input)="getNameOnInput($event)"
-                                type="text"
-                                name="txtName"
-                                class="form-control"
-                                [ngClass]="{ 'is-invalid': this.nameIsInvalid }"
-                                placeholder="Voornaam*"
-                                required
-                        />
-                    </div>
-                    <div class="form-group">
-                        <input
-                                (input)="getEmailOnInput($event)"
-                                type="text"
-                                name="txtEmail"
-                                class="form-control"
-                                [ngClass]="{ 'is-invalid': this.emailIsInvalid }"
-                                placeholder="E-mail*"
-                                required
-                        />
-                    </div>
-                    <input type='hidden' id="zc_gad" name="zc_gad" value=""/>
-                </form>
             </div>
-        </div>
+        </ng-template>
 
-        <div class="row footer background-white">
+        <div *ngIf="showForm" class="row footer background-white">
             <div class="col-12">
                 <div class="download-button">
                     <a (click)="onSubmit()"
@@ -63,5 +84,7 @@
                 </div>
             </div>
         </div>
+
+
     </div>
 </div>

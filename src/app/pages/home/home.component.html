@@ -51,9 +51,9 @@
 
     <app-cookie-bar></app-cookie-bar>
 
-    <app-magnet class="magnet-right" (closeMagnet)="showDesktopMagnet = false"
+    <app-magnet class="magnet-right" (closeMagnet)="closeMagnet()"
                 [@openCloseDesktop]="showDesktopMagnet ? 'open' : 'closed'"></app-magnet>
 
-    <app-magnet class="magnet-top" (closeMagnet)="showMobileMagnet = false"
+    <app-magnet class="magnet-top" (closeMagnet)="closeMagnet()"
                 [@openCloseMobile]="showMobileMagnet ? 'open' : 'closed'"></app-magnet>
 </div>

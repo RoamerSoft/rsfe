@@ -120,11 +120,18 @@ export class HomeComponent implements OnInit {
         if (!magnetHasBeenShowed) {
           // Show magnet if not showed before
           this.showMagnet();
-          // Set magnet as showed in this session
-          sessionStorage.setItem(this.magnetStorageKey, 'true');
         }
       }
     }
+  }
+
+  public closeMagnet() {
+    // Close magnet
+    this.showDesktopMagnet = false;
+    this.showMobileMagnet = false;
+
+    // Set magnet as showed in this session
+    sessionStorage.setItem(this.magnetStorageKey, 'true');
   }
 
   public openInfographicCheckout() {

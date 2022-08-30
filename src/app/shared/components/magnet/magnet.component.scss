@@ -16,6 +16,12 @@
   }
 }
 
+.alert.alert-success {
+  color: #212529;
+  background-color: #9FD58D;
+  border-color: #9FD58D;
+}
+
 .title {
   text-align: center;
   height: 50px;
@@ -26,6 +32,9 @@
 
   .e-book {
     width: 120px;
+    position: relative;
+    right: -10px;
+    bottom: -10px;
   }
 }
 
