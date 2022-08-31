@@ -1,6 +1,14 @@
 <div class="body-inner" [ngStyle]="{'height': height + 'px'}">
     <app-nav-bar [conversionMode]="true"></app-nav-bar>
-    <app-type-form [formId]="consultationFormId" [height]="height"
-                   [heightCorrection]="heightCorrection"></app-type-form>
+
+
+    <ng-container *ngIf="showForm">
+        <app-type-form *ngIf="screenWidth > this.minimalWidthForDesktopTypeForm; else mobileTypeForm"
+                       [formId]="consultationFormId" [height]="height"></app-type-form>
+        <ng-template #mobileTypeForm>
+            <app-type-form [formId]="consultationFormIdMobile" [height]="height"></app-type-form>
+        </ng-template>
+    </ng-container>
+
     <app-cookie-bar></app-cookie-bar>
 </div>

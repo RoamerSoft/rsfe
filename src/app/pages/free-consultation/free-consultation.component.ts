@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { TranslationService } from 'src/app/core/services/translation-service/translation.service';
 import { ScrollService } from '../../core/services/scroll-service/scroll.service';
@@ -9,11 +9,15 @@ import { environment } from '../../../environments/environment';
   templateUrl: './free-consultation.component.html',
   styleUrls: ['./free-consultation.component.scss'],
 })
-export class FreeConsultationComponent implements OnInit {
+export class FreeConsultationComponent implements OnInit, AfterViewInit {
   public loadAPI: Promise<any>;
   public consultationFormId = environment.consultationFormId;
+  public consultationFormIdMobile = environment.consultationFormIdMobile;
   public height = window.innerHeight;
-  public heightCorrection = 200;
+
+  public showForm: boolean;
+  public screenWidth: number;
+  public minimalWidthForDesktopTypeForm = 1227;
 
   /**
    * [0] = Title
@@ -74,7 +78,15 @@ export class FreeConsultationComponent implements OnInit {
 
   async ngOnInit() {
     await this.setTranslationAndMetaData();
+    this.screenWidth = window.innerWidth;
     this.scrollService.disableScrolling();
+  }
+
+  ngAfterViewInit(): void {
+    const waitToShowForm = 500;
+    setTimeout(() => {
+      this.showForm = true;
+    }, waitToShowForm);
   }
 
   public async setTranslationAndMetaData() {
