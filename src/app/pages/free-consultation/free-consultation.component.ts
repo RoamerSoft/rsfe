@@ -18,6 +18,7 @@ export class FreeConsultationComponent implements OnInit, AfterViewInit {
   public showForm: boolean;
   public screenWidth: number;
   public minimalWidthForDesktopTypeForm = 1227;
+  public heightCorrection = 250;
 
   /**
    * [0] = Title

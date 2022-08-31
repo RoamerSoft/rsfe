@@ -6,7 +6,7 @@
         <app-type-form *ngIf="screenWidth > this.minimalWidthForDesktopTypeForm; else mobileTypeForm"
                        [formId]="consultationFormId" [height]="height"></app-type-form>
         <ng-template #mobileTypeForm>
-            <app-type-form [formId]="consultationFormIdMobile" [height]="height"></app-type-form>
+            <app-type-form [formId]="consultationFormIdMobile" [height]="height" [heightCorrection]="heightCorrection"></app-type-form>
         </ng-template>
     </ng-container>
 
