@@ -4,14 +4,14 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build --outputHashing=all",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
     "compile:server": "webpack --config webpack.server.config.js --progress --colors",
     "serve:ssr": "node dist/server",
-    "build:ssr": "npm run build:client-and-server-bundles && npm run compile:server",
-    "build:client-and-server-bundles": "ng build --prod && ng run roamersoft:server:production --bundleDependencies all"
+    "build:ssr": "npm run build:client-and-server-bundles  && npm run compile:server",
+    "build:client-and-server-bundles": "ng build --outputHashing=all --prod && ng run roamersoft:server:production --bundleDependencies all"
   },
   "private": true,
   "dependencies": {
