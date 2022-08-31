@@ -28,13 +28,16 @@
 
     <app-testimonials></app-testimonials>
 
-    <section [hidden]="currentLang === 'nl'" id="contact" class="background-blue p-0 contact">
+    <section *ngIf="currentLang === 'nl'" id="contact" class="background-blue p-0 contact">
         <div class="container-fluid background-blue p-0">
-            <div  class="col-lg-10 center p-0">
+            <div class="col-lg-10 center p-0">
                 <app-type-form *ngIf="screenWidth > this.minimalWidthForDesktopTypeForm; else mobileTypeForm"
-                               [formId]="contactFormId"></app-type-form>
+                               [height]="screenHeight"
+                               [formId]="contactFormId"
+                ></app-type-form>
                 <ng-template #mobileTypeForm>
-                    <app-type-form [formId]="contactFormIdMobile"></app-type-form>
+                    <app-type-form [formId]="contactFormIdMobile" [height]="screenHeight"
+                    ></app-type-form>
                 </ng-template>
             </div>
         </div>

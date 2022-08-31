@@ -18,12 +18,11 @@ export class TypeFormComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    // Get screen height
-    this.height = window.innerHeight;
     // Show form
     typeformEmbed.createWidget(this.formId, {
       container: document.querySelector('#formContainer'),
       height: this.height - this.heightCorrection,
+      lazy: true
     });
   }
 

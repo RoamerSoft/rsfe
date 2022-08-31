@@ -44,6 +44,7 @@ import { InfographicCheckoutComponent } from './components/infographic-checkout/
 export class HomeComponent implements OnInit {
   public showDesktopMagnet = false;
   public showMobileMagnet = false;
+  public screenHeight: number;
   public screenWidth: number;
   public enableEbook = environment.enableEbook;
   public contactFormId = environment.contactFormId;
@@ -81,6 +82,7 @@ export class HomeComponent implements OnInit {
   async ngOnInit() {
     await this.setTranslationAndMetaData();
     this.screenWidth = window.innerWidth;
+    this.screenHeight = window.innerHeight;
     this.currentLang = this.translationService.getLang();
     this.magnetEnabled = this.currentLang === 'nl' && this.enableEbook;
     this.showInfographicButton = this.currentLang === 'nl';
