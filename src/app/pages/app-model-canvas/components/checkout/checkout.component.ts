@@ -47,6 +47,9 @@ export class CheckoutComponent implements OnInit, OnDestroy {
 
 
   public onSubmit() {
+    // Trim e-mail input
+    this.subscribeForm.email = this.subscribeForm.email.trim();
+
     // Check form
     if (!this.isEmpty(this.subscribeForm.firstName) && !this.isEmpty(this.subscribeForm.email)) {
       // Check email.
