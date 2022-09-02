@@ -51,7 +51,7 @@ export class InfographicCheckoutComponent implements OnInit, OnDestroy {
     // Trim form input
     this.subscribeForm.email = this.subscribeForm.email.trim();
     this.subscribeForm.firstName = this.subscribeForm.firstName.trim();
-    
+
     // Check form
     if (!this.isEmpty(this.subscribeForm.firstName) && !this.isEmpty(this.subscribeForm.email)) {
       // Check email.
