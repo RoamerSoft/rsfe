@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { TranslationService } from '../../core/services/translation-service/translation.service';
 
@@ -7,7 +7,7 @@ import { TranslationService } from '../../core/services/translation-service/tran
   templateUrl: './deal.component.html',
   styleUrls: ['./deal.component.scss']
 })
-export class DealComponent implements OnInit {
+export class DealComponent implements OnInit, AfterViewInit {
   /**
    * [0] = Title
    * [1] = Description
@@ -30,10 +30,10 @@ export class DealComponent implements OnInit {
 
   async ngOnInit() {
     await this.setTranslationAndMetaData();
+  }
 
-    setTimeout(() => {
-      this.loadPopper();
-    }, 5000);
+  ngAfterViewInit(): void {
+    this.loadPopper();
   }
 
   public loadPopper() {
@@ -78,5 +78,4 @@ export class DealComponent implements OnInit {
       });
     });
   }
-
 }
