@@ -31,7 +31,7 @@ export class AppComponent {
     if (!isFound) {
       const dynamicScripts = [
         '/assets/js/jquery.js',
-        '/assets/js/popper.min.js' + `?t=${Date.now()}`,
+        '/assets/js/popper.min.js',
         '/assets/js/plugins.js',
         '/assets/js/functions.js',
       ];

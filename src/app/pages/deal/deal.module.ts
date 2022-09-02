@@ -6,6 +6,7 @@ import { FormsModule } from '@angular/forms';
 import { DealRoutingModule } from './deal-routing.module';
 import { CoreModule } from '../../core/core.module';
 import { MaintenanceComponent } from './components/maintenance/maintenance.component';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 
 @NgModule({
@@ -16,6 +17,7 @@ import { MaintenanceComponent } from './components/maintenance/maintenance.compo
     FormsModule,
     SharedModule,
     DealRoutingModule,
+    MatTooltipModule,
   ]
 })
 export class DealModule {
