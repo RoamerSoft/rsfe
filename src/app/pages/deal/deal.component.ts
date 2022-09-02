@@ -30,7 +30,10 @@ export class DealComponent implements OnInit {
 
   async ngOnInit() {
     await this.setTranslationAndMetaData();
-    this.loadPopper();
+
+    setTimeout(() => {
+      this.loadPopper();
+    }, 2000);
   }
 
   public loadPopper() {
