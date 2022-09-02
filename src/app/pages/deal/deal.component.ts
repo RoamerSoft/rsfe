@@ -30,6 +30,25 @@ export class DealComponent implements OnInit {
 
   async ngOnInit() {
     await this.setTranslationAndMetaData();
+    this.loadPopper();
+  }
+
+  public loadPopper() {
+    const dynamicScripts = [
+      '/assets/js/popper.min.js' + `?t=${Date.now()}`,
+    ];
+
+    // tslint:disable-next-line: prefer-for-of
+    for (let i = 0; i < dynamicScripts.length; i++) {
+      const node = document.createElement('script');
+      node.src = dynamicScripts[i];
+      node.type = 'text/javascript';
+      node.async = false;
+      // tslint:disable-next-line: deprecation
+      node.charset = 'utf-8';
+      document.getElementsByTagName('head')[0].appendChild(node);
+    }
+
   }
 
   public async setTranslationAndMetaData() {
