@@ -33,7 +33,7 @@ export class DealComponent implements OnInit {
 
     setTimeout(() => {
       this.loadPopper();
-    }, 2000);
+    }, 5000);
   }
 
   public loadPopper() {
