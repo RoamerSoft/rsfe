@@ -12,11 +12,13 @@ export class DealComponent implements OnInit {
    * [0] = Title
    * [1] = Description
    * [2] = Keywords
+   * [3] = Image for link (og:image)
    */
   private metaDataTranslateKeys = [
     'Beheer en onderhoud',
     'Totaaloplossingen voor app- en serverbeheer',
     'Serverbeheer, Appbeheer, Onderhoud, Bas Gerritsen, RoamerSoft',
+    'https://www.roamersoft.com/assets/images/roamersoft/Bas-Gerritsen.jpg'
   ];
 
   constructor(
@@ -44,6 +46,10 @@ export class DealComponent implements OnInit {
             this.meta.updateTag({
               name: 'keywords',
               content: resAsJson[this.metaDataTranslateKeys[2]],
+            });
+            this.meta.updateTag({
+              property: 'og:image',
+              content: resAsJson[this.metaDataTranslateKeys[3]],
             });
             resolve();
           });

@@ -17,11 +17,13 @@ export class AppModelCanvasComponent implements OnInit {
    * [0] = Title
    * [1] = Description
    * [2] = Keywords
+   * [3] = Image for link (og:image)
    */
   private metaDataTranslateKeys = [
     'App idee, maar waar te beginnen?',
     'Werk je app idee uit met het App Model Canvas!',
     'App Model Canvas, App idee, E-book, Bas Gerritsen, RoamerSoft',
+    'https://www.roamersoft.com/assets/images/ebook/App_idee_maar_waar_te_beginnen_RoamerSoft.jpg'
   ];
 
   constructor(
@@ -88,6 +90,10 @@ export class AppModelCanvasComponent implements OnInit {
             this.meta.updateTag({
               name: 'keywords',
               content: resAsJson[this.metaDataTranslateKeys[2]],
+            });
+            this.meta.updateTag({
+              property: 'og:image',
+              content: resAsJson[this.metaDataTranslateKeys[3]],
             });
             resolve();
           });

@@ -64,11 +64,13 @@ export class HomeComponent implements OnInit {
    * [0] = Title
    * [1] = Description
    * [2] = Keywords
+   * [3] = Image for link (og:image)
    */
   private metaDataTranslateKeys = [
     'Web en app ontwikkeling',
     'Op maat gemaakte webapplicaties en cross-platform mobiele apps die je helpen je doelen te bereiken.',
     'App ontwikkeling, Web ontwikkeling, RoamerSoft, Bas Gerritsen, Full stack software developer, Cross platform, Mobiele app, Webapplicatie',
+    'https://www.roamersoft.com/assets/images/roamersoft/Bas-Gerritsen.jpg'
   ];
 
   constructor(
@@ -156,6 +158,10 @@ export class HomeComponent implements OnInit {
             this.meta.updateTag({
               name: 'keywords',
               content: resAsJson[this.metaDataTranslateKeys[2]],
+            });
+            this.meta.updateTag({
+              property: 'og:image',
+              content: resAsJson[this.metaDataTranslateKeys[3]],
             });
             resolve();
           });

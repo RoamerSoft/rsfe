@@ -24,11 +24,13 @@ export class FreeConsultationComponent implements OnInit, AfterViewInit {
    * [0] = Title
    * [1] = Description
    * [2] = Keywords
+   * [3] = Image for link (og:image)
    */
   private metaDataTranslateKeys = [
-    'Adviesgesprek plannen',
-    'Plan hier jou gratis adviesgesprek!',
+    'Gratis adviesgesprek',
+    'Plan hier je gratis adviesgesprek!',
     'Adviesgesprek, App ontwikkeling, Bas Gerritsen, RoamerSoft',
+    'https://www.roamersoft.com/assets/images/roamersoft/Bas-Gerritsen.jpg'
   ];
 
   constructor(
@@ -104,6 +106,10 @@ export class FreeConsultationComponent implements OnInit, AfterViewInit {
             this.meta.updateTag({
               name: 'keywords',
               content: resAsJson[this.metaDataTranslateKeys[2]],
+            });
+            this.meta.updateTag({
+              property: 'og:image',
+              content: resAsJson[this.metaDataTranslateKeys[3]],
             });
             resolve();
           });
