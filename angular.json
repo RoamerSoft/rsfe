@@ -37,9 +37,7 @@
               "src/theme/css/fonts.css",
               "src/theme/css/theme.css"
             ],
-            "scripts": [
-              "src/assets/js/popper.min.js"
-            ]
+            "scripts": []
           },
           "configurations": {
             "production": {
