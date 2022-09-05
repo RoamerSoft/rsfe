@@ -44,6 +44,19 @@ export class FreeConsultationComponent implements OnInit, AfterViewInit {
       resolve(true);
     });
   }
+  async ngOnInit() {
+    await this.setTranslationAndMetaData();
+    this.screenWidth = window.innerWidth;
+    this.scrollService.disableScrolling();
+  }
+
+  ngAfterViewInit(): void {
+    this.loadScript();
+    const waitToShowForm = 500;
+    setTimeout(() => {
+      this.showForm = true;
+    }, waitToShowForm);
+  }
 
   public loadScript() {
     let isFound = false;
@@ -77,19 +90,6 @@ export class FreeConsultationComponent implements OnInit, AfterViewInit {
         document.getElementsByTagName('head')[0].appendChild(node);
       }
     }
-  }
-
-  async ngOnInit() {
-    await this.setTranslationAndMetaData();
-    this.screenWidth = window.innerWidth;
-    this.scrollService.disableScrolling();
-  }
-
-  ngAfterViewInit(): void {
-    const waitToShowForm = 500;
-    setTimeout(() => {
-      this.showForm = true;
-    }, waitToShowForm);
   }
 
   public async setTranslationAndMetaData() {

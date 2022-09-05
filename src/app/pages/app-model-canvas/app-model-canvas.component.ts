@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { TranslationService } from 'src/app/core/services/translation-service/translation.service';
 import { CheckoutComponent } from './components/checkout/checkout.component';
@@ -9,10 +9,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
   templateUrl: './app-model-canvas.component.html',
   styleUrls: ['./app-model-canvas.component.scss'],
 })
-export class AppModelCanvasComponent implements OnInit {
-  public loadAPI: Promise<any>;
-
-
+export class AppModelCanvasComponent implements OnInit, AfterViewInit {
   /**
    * [0] = Title
    * [1] = Description
@@ -32,10 +29,14 @@ export class AppModelCanvasComponent implements OnInit {
     private translationService: TranslationService,
     private modalService: NgbModal
   ) {
-    this.loadAPI = new Promise((resolve) => {
-      this.loadScript();
-      resolve(true);
-    });
+  }
+
+  async ngOnInit() {
+    await this.setTranslationAndMetaData();
+  }
+
+  ngAfterViewInit(): void {
+    this.loadScript();
   }
 
   public loadScript() {
@@ -70,10 +71,6 @@ export class AppModelCanvasComponent implements OnInit {
         document.getElementsByTagName('head')[0].appendChild(node);
       }
     }
-  }
-
-  async ngOnInit() {
-    await this.setTranslationAndMetaData();
   }
 
   public async setTranslationAndMetaData() {

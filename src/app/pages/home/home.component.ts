@@ -1,4 +1,4 @@
-import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { TranslationService } from 'src/app/core/services/translation-service/translation.service';
 import { animate, state, style, transition, trigger } from '@angular/animations';
@@ -41,7 +41,7 @@ import { InfographicCheckoutComponent } from './components/infographic-checkout/
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit, AfterViewInit {
   public showDesktopMagnet = false;
   public showMobileMagnet = false;
   public screenHeight: number;
@@ -88,7 +88,44 @@ export class HomeComponent implements OnInit {
     this.currentLang = this.translationService.getLang();
     this.magnetEnabled = this.currentLang === 'nl' && this.enableEbook;
     this.showInfographicButton = this.currentLang === 'nl';
+  }
 
+  ngAfterViewInit(): void {
+    this.loadScript();
+  }
+
+  public loadScript() {
+    let isFound = false;
+    const scripts = document.getElementsByTagName('script');
+    // tslint:disable-next-line: prefer-for-of
+    for (let i = 0; i < scripts.length; ++i) {
+      if (
+        scripts[i].getAttribute('src') != null &&
+        scripts[i].getAttribute('src').includes('loader')
+      ) {
+        isFound = true;
+      }
+    }
+
+    if (!isFound) {
+      const dynamicScripts = [
+        '/assets/js/jquery.js',
+        '/assets/js/popper.min.js',
+        '/assets/js/plugins.js',
+        '/assets/js/functions.js',
+      ];
+
+      // tslint:disable-next-line: prefer-for-of
+      for (let i = 0; i < dynamicScripts.length; i++) {
+        const node = document.createElement('script');
+        node.src = dynamicScripts[i];
+        node.type = 'text/javascript';
+        node.async = false;
+        // tslint:disable-next-line: deprecation
+        node.charset = 'utf-8';
+        document.getElementsByTagName('head')[0].appendChild(node);
+      }
+    }
   }
 
   languageChanged(language: string) {
