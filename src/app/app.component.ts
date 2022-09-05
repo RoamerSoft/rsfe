@@ -30,10 +30,10 @@ export class AppComponent {
 
     if (!isFound) {
       const dynamicScripts = [
-        '/assets/js/jquery.js',
+        '/assets/js/jquery.js' + `?t=${Date.now()}`,
         '/assets/js/popper.min.js' + `?t=${Date.now()}`,
-        '/assets/js/plugins.js',
-        '/assets/js/functions.js',
+        '/assets/js/plugins.js' + `?t=${Date.now()}`,
+        '/assets/js/functions.js' + `?t=${Date.now()}`,
       ];
 
       // tslint:disable-next-line: prefer-for-of
