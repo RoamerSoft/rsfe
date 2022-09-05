@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { TranslationService } from '../../core/services/translation-service/translation.service';
 
@@ -7,7 +7,7 @@ import { TranslationService } from '../../core/services/translation-service/tran
   templateUrl: './deal.component.html',
   styleUrls: ['./deal.component.scss']
 })
-export class DealComponent implements OnInit, AfterViewInit {
+export class DealComponent implements OnInit {
   /**
    * [0] = Title
    * [1] = Description
@@ -30,28 +30,6 @@ export class DealComponent implements OnInit, AfterViewInit {
 
   async ngOnInit() {
     await this.setTranslationAndMetaData();
-  }
-
-  ngAfterViewInit(): void {
-    this.loadPopper();
-  }
-
-  public loadPopper() {
-    const dynamicScripts = [
-      '/assets/js/popper.min.js' + `?t=${Date.now()}`,
-    ];
-
-    // tslint:disable-next-line: prefer-for-of
-    for (let i = 0; i < dynamicScripts.length; i++) {
-      const node = document.createElement('script');
-      node.src = dynamicScripts[i];
-      node.type = 'text/javascript';
-      node.async = false;
-      // tslint:disable-next-line: deprecation
-      node.charset = 'utf-8';
-      document.getElementsByTagName('head')[0].appendChild(node);
-    }
-
   }
 
   public async setTranslationAndMetaData() {
