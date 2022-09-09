@@ -12,14 +12,16 @@ import { MagnetComponent } from './components/magnet/magnet.component';
 import { CoreModule } from '../core/core.module';
 import { InfographicCheckoutComponent } from '../pages/home/components/infographic-checkout/infographic-checkout.component';
 import { TypeFormComponent } from './components/type-form/type-form.component';
+import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
     CookieBarComponent, NavBarComponent, FooterComponent, MemberCardComponent,
     CheckoutComponent, MagnetComponent, InfographicCheckoutComponent, TypeFormComponent
   ],
+  providers: [NgbActiveModal],
   imports: [CommonModule, TranslateModule, FormsModule, CoreModule],
-  entryComponents: [CheckoutComponent, MagnetComponent, InfographicCheckoutComponent],
+  entryComponents: [CheckoutComponent, MagnetComponent, InfographicCheckoutComponent, TypeFormComponent],
   exports: [CookieBarComponent, NavBarComponent, FooterComponent, MemberCardComponent,
     CheckoutComponent, MagnetComponent, InfographicCheckoutComponent, TypeFormComponent],
 })

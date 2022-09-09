@@ -3,6 +3,8 @@ import { Meta, Title } from '@angular/platform-browser';
 import { TranslationService } from 'src/app/core/services/translation-service/translation.service';
 import { ScrollService } from '../../core/services/scroll-service/scroll.service';
 import { environment } from '../../../environments/environment';
+import { TypeFormComponent } from '../../shared/components/type-form/type-form.component';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-free-consultation',
@@ -13,12 +15,13 @@ export class FreeConsultationComponent implements OnInit, AfterViewInit {
   public loadAPI: Promise<any>;
   public consultationFormId = environment.consultationFormId;
   public consultationFormIdMobile = environment.consultationFormIdMobile;
-  public height = window.innerHeight;
-
-  public showForm: boolean;
-  public screenWidth: number;
+  public heightCorrection = 80;
+  public heightCorrectionMobile = 48;
   public minimalWidthForDesktopTypeForm = 1227;
-  public heightCorrection = 250;
+  public formInModalMode = true;
+  public screenWidth: number;
+  public screenHeight: number;
+
 
   /**
    * [0] = Title
@@ -37,25 +40,48 @@ export class FreeConsultationComponent implements OnInit, AfterViewInit {
     private title: Title,
     private meta: Meta,
     private translationService: TranslationService,
-    private scrollService: ScrollService
+    private scrollService: ScrollService,
+    private modalService: NgbModal
   ) {
     this.loadAPI = new Promise((resolve) => {
       this.loadScript();
       resolve(true);
     });
   }
+
   async ngOnInit() {
     await this.setTranslationAndMetaData();
     this.screenWidth = window.innerWidth;
+    this.screenHeight = window.innerHeight;
+    this.heightCorrection = this.screenWidth > this.minimalWidthForDesktopTypeForm ? 80 : 45;
     this.scrollService.disableScrolling();
+  }
+
+  public openForm() {
+    setTimeout(() => {
+      const modalRef = this.modalService.open(TypeFormComponent, { size: 'xl' });
+      // Set modal settings
+      modalRef.componentInstance.height = this.screenHeight;
+      modalRef.componentInstance.modalMode = this.formInModalMode;
+      // Check screen width
+      if (this.screenWidth > this.minimalWidthForDesktopTypeForm) {
+        // Large screens
+        modalRef.componentInstance.formId = this.consultationFormId;
+        modalRef.componentInstance.heightCorrection = this.heightCorrection;
+      } else {
+        // Mobile screens
+        modalRef.componentInstance.formId = this.consultationFormIdMobile;
+        modalRef.componentInstance.heightCorrection = this.heightCorrectionMobile;
+      }
+    }, 150);
   }
 
   ngAfterViewInit(): void {
     this.loadScript();
-    const waitToShowForm = 500;
-    setTimeout(() => {
-      this.showForm = true;
-    }, waitToShowForm);
+    // const waitToShowForm = 500;
+    // setTimeout(() => {
+    //   this.showForm = true;
+    // }, waitToShowForm);
   }
 
   public loadScript() {

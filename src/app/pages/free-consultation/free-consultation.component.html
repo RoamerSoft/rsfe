@@ -2,13 +2,9 @@
     <app-nav-bar [conversionMode]="true"></app-nav-bar>
 
 
-    <ng-container *ngIf="showForm">
-        <app-type-form *ngIf="screenWidth > this.minimalWidthForDesktopTypeForm; else mobileTypeForm"
-                       [formId]="consultationFormId" [height]="height"></app-type-form>
-        <ng-template #mobileTypeForm>
-            <app-type-form [formId]="consultationFormIdMobile" [height]="height" [heightCorrection]="heightCorrection"></app-type-form>
-        </ng-template>
-    </ng-container>
+    <div class="cta-button text-center">
+        <button (click)="openForm()" class="btn">Plan adviesgesprek</button>
+    </div>
 
     <app-cookie-bar></app-cookie-bar>
 </div>
