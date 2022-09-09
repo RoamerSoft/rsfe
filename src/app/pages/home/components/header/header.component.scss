@@ -2,6 +2,7 @@ $color-white: #FFFFFF;
 #header {
   display: none;
 }
+
 .captions {
   position: relative;
   text-align: left;
@@ -87,7 +88,16 @@ $color-white: #FFFFFF;
   }
 }
 
+.cta-button {
+  padding-left: 10px;
+}
+
 @media only screen and (max-width: 1024px) {
+
+  .cta-button {
+    padding-left: 0;
+  }
+
   .captions {
     text-align: center !important;
 

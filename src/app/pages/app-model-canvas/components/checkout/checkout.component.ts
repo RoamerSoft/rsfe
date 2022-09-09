@@ -16,7 +16,7 @@ export class CheckoutComponent implements OnInit, OnDestroy {
   public nameIsInvalid = false;
   public emailIsInvalid = false;
 
-  public showForm = false;
+  public showForm = true;
 
   constructor(
     public activeModal: NgbActiveModal,
