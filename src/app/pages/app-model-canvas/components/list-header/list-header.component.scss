@@ -16,6 +16,7 @@ section {
     margin-bottom: 0;
   }
 }
+
 .sub-title {
   font-size: 25px !important;
   line-height: unset !important;
@@ -71,8 +72,9 @@ h1 {
 
   .download-button {
     margin-top: 30px;
+    padding-left: 0;
+    text-align: center;
   }
-
 
   .lead {
     text-align: center;
@@ -93,9 +95,5 @@ h1 {
 
   .list {
     margin: auto;
-  }
-
-  .download-button {
-    text-align: center;
   }
 }
