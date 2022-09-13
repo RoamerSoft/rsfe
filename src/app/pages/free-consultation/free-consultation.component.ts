@@ -56,7 +56,7 @@ export class FreeConsultationComponent implements OnInit, AfterViewInit {
 
   public openForm() {
     setTimeout(() => {
-      const modalRef = this.modalService.open(TypeFormComponent, { size: 'xl' });
+      const modalRef = this.modalService.open(TypeFormComponent, { size: 'xl', backdrop: 'static', keyboard: false });
       // Set modal settings
       modalRef.componentInstance.height = this.screenHeight;
       modalRef.componentInstance.modalMode = this.formInModalMode;
@@ -75,10 +75,6 @@ export class FreeConsultationComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit(): void {
     this.loadScript();
-    // const waitToShowForm = 500;
-    // setTimeout(() => {
-    //   this.showForm = true;
-    // }, waitToShowForm);
   }
 
   public loadScript() {
