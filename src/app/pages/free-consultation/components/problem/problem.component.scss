@@ -14,12 +14,18 @@ p {
 }
 
 img {
-  max-height: 350px;
+  margin-top: 100px;
+  max-width: 500px;
 }
 
 // Only smaller screens
 @media only screen and (max-width: 1024px) {
   .lead {
     font-size: 28px;
+  }
+
+  img {
+    margin-top: 0;
+    width: 100%;
   }
 }
