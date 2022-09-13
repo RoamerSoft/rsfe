@@ -22,18 +22,21 @@ section {
   line-height: unset !important;
 }
 
-.e-book-container-right {
+.image-container-right {
   display: block;
 
-  img {
+  a {
     position: relative;
-    left: -100px;
-    bottom: -50px;
-    max-width: 450px;
+    left: -95px;
+    bottom: -60px;
+  }
+
+  img {
+    max-width: 600px;
   }
 }
 
-.e-book-container-top {
+.image-container-top {
   display: none;
 }
 
@@ -57,7 +60,7 @@ h1 {
 }
 
 @media only screen and (max-width: 2000px) {
-  .e-book-container-right {
+  .image-container-right {
     img {
       left: -50px;
     }
@@ -80,16 +83,16 @@ h1 {
     text-align: center;
   }
 
-  .e-book-container-top {
+  .image-container-top {
     display: block;
-    margin-bottom: 40px;
+    margin-bottom: 10px;
 
     img {
-      max-width: 200px;
+      max-width: 300px;
     }
   }
 
-  .e-book-container-right {
+  .image-container-right {
     display: none;
   }
 

@@ -1,0 +1,31 @@
+.lead {
+  font-size: 36px;
+  font-family: "Nunito", "Helvetica", "Arial", sans-serif;
+  margin-bottom: 30px;
+}
+
+strong {
+  font-weight: 900;
+  color: black;
+}
+
+p {
+  font-size: 16px;
+}
+
+img {
+  margin-top: 100px;
+  max-width: 500px;
+}
+
+// Only smaller screens
+@media only screen and (max-width: 1024px) {
+  .lead {
+    font-size: 28px;
+  }
+
+  img {
+    margin-top: 0;
+    width: 100%;
+  }
+}

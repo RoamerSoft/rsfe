@@ -6,3 +6,15 @@
 ::ng-deep .tf-v1-widget-close {
   display: none;
 }
+
+.wrapper {
+  background-color: #122771;
+}
+
+.close {
+  opacity: 1;
+  span {
+    padding-right: 5px;
+    color: #FFFFFF;
+  }
+}

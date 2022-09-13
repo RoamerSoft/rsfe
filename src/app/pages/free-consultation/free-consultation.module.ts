@@ -5,10 +5,16 @@ import { SharedModule } from '../../shared/shared.module';
 import { FreeConsultationRoutingModule } from './free-consultation-routing.module';
 import { TranslateModule } from '@ngx-translate/core';
 import { FreeConsultationComponent } from './free-consultation.component';
+import { ListHeaderComponent } from './components/list-header/list-header.component';
+import { ProblemComponent } from './components/problem/problem.component';
+import { SolutionComponent } from './components/solution/solution.component';
 
 @NgModule({
   declarations: [
-    FreeConsultationComponent
+    FreeConsultationComponent,
+    ListHeaderComponent,
+    ProblemComponent,
+    SolutionComponent
   ],
   imports: [CoreModule, CommonModule, TranslateModule, SharedModule, FreeConsultationRoutingModule],
 })

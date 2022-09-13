@@ -1,14 +1,13 @@
-<div class="body-inner" [ngStyle]="{'height': height + 'px'}">
+<div class="body-inner">
     <app-nav-bar [conversionMode]="true"></app-nav-bar>
 
+    <app-list-header (buttonClicked)="openForm()"></app-list-header>
 
-    <ng-container *ngIf="showForm">
-        <app-type-form *ngIf="screenWidth > this.minimalWidthForDesktopTypeForm; else mobileTypeForm"
-                       [formId]="consultationFormId" [height]="height"></app-type-form>
-        <ng-template #mobileTypeForm>
-            <app-type-form [formId]="consultationFormIdMobile" [height]="height" [heightCorrection]="heightCorrection"></app-type-form>
-        </ng-template>
-    </ng-container>
+    <app-interruption-text text="Een GRATIS adviesgesprek is ongelofelijk waardevol!"></app-interruption-text>
+
+    <app-problem></app-problem>
+
+    <app-solution (buttonClicked)="openForm()"></app-solution>
 
     <app-cookie-bar></app-cookie-bar>
 </div>
