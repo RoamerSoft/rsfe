@@ -61,7 +61,12 @@
                                    class="scroll-to">{{ 'E-book' | translate }}</a>
                             </li>
 
-                            <li>
+                            <li [hidden]="currentLang !== 'nl'">
+                                <a href="gratis-adviesgesprek" target="_blank"
+                                   class="scroll-to">{{ 'Adviesgesprek' | translate }}</a>
+                            </li>
+
+                            <li [hidden]="currentLang === 'nl'">
                                 <a href="#reviews" class="scroll-to">{{ 'Reviews' | translate }}</a>
                             </li>
 
