@@ -1,10 +1,9 @@
-import { Injectable, Optional, Inject, PLATFORM_ID } from '@angular/core';
+import { Inject, Injectable, Optional, PLATFORM_ID } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { TranslateService } from '@ngx-translate/core';
 import { REQUEST } from '@nguniversal/express-engine/tokens';
-import { isPlatformBrowser } from '@angular/common';
 import { Translation } from '../../entities/translation/translation';
 
 @Injectable({
@@ -12,6 +11,7 @@ import { Translation } from '../../entities/translation/translation';
 })
 export class TranslationService {
   private api: string = environment.api;
+  private defaultLanguage = 'nl';
 
   constructor(
     private http: HttpClient,
@@ -20,7 +20,8 @@ export class TranslationService {
     @Inject(REQUEST)
     private request: Request,
     @Inject(PLATFORM_ID) private platformId: any
-  ) {}
+  ) {
+  }
 
   private getTranslationFromServer(lang: string): Observable<Translation> {
     return this.http.get<Translation>(`${this.api}/translations/${lang}`);
@@ -31,16 +32,7 @@ export class TranslationService {
   }
 
   public getLang(): string {
-    let lang: string;
-    if (isPlatformBrowser(this.platformId)) {
-      // Gets browser language and sets it as default
-      lang = this.translate.getBrowserLang();
-    } else {
-      // Get language request on server side from header and sets it as default (Google web crawlers)
-      // If no header is given, use NL as default.
-      lang = (this.request.headers['accept-language'] || 'nl').substring(0, 2);
-    }
-    return lang;
+    return this.defaultLanguage;
   }
 
   public async setTranslation() {
