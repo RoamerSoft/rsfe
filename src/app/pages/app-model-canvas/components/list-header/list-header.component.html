@@ -31,7 +31,8 @@
                 </div>
 
                 <div class="download-button">
-                    <a (click)="buttonClicked.emit()" class="btn scroll-to call-to-action call-to-action-colored">Gratis
+                    <a (click)="buttonClicked.emit()" (touchstart)="buttonClicked.emit()"
+                       class="btn scroll-to call-to-action call-to-action-colored">Gratis
                         Download</a>
                 </div>
 

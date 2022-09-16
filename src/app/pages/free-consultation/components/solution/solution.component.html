@@ -18,7 +18,8 @@
                     </p>
 
                     <div class="download-button">
-                        <a (click)="buttonClicked.emit()" class="btn scroll-to call-to-action call-to-action-colored">Plan
+                        <a (click)="buttonClicked.emit()" (touchstart)="buttonClicked.emit()"
+                           class="btn scroll-to call-to-action call-to-action-colored">Plan
                             gratis adviesgesprek</a>
                     </div>
 

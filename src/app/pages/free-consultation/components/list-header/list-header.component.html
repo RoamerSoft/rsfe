@@ -31,7 +31,8 @@
                 </div>
 
                 <div class="download-button">
-                    <a (click)="buttonClicked.emit()" class="btn scroll-to call-to-action call-to-action-colored">Plan
+                    <a (click)="buttonClicked.emit()" (touchstart)="buttonClicked.emit()"
+                       class="btn scroll-to call-to-action call-to-action-colored">Plan
                         gratis
                         adviesgesprek</a>
                 </div>
@@ -41,7 +42,8 @@
 
             <div class="col-md-4 pt-5 image-container-right">
                 <div class="text-center pt-2">
-                    <a (click)="buttonClicked.emit()" class="pointer">
+                    <a (click)="buttonClicked.emit()" (touchstart)="buttonClicked.emit()"
+                       class="pointer">
                         <img src="https://i.imgur.com/re8zooF.gif"
                              title="Gratis adviesgesprek met Bas Gerritsen van RoamerSoft"/>
                     </a>

@@ -85,7 +85,7 @@
             </div>
             <div *ngIf="showForm" class="col-md-12">
                 <div class="form-group download-button">
-                    <button (click)="onSubmit()" class="btn">Direct Downloaden</button>
+                    <button (click)="onSubmit()" (touchstart)="onSubmit()" class="btn">Direct Downloaden</button>
                 </div>
             </div>
         </div>
