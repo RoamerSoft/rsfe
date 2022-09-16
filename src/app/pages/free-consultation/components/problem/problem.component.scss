@@ -13,12 +13,16 @@ p {
   font-size: 16px;
 }
 
-img {
+.img-wrapper {
   margin-top: 100px;
+  position: absolute;
+  width: fit-content;
+}
+
+img {
   max-width: 500px;
 }
 
-// Only smaller screens
 @media only screen and (max-width: 1024px) {
   .lead {
     font-size: 28px;
