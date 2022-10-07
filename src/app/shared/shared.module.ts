@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { CookieBarComponent } from '../shared/components/cookie-bar/cookie-bar.component';
 import { NavBarComponent } from '../shared/components/nav-bar/nav-bar.component';
 import { FooterComponent } from '../shared/components/footer/footer.component';
-import { MemberCardComponent } from '../shared/components/member-card/member-card.component';
 import { TranslateModule } from '@ngx-translate/core';
 import { FormsModule } from '@angular/forms';
 
@@ -17,14 +16,14 @@ import { InterruptionTextComponent } from './components/interruption-text/interr
 
 @NgModule({
   declarations: [
-    CookieBarComponent, NavBarComponent, FooterComponent, MemberCardComponent,
+    CookieBarComponent, NavBarComponent, FooterComponent,
     CheckoutComponent, MagnetComponent, InfographicCheckoutComponent, TypeFormComponent,
     InterruptionTextComponent
   ],
   providers: [NgbActiveModal],
   imports: [CommonModule, TranslateModule, FormsModule, CoreModule],
   entryComponents: [CheckoutComponent, MagnetComponent, InfographicCheckoutComponent, TypeFormComponent],
-  exports: [CookieBarComponent, NavBarComponent, FooterComponent, MemberCardComponent,
+  exports: [CookieBarComponent, NavBarComponent, FooterComponent,
     CheckoutComponent, MagnetComponent, InfographicCheckoutComponent, TypeFormComponent, InterruptionTextComponent],
 })
 export class SharedModule {

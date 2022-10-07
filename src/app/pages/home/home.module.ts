@@ -6,7 +6,6 @@ import { HomeComponent } from './home.component';
 import { TranslateModule } from '@ngx-translate/core';
 import { FormsModule } from '@angular/forms';
 import { CoreModule } from 'src/app/core/core.module';
-import { ContactComponent } from './components/contact/contact.component';
 import { FaqComponent } from './components/faq/faq.component';
 import { TestimonialsComponent } from './components/testimonials/testimonials.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -20,7 +19,6 @@ import { SharedModule } from '../../shared/shared.module';
   declarations: [
     HomeComponent,
     HeaderComponent,
-    ContactComponent,
     WorkingMethodComponent,
     GuaranteesComponent,
     CrossPlatformComponent,
