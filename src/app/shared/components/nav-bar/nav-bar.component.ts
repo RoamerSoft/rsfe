@@ -10,6 +10,7 @@ import { environment } from '../../../../environments/environment';
 })
 export class NavBarComponent implements OnInit {
   @Input() conversionMode: boolean;
+  @Input() stickyActive: boolean;
   public currentLang: string;
   @Input() showScrollToTop = true;
 
@@ -24,6 +25,9 @@ export class NavBarComponent implements OnInit {
   }
 
   ngOnInit() {
+    if (this.conversionMode) {
+      this.stickyActive = true;
+    }
     this.currentLang = this.translationService.getLang();
     this.showEbookItem = this.currentLang === 'nl' ? this.enableEbook : false;
   }
