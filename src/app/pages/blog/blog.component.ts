@@ -1,6 +1,5 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
-import { Meta, Title } from '@angular/platform-browser';
-import { TranslationService } from 'src/app/core/services/translation-service/translation.service';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-blog',
@@ -8,32 +7,12 @@ import { TranslationService } from 'src/app/core/services/translation-service/tr
   styleUrls: ['./blog.component.scss'],
 })
 export class BlogComponent implements OnInit, AfterViewInit {
-  /**
-   * [0] = Title
-   * [1] = Description
-   * [2] = Keywords
-   * [3] = Image for link (og:image)
-   */
-  private metaDataTranslateKeys = [
-    'App idee, maar waar te beginnen?',
-    'Werk je app idee uit met het App Model Canvas!',
-    'App Model Canvas, App idee, E-book, Bas Gerritsen, RoamerSoft',
-    'https://www.roamersoft.com/assets/images/ebook/App_idee_maar_waar_te_beginnen_RoamerSoft.jpg'
-  ];
+  public dropInBlogUrl = environment.dropInBlogUrl;
 
-  constructor(
-    private title: Title,
-    private meta: Meta,
-    private translationService: TranslationService,
-  ) {
+  constructor() {
   }
 
   async ngOnInit() {
-    await this.setTranslationAndMetaData();
-
-    const blog = document.createElement('script');
-    blog.setAttribute('src', 'https://io.dropinblog.com/embedjs/08331c96-eb8b-49d8-906c-8b0dc978ff28.js');
-    document.head.appendChild(blog);
   }
 
   ngAfterViewInit(): void {
@@ -59,6 +38,7 @@ export class BlogComponent implements OnInit, AfterViewInit {
         '/assets/js/popper.min.js',
         '/assets/js/plugins.js',
         '/assets/js/functions.js',
+        this.dropInBlogUrl
       ];
 
       // tslint:disable-next-line: prefer-for-of
@@ -73,30 +53,4 @@ export class BlogComponent implements OnInit, AfterViewInit {
       }
     }
   }
-
-  public async setTranslationAndMetaData() {
-    return new Promise((resolve) => {
-      this.translationService.setTranslation().then(() => {
-        this.translationService
-          .getTranslationByKey(this.metaDataTranslateKeys)
-          .subscribe((resAsJson) => {
-            this.title.setTitle(resAsJson[this.metaDataTranslateKeys[0]]);
-            this.meta.updateTag({
-              name: 'description',
-              content: resAsJson[this.metaDataTranslateKeys[1]],
-            });
-            this.meta.updateTag({
-              name: 'keywords',
-              content: resAsJson[this.metaDataTranslateKeys[2]],
-            });
-            this.meta.updateTag({
-              property: 'og:image',
-              content: resAsJson[this.metaDataTranslateKeys[3]],
-            });
-            resolve();
-          });
-      });
-    });
-  }
-
 }
