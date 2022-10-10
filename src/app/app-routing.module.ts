@@ -18,6 +18,10 @@ const routes: Routes = [
     path: 'gratis-adviesgesprek',
     loadChildren: () => import('./pages/free-consultation/free-consultation.module').then((m) => m.FreeConsultationModule),
   },
+  {
+    path: 'blog',
+    loadChildren: () => import('./pages/blog/blog.module').then((m) => m.BlogModule),
+  },
   { path: '**', redirectTo: '/', pathMatch: 'full' },
 ];
 

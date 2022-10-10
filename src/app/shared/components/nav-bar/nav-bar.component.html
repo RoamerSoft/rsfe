@@ -3,13 +3,13 @@
         data-transparent="true"
         data-responsive-fixed="true"
         class="light submenu-light"
-        [ngClass]="{'header-sticky sticky-active' : conversionMode}"
+        [ngClass]="{'header-sticky sticky-active' : stickyActive}"
 >
     <div class="header-inner">
         <div class="container">
             <!--Logo-->
             <div id="logo">
-                <a href="{{ conversionMode ? '/' : '#header' }}" class="scroll-to">
+                <a href="{{ linkLogoToHome ? '/' : '#header' }}" class="scroll-to">
                     <img
                             src="assets/images/roamersoft/roamersoft-logo.svg"
                             class="logo-default pt-3 pb-3"
@@ -24,7 +24,7 @@
                 <ul>
                     <li *ngIf="this.currentLang === 'nl'; else nlFlag">
                         <!-- Show EN flag -->
-                        <img (click)="switchLang('en')" class="flag-icon" src="assets/flags/en.png"  loading="lazy"
+                        <img (click)="switchLang('en')" class="flag-icon" src="assets/flags/en.png" loading="lazy"
                         />
                     </li>
                     <ng-template #nlFlag>
@@ -50,7 +50,7 @@
                                 <a href="#aboutMe" class="scroll-to">{{ 'Over mij' | translate }}</a>
                             </li>
 
-                            <li>
+                            <li [hidden]="currentLang === 'nl'">
                                 <a href="#guarantees" class="scroll-to">{{ 'Garanties' | translate }}</a>
                             </li>
 
@@ -59,17 +59,19 @@
                             </li>
 
                             <li *ngIf="showEbookItem">
-                                <a href="app-idee-maar-waar-te-beginnen" target="_blank"
-                                   class="scroll-to">{{ 'E-book' | translate }}</a>
+                                <a href="app-idee-maar-waar-te-beginnen" target="_blank">{{ 'E-book' | translate }}</a>
                             </li>
 
                             <li [hidden]="currentLang !== 'nl'">
-                                <a href="gratis-adviesgesprek" target="_blank"
-                                   class="scroll-to">{{ 'Adviesgesprek' | translate }}</a>
+                                <a href="gratis-adviesgesprek" target="_blank">{{ 'Adviesgesprek' | translate }}</a>
                             </li>
 
                             <li [hidden]="currentLang === 'nl'">
                                 <a href="#reviews" class="scroll-to">{{ 'Reviews' | translate }}</a>
+                            </li>
+
+                            <li [hidden]="currentLang !== 'nl'">
+                                <a href="blog" target="_blank">{{ 'Blog' | translate }}</a>
                             </li>
 
                             <li>
