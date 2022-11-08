@@ -1,9 +1,10 @@
-import { AfterViewInit, Component, OnInit } from '@angular/core';
-import { Meta, Title } from '@angular/platform-browser';
-import { TranslationService } from 'src/app/core/services/translation-service/translation.service';
-import { environment } from '../../../environments/environment';
-import { TypeFormComponent } from '../../shared/components/type-form/type-form.component';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import {AfterViewInit, Component, OnInit} from '@angular/core';
+import {Meta, Title} from '@angular/platform-browser';
+import {TranslationService} from 'src/app/core/services/translation-service/translation.service';
+import {environment} from '../../../environments/environment';
+import {TypeFormComponent} from '../../shared/components/type-form/type-form.component';
+import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
+import {BgaModalComponent} from "../../shared/components/bga-modal/bga-modal.component";
 
 @Component({
   selector: 'app-free-consultation',
@@ -56,7 +57,7 @@ export class FreeConsultationComponent implements OnInit, AfterViewInit {
 
   public openForm() {
     setTimeout(() => {
-      const modalRef = this.modalService.open(TypeFormComponent, { size: 'xl', backdrop: 'static', keyboard: false });
+      const modalRef = this.modalService.open(TypeFormComponent, {size: 'xl', backdrop: 'static', keyboard: false});
       // Set modal settings
       modalRef.componentInstance.height = this.screenHeight;
       modalRef.componentInstance.modalMode = this.formInModalMode;
@@ -111,8 +112,16 @@ export class FreeConsultationComponent implements OnInit, AfterViewInit {
     }
   }
 
+  public showBGA(): void {
+    const modalRef = this.modalService.open(BgaModalComponent, {size: 'lg'});
+    modalRef.componentInstance.title = 'Wacht even!';
+    modalRef.componentInstance.subTitle = 'Je vergeet je gratis adviesgesprek in te plannen!';
+    modalRef.componentInstance.buttonText = 'Nu inplannen';
+    modalRef.componentInstance.footerText = 'Dit is de eerste en belangrijkste stap naar een fantastische applicatie.';
+  }
+
   public async setTranslationAndMetaData() {
-    return new Promise((resolve) => {
+    return new Promise<void>((resolve) => {
       this.translationService.setTranslation().then(() => {
         this.translationService
           .getTranslationByKey(this.metaDataTranslateKeys)

@@ -1,0 +1,64 @@
+<div class="modal-header">
+  <a class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+    <span aria-hidden="true">&times;</span>
+  </a>
+</div>
+
+<div class="modal-body p-0">
+  <div class="container-fluid">
+    <!-- Title and sub title -->
+    <div class="row pb-3">
+      <div class="col-lg-12 text-center">
+        <h3 class="font-weight-800">{{ title }}</h3>
+        <h5>{{ subTitle }}</h5>
+      </div>
+    </div>
+    <!-- end: Title and sub title -->
+
+    <!-- Main content -->
+    <div class="row form-container background-grey pl-0 pr-0">
+      <!-- Picture -->
+      <div class="col mb-3 d-none d-lg-block text-center">
+        <img src="assets/images/roamersoft/RoamerSoft-gratis-adviesgesprek.png"
+             class="img-fluid"
+             title="Werkwijze Bas Gerritsen RoamerSoft"
+             title="Werkwijze Bas Gerritsen RoamerSoft"
+             loading="lazy">
+      </div>
+      <!-- end: Picture -->
+      <!-- Body -->
+      <div class="col-lg-6">
+        <form>
+          <div class="row">
+            <div class="col-lg-12 pl-0">
+              Content in body
+            </div>
+          </div>
+        </form>
+      </div>
+      <!-- end: Body -->
+    </div>
+
+    <!-- end: Main content-->
+
+    <!-- Submit button -->
+    <div class="row background-grey pb-2">
+      <div class="col-md-12">
+        <div class="download-button">
+          <a (click)="onSubmit()" (touchstart)="onSubmit()"
+             class="btn scroll-to call-to-action call-to-action-colored">
+            {{ buttonText }}
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- end: Submit button  -->
+  </div>
+</div>
+
+<!-- Footer text -->
+<div class="modal-footer text-center">
+  <p class="footNote text-muted"><i class="fa fa-info mr-2"></i>{{ footerText }}</p>
+</div>
+<!-- end: Footer text -->
+
