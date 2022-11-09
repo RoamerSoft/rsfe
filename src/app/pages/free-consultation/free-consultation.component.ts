@@ -114,10 +114,10 @@ export class FreeConsultationComponent implements OnInit, AfterViewInit {
 
   public showBGA(): void {
     const modalRef = this.modalService.open(BgaModalComponent, {size: 'lg'});
-    modalRef.componentInstance.title = 'Wacht even!';
-    modalRef.componentInstance.subTitle = 'Je vergeet je gratis adviesgesprek in te plannen!';
-    modalRef.componentInstance.buttonText = 'Nu inplannen';
-    modalRef.componentInstance.footerText = 'Dit is de eerste en belangrijkste stap naar een fantastische applicatie.';
+    modalRef.componentInstance.title = 'Efficiënter werken, tijd en kosten besparen of je klantvriendelijkheid verhogen';
+    modalRef.componentInstance.subTitle = 'met een eigen app?';
+    modalRef.componentInstance.body = 'Plan een <strong>gratis</strong> adviesgesprek en verzeker jezelf dat je <strong>de juiste eerste stap</strong> zet naar een op maat gemaakte applicatie.';
+    modalRef.componentInstance.buttonText = 'Adviesgesprek inplannen';
   }
 
   public async setTranslationAndMetaData() {

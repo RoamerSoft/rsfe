@@ -11,6 +11,7 @@ import {ScrollService} from "../../../core/services/scroll-service/scroll.servic
 export class BgaModalComponent implements OnInit, OnDestroy {
   @Input() title: string;
   @Input() subTitle: string;
+  @Input() body: string;
   @Input() buttonText: string;
   @Input() footerText: string;
 
