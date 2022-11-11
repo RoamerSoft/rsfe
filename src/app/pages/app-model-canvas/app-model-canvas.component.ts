@@ -1,8 +1,8 @@
-import { AfterViewInit, Component, OnInit } from '@angular/core';
-import { Meta, Title } from '@angular/platform-browser';
-import { TranslationService } from 'src/app/core/services/translation-service/translation.service';
-import { CheckoutComponent } from './components/checkout/checkout.component';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import {AfterViewInit, Component, OnInit} from '@angular/core';
+import {Meta, Title} from '@angular/platform-browser';
+import {TranslationService} from 'src/app/core/services/translation-service/translation.service';
+import {CheckoutComponent} from './components/checkout/checkout.component';
+import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-web-deal',
@@ -23,6 +23,9 @@ export class AppModelCanvasComponent implements OnInit, AfterViewInit {
     'https://www.roamersoft.com/assets/images/ebook/App_idee_maar_waar_te_beginnen_RoamerSoft.jpg'
   ];
 
+  public reminderShowed: boolean;
+  public reminderStorageKey = 'reminderShowed';
+
   constructor(
     private title: Title,
     private meta: Meta,
@@ -32,6 +35,10 @@ export class AppModelCanvasComponent implements OnInit, AfterViewInit {
   }
 
   async ngOnInit() {
+    // Check if reminder is showed
+    const reminderStorage = sessionStorage.getItem(this.reminderStorageKey);
+    this.reminderShowed = !!reminderStorage;
+
     await this.setTranslationAndMetaData();
   }
 
@@ -102,5 +109,15 @@ export class AppModelCanvasComponent implements OnInit, AfterViewInit {
     setTimeout(() => {
       this.modalService.open(CheckoutComponent);
     }, 150);
+  }
+
+  public showReminder(): void {
+    if (!this.reminderShowed) {
+      // Set reminder as showed
+      this.reminderShowed = true
+      // Save reminder as showed
+      sessionStorage.setItem(this.reminderStorageKey, this.reminderStorageKey);
+      this.modalService.open(CheckoutComponent);
+    }
   }
 }
