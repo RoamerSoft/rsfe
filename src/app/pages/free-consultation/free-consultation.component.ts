@@ -121,9 +121,9 @@ export class FreeConsultationComponent implements OnInit, AfterViewInit {
   public showBGA(): void {
     if (!this.bgaShowed) {
       // Set bga as showed
-      this.bgaShowed = false; //TODO
+      this.bgaShowed = true;
       // Save bga showed
-      // localStorage.setItem(this.bgaStorageKey, this.bgaStorageKey);
+      localStorage.setItem(this.bgaStorageKey, this.bgaStorageKey);
       // Create modal
       const modalRef = this.modalService.open(BgaModalComponent, {size: 'lg'});
       // Set text
