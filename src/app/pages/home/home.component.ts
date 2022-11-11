@@ -1,10 +1,10 @@
-import { AfterViewInit, Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
-import { Meta, Title } from '@angular/platform-browser';
-import { TranslationService } from 'src/app/core/services/translation-service/translation.service';
-import { animate, state, style, transition, trigger } from '@angular/animations';
-import { environment } from '../../../environments/environment';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { InfographicCheckoutComponent } from './components/infographic-checkout/infographic-checkout.component';
+import {AfterViewInit, Component, ElementRef, HostListener, OnInit, ViewChild} from '@angular/core';
+import {Meta, Title} from '@angular/platform-browser';
+import {TranslationService} from 'src/app/core/services/translation-service/translation.service';
+import {animate, state, style, transition, trigger} from '@angular/animations';
+import {environment} from '../../../environments/environment';
+import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
+import {InfographicCheckoutComponent} from './components/infographic-checkout/infographic-checkout.component';
 
 @Component({
   selector: 'app-home',
@@ -54,7 +54,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
   public minimalWidthForDesktopMagnet = 450;
   public minimalWidthForDesktopTypeForm = 1227;
 
-  @ViewChild('magnetTrigger', { static: false }) private magnetTrigger: ElementRef<HTMLDivElement>;
+  @ViewChild('magnetTrigger', {static: false}) private magnetTrigger: ElementRef<HTMLDivElement>;
   public magnetTriggerScrolledIntoView: boolean;
   public magnetStorageKey = 'showedMagnet';
 
@@ -182,7 +182,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
   }
 
   public async setTranslationAndMetaData() {
-    return new Promise((resolve) => {
+    return new Promise<void>((resolve) => {
       this.translationService.setTranslation().then(() => {
         this.translationService
           .getTranslationByKey(this.metaDataTranslateKeys)

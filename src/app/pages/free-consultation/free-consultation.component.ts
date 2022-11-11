@@ -1,9 +1,10 @@
-import { AfterViewInit, Component, OnInit } from '@angular/core';
-import { Meta, Title } from '@angular/platform-browser';
-import { TranslationService } from 'src/app/core/services/translation-service/translation.service';
-import { environment } from '../../../environments/environment';
-import { TypeFormComponent } from '../../shared/components/type-form/type-form.component';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import {AfterViewInit, Component, OnInit} from '@angular/core';
+import {Meta, Title} from '@angular/platform-browser';
+import {TranslationService} from 'src/app/core/services/translation-service/translation.service';
+import {environment} from '../../../environments/environment';
+import {TypeFormComponent} from '../../shared/components/type-form/type-form.component';
+import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
+import {BgaModalComponent} from "../../shared/components/bga-modal/bga-modal.component";
 
 @Component({
   selector: 'app-free-consultation',
@@ -20,6 +21,9 @@ export class FreeConsultationComponent implements OnInit, AfterViewInit {
   public formInModalMode = true;
   public screenWidth: number;
   public screenHeight: number;
+
+  public bgaShowed: boolean;
+  public bgaStorageKey = 'bgaShowed';
 
 
   /**
@@ -48,6 +52,9 @@ export class FreeConsultationComponent implements OnInit, AfterViewInit {
   }
 
   async ngOnInit() {
+    // Check if bga is showed
+    const localStorageBgaStatus = localStorage.getItem(this.bgaStorageKey);
+    this.bgaShowed = !!localStorageBgaStatus;
     await this.setTranslationAndMetaData();
     this.screenWidth = window.innerWidth;
     this.screenHeight = window.innerHeight;
@@ -56,7 +63,7 @@ export class FreeConsultationComponent implements OnInit, AfterViewInit {
 
   public openForm() {
     setTimeout(() => {
-      const modalRef = this.modalService.open(TypeFormComponent, { size: 'xl', backdrop: 'static', keyboard: false });
+      const modalRef = this.modalService.open(TypeFormComponent, {size: 'xl', backdrop: 'static', keyboard: false});
       // Set modal settings
       modalRef.componentInstance.height = this.screenHeight;
       modalRef.componentInstance.modalMode = this.formInModalMode;
@@ -111,8 +118,31 @@ export class FreeConsultationComponent implements OnInit, AfterViewInit {
     }
   }
 
+  public showBGA(): void {
+    if (!this.bgaShowed) {
+      // Set bga as showed
+      this.bgaShowed = true;
+      // Save bga showed
+      localStorage.setItem(this.bgaStorageKey, this.bgaStorageKey);
+      // Create modal
+      const modalRef = this.modalService.open(BgaModalComponent, {size: 'lg'});
+      // Set text
+      modalRef.componentInstance.boldTitle = 'Efficiënter werken, kosten besparen of je klantvriendelijkheid verhogen';
+      modalRef.componentInstance.title = 'met een eigen app?';
+      modalRef.componentInstance.body = 'Plan nu een <strong>gratis adviesgesprek </strong> en verzeker jezelf dat je de juiste eerste stap zet naar een <strong>op maat</strong> gemaakte applicatie.';
+      modalRef.componentInstance.buttonText = 'Adviesgesprek inplannen';
+      // Listen to response
+      modalRef.componentInstance.buttonClicked.subscribe(() => {
+        modalRef.componentInstance.buttonClicked.unsubscribe();
+        modalRef.close();
+        this.openForm();
+      })
+    }
+
+  }
+
   public async setTranslationAndMetaData() {
-    return new Promise((resolve) => {
+    return new Promise<void>((resolve) => {
       this.translationService.setTranslation().then(() => {
         this.translationService
           .getTranslationByKey(this.metaDataTranslateKeys)
