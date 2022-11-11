@@ -9,8 +9,8 @@
     <!-- Title and sub title -->
     <div class="row pb-3">
       <div class="col-lg-12 text-center">
-        <span class="h3 font-weight-700 text-white">{{ title }}</span>
-        <span class="h3 font-weight-400 text-white"> {{ subTitle }}</span>
+        <span class="h3 font-weight-600 text-white">{{ boldTitle }}</span>
+        <span class="h3 font-weight-400 text-white"> {{ title }}</span>
       </div>
     </div>
     <!-- end: Title and sub title -->
@@ -36,13 +36,13 @@
   </div>
 </div>
 
-<!-- Footer text -->
+<!-- Footer -->
 <div class="modal-footer text-center">
   <!-- Submit button -->
   <div class="row">
     <div class="col-md-12">
       <div class="download-button">
-        <a (click)="onSubmit()" (touchstart)="onSubmit()"
+        <a (click)="buttonClicked.emit()" (touchstart)="buttonClicked.emit()"
            class="btn scroll-to call-to-action call-to-action-colored">
           {{ buttonText }}
         </a>
@@ -51,5 +51,5 @@
   </div>
   <!-- end: Submit button  -->
 </div>
-<!-- end: Footer text -->
+<!-- end: Footer -->
 

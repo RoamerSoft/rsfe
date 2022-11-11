@@ -1,15 +1,13 @@
 <div class="body-inner">
-  <app-nav-bar [conversionMode]="true"></app-nav-bar>
-  <div (mouseleave)="showBGA()">
-    <app-list-header (buttonClicked)="openForm()"></app-list-header>
+  <app-nav-bar (mouseleave)="showBGA()" [conversionMode]="true"></app-nav-bar>
 
-    <app-interruption-text text="Een GRATIS adviesgesprek is ongelofelijk waardevol!"></app-interruption-text>
+  <app-list-header (buttonClicked)="openForm()"></app-list-header>
 
-    <app-problem></app-problem>
+  <app-interruption-text text="Een GRATIS adviesgesprek is ongelofelijk waardevol!"></app-interruption-text>
 
-    <app-solution (buttonClicked)="openForm()"></app-solution>
+  <app-problem></app-problem>
 
-    <app-cookie-bar></app-cookie-bar>
-  </div>
+  <app-solution (buttonClicked)="openForm()"></app-solution>
 
+  <app-cookie-bar></app-cookie-bar>
 </div>

@@ -1,4 +1,4 @@
-import {Component, Input, OnDestroy, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnDestroy, OnInit, Output} from '@angular/core';
 import {NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
 import {ScrollService} from "../../../core/services/scroll-service/scroll.service";
 
@@ -9,11 +9,12 @@ import {ScrollService} from "../../../core/services/scroll-service/scroll.servic
   styleUrls: ['./bga-modal.component.scss'],
 })
 export class BgaModalComponent implements OnInit, OnDestroy {
+  @Input() boldTitle: string;
   @Input() title: string;
-  @Input() subTitle: string;
   @Input() body: string;
   @Input() buttonText: string;
-  @Input() footerText: string;
+
+  @Output() buttonClicked = new EventEmitter<void>();
 
   constructor(
     public activeModal: NgbActiveModal,
@@ -29,7 +30,4 @@ export class BgaModalComponent implements OnInit, OnDestroy {
     this.scrollService.enableScrolling();
   }
 
-  public onSubmit() {
-
-  }
 }

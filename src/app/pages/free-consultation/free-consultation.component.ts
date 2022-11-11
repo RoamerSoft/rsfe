@@ -22,6 +22,9 @@ export class FreeConsultationComponent implements OnInit, AfterViewInit {
   public screenWidth: number;
   public screenHeight: number;
 
+  public bgaShowed: boolean;
+  public bgaStorageKey = 'bgaShowed';
+
 
   /**
    * [0] = Title
@@ -49,6 +52,9 @@ export class FreeConsultationComponent implements OnInit, AfterViewInit {
   }
 
   async ngOnInit() {
+    // Check if bga is showed
+    const localStorageBgaStatus = localStorage.getItem(this.bgaStorageKey);
+    this.bgaShowed = !!localStorageBgaStatus;
     await this.setTranslationAndMetaData();
     this.screenWidth = window.innerWidth;
     this.screenHeight = window.innerHeight;
@@ -113,11 +119,26 @@ export class FreeConsultationComponent implements OnInit, AfterViewInit {
   }
 
   public showBGA(): void {
-    const modalRef = this.modalService.open(BgaModalComponent, {size: 'lg'});
-    modalRef.componentInstance.title = 'Efficiënter werken, tijd en kosten besparen of je klantvriendelijkheid verhogen';
-    modalRef.componentInstance.subTitle = 'met een eigen app?';
-    modalRef.componentInstance.body = 'Plan een <strong>gratis</strong> adviesgesprek en verzeker jezelf dat je <strong>de juiste eerste stap</strong> zet naar een op maat gemaakte applicatie.';
-    modalRef.componentInstance.buttonText = 'Adviesgesprek inplannen';
+    if (!this.bgaShowed) {
+      // Set bga as showed
+      this.bgaShowed = false; //TODO
+      // Save bga showed
+      // localStorage.setItem(this.bgaStorageKey, this.bgaStorageKey);
+      // Create modal
+      const modalRef = this.modalService.open(BgaModalComponent, {size: 'lg'});
+      // Set text
+      modalRef.componentInstance.boldTitle = 'Efficiënter werken, kosten besparen of je klantvriendelijkheid verhogen';
+      modalRef.componentInstance.title = 'met een eigen app?';
+      modalRef.componentInstance.body = 'Plan nu een <strong>gratis adviesgesprek </strong> en verzeker jezelf dat je de juiste eerste stap zet naar een <strong>op maat</strong> gemaakte applicatie.';
+      modalRef.componentInstance.buttonText = 'Adviesgesprek inplannen';
+      // Listen to response
+      modalRef.componentInstance.buttonClicked.subscribe(() => {
+        modalRef.componentInstance.buttonClicked.unsubscribe();
+        modalRef.close();
+        this.openForm();
+      })
+    }
+
   }
 
   public async setTranslationAndMetaData() {
