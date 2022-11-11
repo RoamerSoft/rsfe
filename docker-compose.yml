@@ -19,7 +19,7 @@ services:
     networks:
       - rsbe_default
     ports:
-      - 3333:3333
+      - 8080:8080
 
 networks:
   rsbe_default:
