@@ -98,12 +98,13 @@ export class FreeConsultationComponent implements OnInit, AfterViewInit {
     this.screenWidth = window.innerWidth;
     this.screenHeight = window.innerHeight;
     this.heightCorrection = this.screenWidth > this.minimalWidthForDesktopTypeForm ? 80 : 45;
-    // Show add
+    // Show adds
     this.showMagnet();
   }
 
   ngAfterViewInit(): void {
     this.loadScript();
+    this.showCyberMondayBGA();
   }
 
   public loadScript() {
@@ -212,6 +213,23 @@ export class FreeConsultationComponent implements OnInit, AfterViewInit {
         this.openForm();
       })
     }
+  }
+
+  public showCyberMondayBGA(): void {
+    // Create modal
+    const modalRef = this.modalService.open(BgaModalComponent, {size: 'lg'});
+    modalRef.componentInstance.cyberMonday = true;
+    // Set text
+    modalRef.componentInstance.boldTitle = 'Plan vandaag een gratis adviesgesprek';
+    modalRef.componentInstance.title = 'en krijg 25% korting op je totale offerte!';
+    modalRef.componentInstance.body = 'Plan nu een <strong>gratis adviesgesprek </strong> en verzeker jezelf dat je de juiste eerste stap zet naar een <strong>op maat</strong> gemaakte applicatie.';
+    modalRef.componentInstance.buttonText = 'Adviesgesprek inplannen';
+    // Listen to response
+    modalRef.componentInstance.buttonClicked.subscribe(() => {
+      modalRef.componentInstance.buttonClicked.unsubscribe();
+      modalRef.close();
+      this.openForm();
+    })
 
   }
 

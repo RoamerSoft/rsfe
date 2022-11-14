@@ -36,6 +36,20 @@
   margin: 0;
 }
 
+::ng-deep .countdown-box {
+  position: relative;
+  right: -25px;
+  color: white !important;
+
+  span {
+    color: white !important;
+  }
+}
+
+::ng-deep .countdown-container > .countdown-box:first-child {
+  display: none;
+}
+
 .background-color {
   background: #4050B5;
 }
@@ -60,10 +74,28 @@
   }
 }
 
+.button-cyber {
+  position: relative;
+  top: -5px;
+  background-color: #FE21AA !important;
+  border-color: #FE21AA !important;
+}
+
+img {
+  padding-top: 15px;
+  max-height: 300px;
+}
+
+
 @media only screen and(max-width: 991px) {
   .body {
     left: 0;
     height: fit-content;
+  }
+
+  ::ng-deep .countdown-box {
+    position: relative;
+    right: 0;
   }
 
   ::ng-deep.modal-lg {

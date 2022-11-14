@@ -1,35 +1,50 @@
-<div class="modal-header background-color text-white">
+<div class="modal-header background-color text-white" [ngStyle]="cyberMonday && {'background-color': '#28163D'}">
   <a class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
     <span aria-hidden="true">&times;</span>
   </a>
 </div>
 
-<div class="modal-body p-0 background-color">
+<div class="modal-body p-0 background-color" [ngStyle]="cyberMonday && {'background-color': '#28163D'}">
   <div class="container-fluid">
     <!-- Title and sub title -->
     <div class="row pb-3">
       <div class="col-lg-12 text-center">
-        <span class="h3 font-weight-600 text-white">{{ boldTitle }}</span>
+        <span class="h2 font-weight-600 text-white">{{ boldTitle }}</span>
         <span class="h3 font-weight-400 text-white"> {{ title }}</span>
       </div>
     </div>
     <!-- end: Title and sub title -->
 
     <!-- Main content -->
-    <div class="row content-container background-color">
+    <div class="row content-container background-color" [ngStyle]="cyberMonday && {'background-color': '#28163D'}">
       <!-- Picture -->
       <div class="col text-center">
-        <img src="assets/images/roamersoft/RoamerSoft-gratis-adviesgesprek.png"
+        <img *ngIf="cyberMonday; else normalPic"
+             src="assets/images/discount/RoamerSoft_25_procent_korting.png"
              class="img-fluid"
              loading="lazy">
+        <ng-template #normalPic>
+          <img src="assets/images/roamersoft/RoamerSoft-gratis-adviesgesprek.png"
+               class="img-fluid"
+               loading="lazy">
+        </ng-template>
       </div>
       <!-- end: Picture -->
       <!-- Body -->
-      <div class="col-lg-6 p-0">
+      <div *ngIf="cyberMonday; else normalBody" class="col-lg-7 pt-5">
         <div class="body">
-          <p class="text-white" [innerHTML]="body"></p>
+          <div class="countdown" data-countdown="2022/11/29 12:34:56"></div>
         </div>
       </div>
+
+      <ng-template #normalBody>
+        <div class="col-lg-6 p-0">
+          <div class="body">
+            <p class="text-white" [innerHTML]="body"></p>
+          </div>
+        </div>
+
+      </ng-template>
       <!-- end: Body -->
     </div>
     <!-- end: Main content-->
@@ -37,13 +52,15 @@
 </div>
 
 <!-- Footer -->
-<div class="modal-footer text-center">
+<div class="modal-footer text-center" [ngStyle]="cyberMonday && {'background-color': '#28163D'}">
   <!-- Submit button -->
   <div class="row">
     <div class="col-md-12">
       <div class="download-button">
         <a (click)="buttonClicked.emit()" (touchstart)="buttonClicked.emit()"
-           class="btn scroll-to call-to-action call-to-action-colored">
+           class="btn scroll-to call-to-action call-to-action-colored"
+           [ngClass]="{'button-cyber': cyberMonday}"
+        >
           {{ buttonText }}
         </a>
       </div>

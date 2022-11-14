@@ -13,6 +13,7 @@ export class BgaModalComponent implements OnInit, OnDestroy {
   @Input() title: string;
   @Input() body: string;
   @Input() buttonText: string;
+  @Input() cyberMonday: boolean
 
   @Output() buttonClicked = new EventEmitter<void>();
 

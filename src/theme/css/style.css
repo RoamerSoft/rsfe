@@ -14941,22 +14941,20 @@ Carousel: Dots
   color: #9896a6 !important;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 991px) {
   .countdown .countdown-box {
-    height: 60px !important;
+    height: 100% !important;
     padding: 2px 0px 0 0 !important;
-    width: 60px !important;
     margin: 0px !important;
     border: solid 0px !important;
   }
-
   .countdown .countdown-box .number {
-    font-size: 20px !important;
-    margin-bottom: 0px;
+    font-size: 50px !important;
+    margin: 0 15px;
   }
 
   .countdown .countdown-container .countdown-box span {
-    font-size: 10px !important;
+    font-size: 18px !important;
     padding-top: 0px;
   }
 }
