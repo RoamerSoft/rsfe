@@ -16,17 +16,18 @@ import {TypeFormComponent} from './components/type-form/type-form.component';
 import {NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
 import {InterruptionTextComponent} from './components/interruption-text/interruption-text.component';
 import {BgaModalComponent} from "./components/bga-modal/bga-modal.component";
+import {DiscountMagnetComponent} from "./components/discount-magnet/discount-magnet.component";
 
 @NgModule({
   declarations: [
     CookieBarComponent, NavBarComponent, FooterComponent,
     CheckoutComponent, MagnetComponent, InfographicCheckoutComponent, TypeFormComponent,
-    InterruptionTextComponent, BgaModalComponent
+    InterruptionTextComponent, BgaModalComponent, DiscountMagnetComponent
   ],
   providers: [NgbActiveModal],
   imports: [CommonModule, TranslateModule, FormsModule, CoreModule],
-  entryComponents: [CheckoutComponent, MagnetComponent, InfographicCheckoutComponent, TypeFormComponent, BgaModalComponent],
-  exports: [CookieBarComponent, NavBarComponent, FooterComponent,
+  entryComponents: [CheckoutComponent, MagnetComponent, InfographicCheckoutComponent, TypeFormComponent, BgaModalComponent, DiscountMagnetComponent],
+  exports: [CookieBarComponent, NavBarComponent, FooterComponent, DiscountMagnetComponent,
     CheckoutComponent, MagnetComponent, InfographicCheckoutComponent, TypeFormComponent, InterruptionTextComponent, BgaModalComponent],
 })
 export class SharedModule {

@@ -1,0 +1,46 @@
+<div class="wrapper">
+  <div class="container-fullwidth">
+    <div class="background-cyber-monday">
+      <div class="row header">
+        <div class="col-1 offset-11 p-0 pointer" (click)="closeMagnet.emit()">
+          <div class="close" aria-label="Close">
+            <span class="pointer" aria-hidden="true">&times;</span>
+          </div>
+        </div>
+      </div>
+
+      <ng-container>
+        <div class="row title text-white">
+          <div class="col-12">
+            <h4><strong>{{ 'Cyber Monday!' | translate }}</strong></h4>
+            <h6
+              class="m-b-0">{{ 'Plan vandaag een gratis adviesgesprek en krijg 25% op je totale offerte!' | translate}}</h6>
+          </div>
+        </div>
+
+        <div class="row body">
+          <div class="col-12 p-0 text-center">
+            <a href="app-idee-maar-waar-te-beginnen" target="_blank">
+              <img class="img-fluid image"
+                   src="/assets/images/discount/RoamerSoft_25_procent_korting.png"
+                   alt="Het App Model Canvas"
+                   loading="lazy"/>
+            </a>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+
+    <div class="row footer background-cyber-monday">
+      <div class="col-12">
+        <div class="download-button">
+          <a (click)="usedButton.emit()"
+             class="btn btn-block button-cyber">
+            {{ 'Nu inplannen' | translate}}</a>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+</div>

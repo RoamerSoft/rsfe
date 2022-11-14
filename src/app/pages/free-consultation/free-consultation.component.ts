@@ -1,13 +1,44 @@
-import {AfterViewInit, Component, OnInit} from '@angular/core';
+import {AfterViewInit, Component, ElementRef, HostListener, OnInit, ViewChild} from '@angular/core';
 import {Meta, Title} from '@angular/platform-browser';
 import {TranslationService} from 'src/app/core/services/translation-service/translation.service';
 import {environment} from '../../../environments/environment';
 import {TypeFormComponent} from '../../shared/components/type-form/type-form.component';
 import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 import {BgaModalComponent} from "../../shared/components/bga-modal/bga-modal.component";
+import {animate, state, style, transition, trigger} from "@angular/animations";
 
 @Component({
   selector: 'app-free-consultation',
+  animations: [
+    trigger('openCloseDesktop', [
+      state('open', style({
+        right: '0',
+      })),
+      state('closed', style({
+        right: '-375px',
+      })),
+      transition('open => closed', [
+        animate('0.5s')
+      ]),
+      transition('closed => open', [
+        animate('0.5s')
+      ]),
+    ]),
+    trigger('openCloseMobile', [
+      state('open', style({
+        top: '80px',
+      })),
+      state('closed', style({
+        top: '-350px',
+      })),
+      transition('open => closed', [
+        animate('0.6s')
+      ]),
+      transition('closed => open', [
+        animate('0.6s')
+      ]),
+    ]),
+  ],
   templateUrl: './free-consultation.component.html',
   styleUrls: ['./free-consultation.component.scss'],
 })
@@ -25,6 +56,12 @@ export class FreeConsultationComponent implements OnInit, AfterViewInit {
   public bgaShowed: boolean;
   public bgaStorageKey = 'bgaShowed';
 
+  public minimalWidthForDesktopMagnet = 450;
+
+  public showDesktopMagnet = false;
+  public showMobileMagnet = false;
+  @ViewChild('magnetTrigger', {static: false}) private magnetTrigger: ElementRef<HTMLDivElement>;
+  public discountMagnetStorageKey = 'showedDiscountMagnet';
 
   /**
    * [0] = Title
@@ -55,29 +92,14 @@ export class FreeConsultationComponent implements OnInit, AfterViewInit {
     // Check if bga is showed
     const localStorageBgaStatus = localStorage.getItem(this.bgaStorageKey);
     this.bgaShowed = !!localStorageBgaStatus;
+    // Set Google meta data
     await this.setTranslationAndMetaData();
+    // Get screen measures
     this.screenWidth = window.innerWidth;
     this.screenHeight = window.innerHeight;
     this.heightCorrection = this.screenWidth > this.minimalWidthForDesktopTypeForm ? 80 : 45;
-  }
-
-  public openForm() {
-    setTimeout(() => {
-      const modalRef = this.modalService.open(TypeFormComponent, {size: 'xl', backdrop: 'static', keyboard: false});
-      // Set modal settings
-      modalRef.componentInstance.height = this.screenHeight;
-      modalRef.componentInstance.modalMode = this.formInModalMode;
-      // Check screen width
-      if (this.screenWidth > this.minimalWidthForDesktopTypeForm) {
-        // Large screens
-        modalRef.componentInstance.formId = this.consultationFormId;
-        modalRef.componentInstance.heightCorrection = this.heightCorrection;
-      } else {
-        // Mobile screens
-        modalRef.componentInstance.formId = this.consultationFormIdMobile;
-        modalRef.componentInstance.heightCorrection = this.heightCorrectionMobile;
-      }
-    }, 150);
+    // Show add
+    this.showMagnet();
   }
 
   ngAfterViewInit(): void {
@@ -118,29 +140,6 @@ export class FreeConsultationComponent implements OnInit, AfterViewInit {
     }
   }
 
-  public showBGA(): void {
-    if (!this.bgaShowed) {
-      // Set bga as showed
-      this.bgaShowed = true;
-      // Save bga showed
-      localStorage.setItem(this.bgaStorageKey, this.bgaStorageKey);
-      // Create modal
-      const modalRef = this.modalService.open(BgaModalComponent, {size: 'lg'});
-      // Set text
-      modalRef.componentInstance.boldTitle = 'Efficiënter werken, kosten besparen of je klantvriendelijkheid verhogen';
-      modalRef.componentInstance.title = 'met een eigen app?';
-      modalRef.componentInstance.body = 'Plan nu een <strong>gratis adviesgesprek </strong> en verzeker jezelf dat je de juiste eerste stap zet naar een <strong>op maat</strong> gemaakte applicatie.';
-      modalRef.componentInstance.buttonText = 'Adviesgesprek inplannen';
-      // Listen to response
-      modalRef.componentInstance.buttonClicked.subscribe(() => {
-        modalRef.componentInstance.buttonClicked.unsubscribe();
-        modalRef.close();
-        this.openForm();
-      })
-    }
-
-  }
-
   public async setTranslationAndMetaData() {
     return new Promise<void>((resolve) => {
       this.translationService.setTranslation().then(() => {
@@ -164,5 +163,64 @@ export class FreeConsultationComponent implements OnInit, AfterViewInit {
           });
       });
     });
+  }
+
+  public showMagnet(): void {
+    if (this.screenWidth > this.minimalWidthForDesktopMagnet) {
+      this.showDesktopMagnet = true;
+    } else {
+      this.showMobileMagnet = true;
+    }
+  }
+
+  public openForm() {
+    setTimeout(() => {
+      const modalRef = this.modalService.open(TypeFormComponent, {size: 'xl', backdrop: 'static', keyboard: false});
+      // Set modal settings
+      modalRef.componentInstance.height = this.screenHeight;
+      modalRef.componentInstance.modalMode = this.formInModalMode;
+      // Check screen width
+      if (this.screenWidth > this.minimalWidthForDesktopTypeForm) {
+        // Large screens
+        modalRef.componentInstance.formId = this.consultationFormId;
+        modalRef.componentInstance.heightCorrection = this.heightCorrection;
+      } else {
+        // Mobile screens
+        modalRef.componentInstance.formId = this.consultationFormIdMobile;
+        modalRef.componentInstance.heightCorrection = this.heightCorrectionMobile;
+      }
+    }, 150);
+  }
+
+  public showBGA(): void {
+    if (!this.bgaShowed) {
+      // Set bga as showed
+      this.bgaShowed = true;
+      // Save bga showed
+      localStorage.setItem(this.bgaStorageKey, this.bgaStorageKey);
+      // Create modal
+      const modalRef = this.modalService.open(BgaModalComponent, {size: 'lg'});
+      // Set text
+      modalRef.componentInstance.boldTitle = 'Efficiënter werken, kosten besparen of je klantvriendelijkheid verhogen';
+      modalRef.componentInstance.title = 'met een eigen app?';
+      modalRef.componentInstance.body = 'Plan nu een <strong>gratis adviesgesprek </strong> en verzeker jezelf dat je de juiste eerste stap zet naar een <strong>op maat</strong> gemaakte applicatie.';
+      modalRef.componentInstance.buttonText = 'Adviesgesprek inplannen';
+      // Listen to response
+      modalRef.componentInstance.buttonClicked.subscribe(() => {
+        modalRef.componentInstance.buttonClicked.unsubscribe();
+        modalRef.close();
+        this.openForm();
+      })
+    }
+
+  }
+
+  public closeMagnet() {
+    // Close magnet
+    this.showDesktopMagnet = false;
+    this.showMobileMagnet = false;
+
+    // Set magnet as showed in this session
+    sessionStorage.setItem(this.discountMagnetStorageKey, 'true');
   }
 }

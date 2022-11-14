@@ -1,0 +1,62 @@
+.wrapper {
+  width: 350px;
+  height: 300px;
+  border: 1px solid rgba(0, 0, 0, .2);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.background-cyber-monday {
+  background-color: #26003C;
+}
+
+.header {
+  height: 20px;
+
+  .close {
+    color: white !important;
+    margin: 5px 10px;
+    opacity: 1;
+  }
+}
+
+.alert.alert-success {
+  color: #212529;
+  background-color: #9FD58D;
+  border-color: #9FD58D;
+}
+
+.title {
+  text-align: center;
+  height: 50px;
+}
+
+.body {
+  height: 140px;
+
+  .image {
+    height: 210px;
+    position: relative;
+    top: -10px;
+  }
+}
+
+
+.footer {
+  height: 100px;
+}
+
+
+.download-button {
+  position: relative;
+  top: 35px;
+  text-align: center;
+  a {
+    font-size: 15px;
+  }
+}
+
+.button-cyber {
+  background-color: #FE21AA !important;
+  border-color: #FE21AA !important;
+}
