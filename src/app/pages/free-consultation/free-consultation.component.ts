@@ -43,7 +43,6 @@ import {animate, state, style, transition, trigger} from "@angular/animations";
   styleUrls: ['./free-consultation.component.scss'],
 })
 export class FreeConsultationComponent implements OnInit, AfterViewInit {
-  public loadAPI: Promise<any>;
   public consultationFormId = environment.consultationFormId;
   public consultationFormIdMobile = environment.consultationFormIdMobile;
   public heightCorrection = 80;
@@ -53,15 +52,10 @@ export class FreeConsultationComponent implements OnInit, AfterViewInit {
   public screenWidth: number;
   public screenHeight: number;
 
-  public bgaShowed: boolean;
+  public bgaShowed = true;
   public bgaStorageKey = 'bgaShowed';
 
-  public minimalWidthForDesktopMagnet = 450;
-
-  public showDesktopMagnet = false;
-  public showMobileMagnet = false;
-  @ViewChild('magnetTrigger', {static: false}) private magnetTrigger: ElementRef<HTMLDivElement>;
-  public discountMagnetStorageKey = 'showedDiscountMagnet';
+  private millisecondsToPreventShowingBga = 2000;
 
   /**
    * [0] = Title
@@ -82,29 +76,28 @@ export class FreeConsultationComponent implements OnInit, AfterViewInit {
     private translationService: TranslationService,
     private modalService: NgbModal
   ) {
-    this.loadAPI = new Promise((resolve) => {
-      this.loadScript();
-      resolve(true);
-    });
   }
 
   async ngOnInit() {
-    // Check if bga is showed
-    const localStorageBgaStatus = localStorage.getItem(this.bgaStorageKey);
-    this.bgaShowed = !!localStorageBgaStatus;
+    // Prevent showing bga to fast
+    setTimeout(() => {
+      // Check if bga is showed
+      const localStorageBgaStatus = localStorage.getItem(this.bgaStorageKey);
+      this.bgaShowed = !!localStorageBgaStatus;
+    }, this.millisecondsToPreventShowingBga);
     // Set Google meta data
     await this.setTranslationAndMetaData();
     // Get screen measures
     this.screenWidth = window.innerWidth;
     this.screenHeight = window.innerHeight;
     this.heightCorrection = this.screenWidth > this.minimalWidthForDesktopTypeForm ? 80 : 45;
-    // Show adds
-    this.showMagnet();
   }
 
   ngAfterViewInit(): void {
-    this.loadScript();
-    this.showCyberMondayBGA();
+    // Prevent showing bga to fast
+    setTimeout(() => {
+      this.showCyberMondayBGA();
+    }, this.millisecondsToPreventShowingBga);
   }
 
   public loadScript() {
@@ -114,7 +107,7 @@ export class FreeConsultationComponent implements OnInit, AfterViewInit {
     for (let i = 0; i < scripts.length; ++i) {
       if (
         scripts[i].getAttribute('src') != null &&
-        scripts[i].getAttribute('src').includes('loader')
+        scripts[i].getAttribute('src').includes('functions')
       ) {
         isFound = true;
       }
@@ -164,14 +157,6 @@ export class FreeConsultationComponent implements OnInit, AfterViewInit {
           });
       });
     });
-  }
-
-  public showMagnet(): void {
-    if (this.screenWidth > this.minimalWidthForDesktopMagnet) {
-      this.showDesktopMagnet = true;
-    } else {
-      this.showMobileMagnet = true;
-    }
   }
 
   public openForm() {
@@ -224,6 +209,10 @@ export class FreeConsultationComponent implements OnInit, AfterViewInit {
     modalRef.componentInstance.title = 'en krijg 25% korting op je totale offerte!';
     modalRef.componentInstance.body = 'Plan nu een <strong>gratis adviesgesprek </strong> en verzeker jezelf dat je de juiste eerste stap zet naar een <strong>op maat</strong> gemaakte applicatie.';
     modalRef.componentInstance.buttonText = 'Adviesgesprek inplannen';
+
+    // load scripts again for the clock
+    this.loadScript();
+
     // Listen to response
     modalRef.componentInstance.buttonClicked.subscribe(() => {
       modalRef.componentInstance.buttonClicked.unsubscribe();
@@ -231,14 +220,5 @@ export class FreeConsultationComponent implements OnInit, AfterViewInit {
       this.openForm();
     })
 
-  }
-
-  public closeMagnet() {
-    // Close magnet
-    this.showDesktopMagnet = false;
-    this.showMobileMagnet = false;
-
-    // Set magnet as showed in this session
-    sessionStorage.setItem(this.discountMagnetStorageKey, 'true');
   }
 }

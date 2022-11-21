@@ -14,7 +14,7 @@ import { SolutionComponent } from './components/solution/solution.component';
     FreeConsultationComponent,
     ListHeaderComponent,
     ProblemComponent,
-    SolutionComponent
+    SolutionComponent,
   ],
   imports: [CoreModule, CommonModule, TranslateModule, SharedModule, FreeConsultationRoutingModule],
 })

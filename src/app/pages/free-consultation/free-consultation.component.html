@@ -1,8 +1,8 @@
 <div class="body-inner">
-  <app-nav-bar (mouseenter)="showBGA()" [conversionMode]="true"></app-nav-bar>
+  <app-nav-bar [conversionMode]="true"></app-nav-bar>
+<!--  <app-nav-bar (mouseenter)="showBGA()" [conversionMode]="true"></app-nav-bar>-->
 
   <app-list-header (buttonClicked)="openForm()"></app-list-header>
-  <div #magnetTrigger></div>
 
   <app-interruption-text text="Een GRATIS adviesgesprek is ongelofelijk waardevol!"></app-interruption-text>
 
@@ -12,9 +12,4 @@
 
   <app-cookie-bar></app-cookie-bar>
 
-  <app-discount-magnet class="magnet-right" (closeMagnet)="closeMagnet()"
-                       [@openCloseDesktop]="showDesktopMagnet ? 'open' : 'closed'"></app-discount-magnet>
-
-  <app-discount-magnet class="magnet-top" (closeMagnet)="closeMagnet()"
-                       [@openCloseMobile]="showMobileMagnet ? 'open' : 'closed'"></app-discount-magnet>
 </div>

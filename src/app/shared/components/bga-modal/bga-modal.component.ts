@@ -4,7 +4,7 @@ import {ScrollService} from "../../../core/services/scroll-service/scroll.servic
 
 
 @Component({
-  selector: 'app-infographic-checkout',
+  selector: 'app-bga-modal',
   templateUrl: './bga-modal.component.html',
   styleUrls: ['./bga-modal.component.scss'],
 })

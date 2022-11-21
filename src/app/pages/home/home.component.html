@@ -1,62 +1,68 @@
 <div class="body-inner">
-    <app-nav-bar [showScrollToTop]="!showDesktopMagnet" (languageChanged)="languageChanged($event)"></app-nav-bar>
+  <app-nav-bar [showScrollToTop]="!showDesktopMagnet" (languageChanged)="languageChanged($event)"></app-nav-bar>
 
-    <app-header [showEbookButton]="magnetEnabled" [currentLang]="currentLang"></app-header>
+  <app-header [showEbookButton]="magnetEnabled" [currentLang]="currentLang"></app-header>
 
-    <app-cross-platform [currentLang]="currentLang"></app-cross-platform>
+  <app-cross-platform [currentLang]="currentLang"></app-cross-platform>
 
-    <app-review-quote
-            [quote]="'Hij neemt je goed mee in zijn planning & voortgang en belangrijkste, levert kwaliteit.' | translate"
-            [name]="'Job van der Lans'"></app-review-quote>
+  <app-review-quote
+    [quote]="'Hij neemt je goed mee in zijn planning & voortgang en belangrijkste, levert kwaliteit.' | translate"
+    [name]="'Job van der Lans'"></app-review-quote>
 
-    <app-about-me></app-about-me>
+  <app-about-me></app-about-me>
 
-    <app-review-quote
-            [quote]="'In welke uithoek van de wereld Bas ook zit, wij kunnen altijd op RoamerSoft bouwen.' | translate"
-            [name]="'Maarten Duineveld'"></app-review-quote>
+  <app-review-quote
+    [quote]="'In welke uithoek van de wereld Bas ook zit, wij kunnen altijd op RoamerSoft bouwen.' | translate"
+    [name]="'Maarten Duineveld'"></app-review-quote>
 
-    <app-guarantees [currentLang]="currentLang"></app-guarantees>
+  <app-guarantees [currentLang]="currentLang"></app-guarantees>
 
-    <app-working-method (buttonClicked)="openInfographicCheckout()"
-                        [showLeadMagnetButton]="showInfographicButton"></app-working-method>
+  <app-working-method (buttonClicked)="openInfographicCheckout()"
+                      [showLeadMagnetButton]="showInfographicButton"></app-working-method>
 
-    <div #magnetTrigger></div>
+  <!--  <div #magnetTrigger></div>-->
 
-    <app-review-quote
-            [quote]="'Zeer prettig in het contact, snelle reactie en erg goede service!' | translate"
-            [name]="'Berry Jansen'"></app-review-quote>
+  <app-review-quote
+    [quote]="'Zeer prettig in het contact, snelle reactie en erg goede service!' | translate"
+    [name]="'Berry Jansen'"></app-review-quote>
 
-    <app-testimonials></app-testimonials>
+  <app-testimonials></app-testimonials>
 
-    <section *ngIf="currentLang === 'nl'" id="contact" class="background-blue p-0 contact">
-        <div class="container-fluid background-blue p-0">
-            <div class="col-lg-10 center p-0">
-                <app-type-form *ngIf="screenWidth > this.minimalWidthForDesktopTypeForm; else mobileTypeForm"
-                               [height]="screenHeight"
-                               [formId]="contactFormId"
-                ></app-type-form>
-                <ng-template #mobileTypeForm>
-                    <app-type-form [formId]="contactFormIdMobile" [height]="screenHeight"
-                    ></app-type-form>
-                </ng-template>
-            </div>
-        </div>
-    </section>
+  <section *ngIf="currentLang === 'nl'" id="contact" class="background-blue p-0 contact">
+    <div class="container-fluid background-blue p-0">
+      <div class="col-lg-10 center p-0">
+        <app-type-form *ngIf="screenWidth > this.minimalWidthForDesktopTypeForm; else mobileTypeForm"
+                       [height]="screenHeight"
+                       [formId]="contactFormId"
+        ></app-type-form>
+        <ng-template #mobileTypeForm>
+          <app-type-form [formId]="contactFormIdMobile" [height]="screenHeight"
+          ></app-type-form>
+        </ng-template>
+      </div>
+    </div>
+  </section>
 
-    <app-review-quote
-            [hidden]="currentLang === 'nl'"
-            [quote]="'Een software developer waar je op kan vertrouwen!' | translate"
-            [name]="'Wouter Moll'"></app-review-quote>
+  <app-review-quote
+    [hidden]="currentLang === 'nl'"
+    [quote]="'Een software developer waar je op kan vertrouwen!' | translate"
+    [name]="'Wouter Moll'"></app-review-quote>
 
-    <app-faq></app-faq>
+  <app-faq></app-faq>
 
-    <app-footer></app-footer>
+  <app-footer></app-footer>
 
-    <app-cookie-bar></app-cookie-bar>
+  <app-cookie-bar></app-cookie-bar>
 
-    <app-magnet class="magnet-right" (closeMagnet)="closeMagnet()"
-                [@openCloseDesktop]="showDesktopMagnet ? 'open' : 'closed'"></app-magnet>
+  <!--    <app-magnet class="magnet-right" (closeMagnet)="closeMagnet()"-->
+  <!--                [@openCloseDesktop]="showDesktopMagnet ? 'open' : 'closed'"></app-magnet>-->
 
-    <app-magnet class="magnet-top" (closeMagnet)="closeMagnet()"
-                [@openCloseMobile]="showMobileMagnet ? 'open' : 'closed'"></app-magnet>
+  <!--    <app-magnet class="magnet-top" (closeMagnet)="closeMagnet()"-->
+  <!--                [@openCloseMobile]="showMobileMagnet ? 'open' : 'closed'"></app-magnet>-->
+
+  <app-discount-magnet class="magnet-right" (closeMagnet)="closeMagnet()" (usedButton)="redirectToConsultation()"
+                       [@openCloseDesktop]="showDesktopMagnet ? 'open' : 'closed'"></app-discount-magnet>
+
+  <app-discount-magnet class="magnet-top" (closeMagnet)="closeMagnet()" (usedButton)="redirectToConsultation()"
+                       [@openCloseMobile]="showMobileMagnet ? 'open' : 'closed'"></app-discount-magnet>
 </div>

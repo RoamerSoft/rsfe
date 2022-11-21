@@ -5,6 +5,7 @@ import {animate, state, style, transition, trigger} from '@angular/animations';
 import {environment} from '../../../environments/environment';
 import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 import {InfographicCheckoutComponent} from './components/infographic-checkout/infographic-checkout.component';
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'app-home',
@@ -88,6 +89,10 @@ export class HomeComponent implements OnInit, AfterViewInit {
     this.currentLang = this.translationService.getLang();
     this.magnetEnabled = this.currentLang === 'nl' && this.enableEbook;
     this.showInfographicButton = this.currentLang === 'nl';
+
+    setTimeout(() => {
+      this.showMagnet();
+    }, 2000)
   }
 
   ngAfterViewInit(): void {
@@ -132,6 +137,11 @@ export class HomeComponent implements OnInit, AfterViewInit {
     this.currentLang = language;
     this.magnetEnabled = language === 'nl' && this.enableEbook;
     this.showInfographicButton = language === 'nl';
+  }
+
+  redirectToConsultation(): void {
+    this.closeMagnet();
+    window.open('gratis-adviesgesprek', '_blank');
   }
 
   public showMagnet(): void {
