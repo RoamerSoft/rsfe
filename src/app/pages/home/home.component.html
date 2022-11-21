@@ -20,7 +20,7 @@
   <app-working-method (buttonClicked)="openInfographicCheckout()"
                       [showLeadMagnetButton]="showInfographicButton"></app-working-method>
 
-  <!--  <div #magnetTrigger></div>-->
+  <div #magnetTrigger></div>
 
   <app-review-quote
     [quote]="'Zeer prettig in het contact, snelle reactie en erg goede service!' | translate"
@@ -54,15 +54,10 @@
 
   <app-cookie-bar></app-cookie-bar>
 
-  <!--    <app-magnet class="magnet-right" (closeMagnet)="closeMagnet()"-->
-  <!--                [@openCloseDesktop]="showDesktopMagnet ? 'open' : 'closed'"></app-magnet>-->
+  <app-magnet class="magnet-right" (closeMagnet)="closeMagnet()"
+              [@openCloseDesktop]="showDesktopMagnet ? 'open' : 'closed'"></app-magnet>
 
-  <!--    <app-magnet class="magnet-top" (closeMagnet)="closeMagnet()"-->
-  <!--                [@openCloseMobile]="showMobileMagnet ? 'open' : 'closed'"></app-magnet>-->
+  <app-magnet class="magnet-top" (closeMagnet)="closeMagnet()"
+              [@openCloseMobile]="showMobileMagnet ? 'open' : 'closed'"></app-magnet>
 
-  <app-discount-magnet class="magnet-right" (closeMagnet)="closeMagnet()" (usedButton)="redirectToConsultation()"
-                       [@openCloseDesktop]="showDesktopMagnet ? 'open' : 'closed'"></app-discount-magnet>
-
-  <app-discount-magnet class="magnet-top" (closeMagnet)="closeMagnet()" (usedButton)="redirectToConsultation()"
-                       [@openCloseMobile]="showMobileMagnet ? 'open' : 'closed'"></app-discount-magnet>
 </div>

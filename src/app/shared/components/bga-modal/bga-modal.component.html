@@ -32,7 +32,7 @@
       <!-- end: Picture -->
       <!-- Body -->
       <div *ngIf="cyberMonday; else normalBody" class="col-lg-7 pt-5">
-        <div class="body">
+        <div class="body" [ngStyle]="cyberMonday && { 'width': 'width: 500px'}">
           <div class="countdown" data-countdown="2022/11/29 12:34:56"></div>
         </div>
       </div>

@@ -42,7 +42,7 @@ import {animate, state, style, transition, trigger} from "@angular/animations";
   templateUrl: './free-consultation.component.html',
   styleUrls: ['./free-consultation.component.scss'],
 })
-export class FreeConsultationComponent implements OnInit, AfterViewInit {
+export class FreeConsultationComponent implements OnInit {
   public consultationFormId = environment.consultationFormId;
   public consultationFormIdMobile = environment.consultationFormIdMobile;
   public heightCorrection = 80;
@@ -91,13 +91,6 @@ export class FreeConsultationComponent implements OnInit, AfterViewInit {
     this.screenWidth = window.innerWidth;
     this.screenHeight = window.innerHeight;
     this.heightCorrection = this.screenWidth > this.minimalWidthForDesktopTypeForm ? 80 : 45;
-  }
-
-  ngAfterViewInit(): void {
-    // Prevent showing bga to fast
-    setTimeout(() => {
-      this.showCyberMondayBGA();
-    }, this.millisecondsToPreventShowingBga);
   }
 
   public loadScript() {
@@ -198,27 +191,5 @@ export class FreeConsultationComponent implements OnInit, AfterViewInit {
         this.openForm();
       })
     }
-  }
-
-  public showCyberMondayBGA(): void {
-    // Create modal
-    const modalRef = this.modalService.open(BgaModalComponent, {size: 'lg'});
-    modalRef.componentInstance.cyberMonday = true;
-    // Set text
-    modalRef.componentInstance.boldTitle = 'Plan vandaag een gratis adviesgesprek';
-    modalRef.componentInstance.title = 'en krijg 25% korting op je totale offerte!';
-    modalRef.componentInstance.body = 'Plan nu een <strong>gratis adviesgesprek </strong> en verzeker jezelf dat je de juiste eerste stap zet naar een <strong>op maat</strong> gemaakte applicatie.';
-    modalRef.componentInstance.buttonText = 'Adviesgesprek inplannen';
-
-    // load scripts again for the clock
-    this.loadScript();
-
-    // Listen to response
-    modalRef.componentInstance.buttonClicked.subscribe(() => {
-      modalRef.componentInstance.buttonClicked.unsubscribe();
-      modalRef.close();
-      this.openForm();
-    })
-
   }
 }
