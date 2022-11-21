@@ -41,6 +41,7 @@
   width: fit-content !important;
   right: 18px;
   color: white !important;
+  overflow: visible;
 
   span {
     color: white !important;
@@ -105,5 +106,12 @@ img {
   ::ng-deep.modal-lg {
     margin: 10px;
     max-width: 100%;
+  }
+}
+
+
+@media only screen and(max-width: 417px) {
+  ::ng-deep .countdown .countdown-container .countdown-box .number {
+    font-size: 35px !important;
   }
 }
