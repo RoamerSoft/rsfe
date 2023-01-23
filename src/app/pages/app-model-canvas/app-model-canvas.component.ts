@@ -23,7 +23,7 @@ export class AppModelCanvasComponent implements OnInit, AfterViewInit {
     'https://www.roamersoft.com/assets/images/ebook/App_idee_maar_waar_te_beginnen_RoamerSoft.jpg'
   ];
 
-  public reminderShowed: boolean;
+  public reminderShowed = true;
   public reminderStorageKey = 'reminderShowed';
 
   constructor(
@@ -35,9 +35,14 @@ export class AppModelCanvasComponent implements OnInit, AfterViewInit {
   }
 
   async ngOnInit() {
-    // Check if reminder is showed
-    const reminderStorage = sessionStorage.getItem(this.reminderStorageKey);
-    this.reminderShowed = !!reminderStorage;
+
+    // Wait 5 seconds before showing reminder
+    setTimeout(() => {
+      // Check if reminder is showed
+      const reminderStorage = sessionStorage.getItem(this.reminderStorageKey);
+      this.reminderShowed = !!reminderStorage;
+    }, 5000);
+
 
     await this.setTranslationAndMetaData();
   }

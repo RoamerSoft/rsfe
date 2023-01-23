@@ -89,10 +89,6 @@ export class HomeComponent implements OnInit, AfterViewInit {
     this.currentLang = this.translationService.getLang();
     this.magnetEnabled = this.currentLang === 'nl' && this.enableEbook;
     this.showInfographicButton = this.currentLang === 'nl';
-
-    setTimeout(() => {
-      this.showMagnet();
-    }, 2000)
   }
 
   ngAfterViewInit(): void {
