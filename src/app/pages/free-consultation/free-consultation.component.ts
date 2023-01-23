@@ -55,7 +55,7 @@ export class FreeConsultationComponent implements OnInit {
   public bgaShowed = true;
   public bgaStorageKey = 'bgaShowed';
 
-  private millisecondsToPreventShowingBga = 2000;
+  private millisecondsToPreventShowingBga = 5000;
 
   /**
    * [0] = Title
